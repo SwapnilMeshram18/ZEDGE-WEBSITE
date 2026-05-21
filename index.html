@@ -1,0 +1,1416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZOE Care</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+
+body{
+font-family:Inter,sans-serif;
+background:#F7F4EA;
+}
+
+.hero-overlay{
+background:linear-gradient(
+90deg,
+rgba(28,34,24,.84),
+rgba(28,34,24,.48)
+);
+}
+
+</style>
+
+</head>
+
+<body class="scroll-smooth text-[#22301E]">
+
+<!-- NAVBAR -->
+
+<header class="fixed top-5 left-0 w-full z-50 px-5">
+
+  <nav class="max-w-7xl mx-auto">
+
+    <div class="backdrop-blur-xl
+bg-white/10
+border border-white/10
+rounded-full
+flex items-center justify-between
+px-7 py-4">
+
+      <!-- LOGO -->
+
+      <a href="#home" class="flex flex-col leading-none">
+
+        <span style="font-size:28px;font-weight:900;color:#6aaa50;line-height:1">Z</span>
+
+        <span style="font-size:11.5px;letter-spacing:.22em;color:rgba(255,255,255,.75);text-transform:uppercase">
+          Edge
+        </span>
+
+        <span style="font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase">
+          counselling
+        </span>
+
+      </a>
+
+      <!-- CENTER NAV -->
+
+      <div class="hidden lg:flex
+items-center
+gap-2
+bg-white/10
+rounded-full
+px-4 py-2">
+
+        <a href="#home" class="px-4 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
+          Home
+        </a>
+
+        <!-- DROPDOWN -->
+
+        <div class="relative" id="servicesParent">
+
+          <button onclick="toggleDD()"
+            class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
+
+            Services
+
+            <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+
+            </svg>
+
+          </button>
+
+          <!-- DROPDOWN MENU -->
+
+          <div class="dropdown-menu" id="servicesDD">
+
+            <a href="pages/Services/services.html" class="dropdown-item font-semibold border-b border-[#e2eeda]">
+              All Services
+            </a>
+
+            <a href="pages/Services/personal-counselling.html" class="dropdown-item">
+              Personal Counselling
+            </a>
+
+            <a href="pages/Services/career-counselling.html" class="dropdown-item">
+              Career Counselling
+            </a>
+
+            <a href="pages/Services/relationship-counselling.html" class="dropdown-item">
+              Relationship &amp; Marriage Counselling
+            </a>
+
+            <a href="pages/Services/family-counselling.html" class="dropdown-item">
+              Family &amp; Parental Counselling
+            </a>
+
+            <a href="pages/Services/mbti-assessment.html" class="dropdown-item">
+              Personality Assessment – MBTI
+            </a>
+
+          </div>
+
+        </div>
+
+        <a href="pages/resources.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+          Resources
+        </a>
+
+        <a href="pages/about-us.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+          About Us
+        </a>
+
+        <a href="pages/our-team.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+          Our Team
+        </a>
+
+      </div>
+
+      <!-- CONTACT BUTTON -->
+
+      <a href="pages/contact-us.html" class="hidden lg:flex
+bg-[#84C441]
+hover:bg-[#76B438]
+transition
+text-white
+px-7 py-3
+rounded-full
+text-sm">
+
+        Contact Us
+
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section id="home"
+
+class="relative min-h-screen
+bg-cover bg-center"
+
+style="background-image:url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=2200&q=80');">
+
+<div class="absolute inset-0 hero-overlay"></div>
+
+<div class="relative z-10
+max-w-[1410px]
+mx-auto
+px-6
+pt-40
+pb-32">
+
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+
+<!-- LEFT -->
+
+<div class="text-white">
+<div>
+<h1 class="text-5xl lg:text-7xl
+font-light
+leading-tight
+mb-3">
+
+Clarity starts with a 
+</h1>
+<h1 class="bg-[#50792F] text-7xl
+font-light max-w-md mb-7">
+
+Conversation
+
+</h1></div>
+
+<p class="text-white/80
+leading-8
+max-w-xl
+mb-9">
+
+Whether you're feeling stuck in your career,
+navigating relationships,
+or seeking deeper meaning,
+we're here to listen,
+guide,
+and support you with care.
+
+</p>
+
+<button onclick="openModal()" class="bg-[#84C441]
+hover:bg-[#76B438]
+transition
+px-8 py-4
+rounded-full">
+
+Book a session
+
+</button>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="relative">
+
+<img
+src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80"
+
+class="rounded-xl
+w-full
+max-w-[520px]
+ml-auto
+shadow-2xl">
+
+<div class="absolute
+left-0
+bottom-10
+
+bg-white/20
+backdrop-blur-xl
+
+rounded-2xl
+p-5
+w-[220px]
+text-white">
+
+<div class="text-[#8AD64B] text-lg">
+
+★★★★★
+
+</div>
+
+<p class="font-medium mt-2">
+
+500+ Healed Lives
+
+</p>
+
+<div class="flex -space-x-3 mt-5">
+
+<img src="https://i.pravatar.cc/50?img=12"
+class="w-10 h-10 rounded-full border-2 border-white">
+
+<img src="https://i.pravatar.cc/50?img=5"
+class="w-10 h-10 rounded-full border-2 border-white">
+
+<img src="https://i.pravatar.cc/50?img=8"
+class="w-10 h-10 rounded-full border-2 border-white">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="flex flex-wrap gap-16 mt-24 text-white">
+
+<div>
+
+<h3 class="text-5xl font-semibold">
+
+25+
+
+</h3>
+
+<p class="text-white/70 mt-2">
+
+Years Experience
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-5xl font-semibold">
+
+50+
+
+</h3>
+
+<p class="text-white/70 mt-2">
+
+Active Members
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-5xl font-semibold">
+
+99%
+
+</h3>
+
+<p class="text-white/70 mt-2">
+
+Satisfied Client
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="bg-[#F0E8D0] py-28">
+
+<div class="max-w-7xl mx-auto px-6">
+  <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[3px] text-sm text-[#7A8C62]">
+          SERVICES
+        </p>
+  
+        <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
+      </div><br>
+
+
+
+<h2 class="text-5xl font-light max-w-2xl mt-6">
+
+Guidance that adapts to your unique situation.
+
+</h2>
+
+<div class="grid lg:grid-cols-[0.8fr_2fr_0.8fr_0.8fr] gap-6 mt-16">
+
+  <!-- Card 01 -->
+  <div class="bg-[#DDE5CF] rounded-lg h-[480px] overflow-hidden relative">
+
+    <!-- Number -->
+    <div class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm">
+      01
+    </div>
+
+    <!-- Vertical Text -->
+    <div class="absolute inset-0 flex items-center justify-center mt-6">
+      <h3 class="-rotate-90 text-2xl font-bold whitespace-nowrap">
+        Career Counselling
+      </h3>
+    </div>
+
+  </div>
+
+
+  <!-- Main Active Card -->
+  <div class="bg-[#95AE7E] rounded-lg h-[480px] overflow-hidden">
+
+    <!-- Number -->
+    <div class="h-12 bg-[#A8BE95] flex items-center px-10 text-white text-sm">
+      02
+    </div>
+
+    <div class="p-12 text-white">
+      <h3 class="text-3xl mb-8 font-bold">
+        Personal Counselling
+      </h3>
+
+      <p class="leading-8 text-[15px] max-w-xl">
+        Life can feel overwhelming at times, whether you're dealing with
+        stress, uncertainty, emotional struggles, or simply feeling stuck.
+        Our counselling sessions create a safe confidential space to talk
+        openly and explore your emotions at your own pace.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Card 03 -->
+  <div class="bg-[#DDE5CF] rounded-lg h-[480px] overflow-hidden relative">
+
+    <!-- Number -->
+    <div class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm">
+      03
+    </div>
+
+    <!-- Vertical Text -->
+    <div class="absolute inset-0 flex items-center justify-center mt-6">
+      <h3 class="-rotate-90 text-2xl font-bold whitespace-nowrap">
+        Relationship Counselling
+      </h3>
+    </div>
+
+  </div>
+
+
+  <!-- Card 04 -->
+  <div class="bg-[#DDE5CF] rounded-lg h-[480px] overflow-hidden relative">
+
+    <!-- Number -->
+    <div class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm">
+      04
+    </div>
+
+    <!-- Vertical Text -->
+    <div class="absolute inset-0 flex items-center justify-center mt-6">
+      <h3 class="-rotate-90 text-2xl font-bold whitespace-nowrap text-center">
+        Workshops & Corporate Training
+      </h3>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="text-center mt-14">
+
+<a href="pages/Services/services.html" class="inline-block bg-[#84C441]
+hover:bg-[#76B438]
+transition
+text-white
+px-8 py-4
+rounded-full">
+
+View all services →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="bg-[#D9E2CC] py-24">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Top Label -->
+    <div class="flex items-center gap-4">
+      <p class="uppercase text-sm tracking-[2px] text-black">
+        HOW IT WORKS
+      </p>
+
+      <div class="w-24 h-[1px] bg-[#8DA46E]"></div>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="text-[58px] leading-[1.1] font-light mt-8 max-w-2xl text-black">
+      Just a few steps to begin your journey
+    </h2>
+
+    <!-- Cards -->
+    <div class="grid lg:grid-cols-4 gap-6 mt-16">
+
+      <!-- Card 1 -->
+      <div class="bg-[#E8EDE2] border border-white/60 rounded-xl p-8 min-h-[320px]">
+
+        <span class="text-lg text-black">
+          01
+        </span>
+
+        <h3 class="text-[42px] leading-tight mt-6 text-black font-light">
+          Choose a service
+        </h3>
+
+        <p class="text-[#3A3A3A] leading-8 mt-8 text-[15px]">
+          Explore our range of services and choose what feels right for you.
+          Whether you're seeking clarity, support, or deeper understanding,
+          you can start where you feel most comfortable.
+        </p>
+
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#E8EDE2] border border-white/60 rounded-xl p-8 min-h-[320px]">
+
+        <span class="text-lg text-black">
+          02
+        </span>
+
+        <h3 class="text-[42px] leading-tight mt-6 text-black font-light">
+          Book a session
+        </h3>
+
+        <p class="text-[#3A3A3A] leading-8 mt-8 text-[15px]">
+          Pick a time that works for you and schedule your session.
+          Our booking process is simple, flexible, and designed around your convenience.
+        </p>
+
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#E8EDE2] border border-white/60 rounded-xl p-8 min-h-[320px]">
+
+        <span class="text-lg text-black">
+          03
+        </span>
+
+        <h3 class="text-[42px] leading-tight mt-6 text-black font-light">
+          Talk to expert
+        </h3>
+
+        <p class="text-[#3A3A3A] leading-8 mt-8 text-[15px]">
+          Connect with a trusted expert in a safe, confidential space
+          where you can speak openly and feel truly heard,
+          without judgement or pressure.
+        </p>
+
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#E8EDE2] border border-white/60 rounded-xl p-8 min-h-[320px]">
+
+        <span class="text-lg text-black">
+          04
+        </span>
+
+        <h3 class="text-[42px] leading-tight mt-6 text-black font-light">
+          Get personalised guidance
+        </h3>
+
+        <p class="text-[#3A3A3A] leading-8 mt-8 text-[15px]">
+          Receive thoughtful guidance tailored to your situation,
+          helping you gain clarity, perspective, and confidence to move forward.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="bg-[#F5F2EA] py-32 overflow-hidden" id="about-us">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Label -->
+    <div class="flex items-center gap-4">
+      <p class="uppercase text-sm tracking-[2px] text-[#5D7A4E]">
+        ABOUT US
+      </p>
+
+      <div class="w-24 h-[1px] bg-[#8EB36A]"></div>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="text-[64px] leading-[1.08] font-light text-[#29461F] max-w-4xl mt-8">
+      A space built on trust, care, and meaningful conversations.
+    </h2>
+
+    <!-- Main Layout -->
+    <div class="grid lg:grid-cols-[220px_320px_1fr] gap-10 mt-24 items-start">
+
+      <!-- Left Small Image -->
+      <div class="relative mt-0">
+
+        <img
+          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+          class="rounded-lg h-[290px] w-full object-cover"
+        >
+
+        <!-- Bottom Decoration -->
+        <div class="absolute -bottom-6 left-0 flex items-center gap-3">
+
+          <div class="w-14 h-[2px] bg-[#7AC142]"></div>
+
+          <div class="w-2 h-2 rounded-full bg-[#7AC142]"></div>
+
+          <div class="w-14 h-[2px] bg-[#7AC142]"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Center Large Image -->
+      <div class="relative mt-28">
+
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
+          class="rounded-lg h-[430px] w-full object-cover"
+        >
+
+        <!-- Vertical Decoration -->
+        <div class="absolute top-12 -right-5 flex flex-col items-center">
+
+          <div class="h-16 w-[2px] bg-[#7AC142]"></div>
+
+          <div class="w-2 h-2 rounded-full bg-[#7AC142] my-3"></div>
+
+          <div class="h-16 w-[2px] bg-[#7AC142]"></div>
+
+          <div class="w-2 h-2 rounded-full bg-[#7AC142] mt-3"></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Text Content -->
+      <div class="pt-40">
+
+        <p class="text-[#2F2F2F] leading-10 text-[18px]">
+          Z-Edge Counselling is a trusted counselling and training
+          organisation in Nagpur, dedicated to helping individuals and
+          organisations grow with clarity and purpose.
+        </p>
+
+        <p class="text-[#2F2F2F] leading-10 text-[18px] mt-6">
+          Founded by Renu Daga, with over 30+ years of experience,
+          Z-Edge has guided countless individuals in making life-changing
+          decisions related to career, relationships, and personal growth.
+          We don’t define you, we help you discover your true potential.
+        </p>
+
+        <!-- Button -->
+        <a href="pages/about-us.html" class="mt-10 inline-flex bg-[#78BE43] hover:bg-[#6DA83C] transition-all duration-300 text-white px-8 py-4 rounded-full items-center gap-3 shadow-md">
+
+          Read more
+
+          <span>→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section
+  class="relative py-28 overflow-hidden bg-cover bg-center"
+  style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');"
+>
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Top Label -->
+    <div class="flex items-center gap-4">
+      <p class="uppercase tracking-[3px] text-sm text-white/80">
+        Testimonials
+      </p>
+
+      <div class="w-24 h-[1px] bg-white/30"></div>
+    </div>
+
+    <!-- Heading -->
+    <h2
+      class="mt-6 text-white text-4xl md:text-5xl lg:text-[58px] leading-[1.1] font-light max-w-2xl"
+    >
+      Life-changing stories <br />
+      from our clients
+    </h2>
+
+    <!-- Cards -->
+    <div class="grid lg:grid-cols-3 gap-10 mt-20 items-start">
+
+      <!-- Card 1 -->
+      <div
+        class="backdrop-blur-2xl bg-white/[0.08] border border-white/10 rounded-2xl px-8 py-10 text-white shadow-2xl"
+      >
+        <!-- Quote -->
+        <div class="text-[#B6E388] text-7xl leading-none font-serif">
+          “
+        </div>
+
+        <!-- Text -->
+        <p class="mt-4 text-white/85 leading-8 text-[15px]">
+          We were struggling to communicate and felt distant for months.
+          These sessions helped us understand each other in a way we never
+          had before. It honestly changed our relationship.
+        </p>
+
+        <!-- Footer -->
+        <div
+          class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
+        >
+          <span class="text-white/90 text-sm">Priya & Kunal</span>
+
+          <span class="text-[#84C441] tracking-[3px] text-lg">
+            ★★★★★
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="lg:mt-[-55px] backdrop-blur-2xl bg-white/[0.10] border border-white/10 rounded-2xl px-8 py-10 text-white shadow-2xl"
+      >
+        <div class="text-[#B6E388] text-7xl leading-none font-serif">
+          “
+        </div>
+
+        <p class="mt-4 text-white/85 leading-8 text-[15px]">
+          I was going through a really difficult phase and didn’t know who to
+          talk to. This felt like a safe space from the very first session.
+          I felt heard, understood, and supported.
+        </p>
+
+        <div
+          class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
+        >
+          <span class="text-white/90 text-sm">Neha R.</span>
+
+          <span class="text-[#84C441] tracking-[3px] text-lg">
+            ★★★★★
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="backdrop-blur-2xl bg-white/[0.08] border border-white/10 rounded-2xl px-8 py-10 text-white shadow-2xl"
+      >
+        <div class="text-[#B6E388] text-7xl leading-none font-serif">
+          “
+        </div>
+
+        <p class="mt-4 text-white/85 leading-8 text-[15px]">
+          I felt completely lost about my career and overwhelmed with choices.
+          Talking to them gave me clarity I didn’t even know I needed.
+          For the first time, I feel confident about my direction.
+        </p>
+
+        <div
+          class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
+        >
+          <span class="text-white/90 text-sm">Aarav S.</span>
+
+          <span class="text-[#84C441] tracking-[3px] text-lg">
+            ★★★★★
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES SECTION -->
+<section class="bg-[#F8F6EE] py-[110px]" id="resources">
+
+<div class="max-w-[1240px] mx-auto px-6">
+  <div class="flex items-center gap-4">
+      <p class="uppercase tracking-[3px] text-sm text-[#7A8C62]">
+        RESOURCES
+      </p>
+
+      <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
+    </div><br>
+
+
+<h2 class="text-[#32452D]
+text-[56px]
+leading-[1.08]
+font-light
+max-w-[680px]">
+
+Insights and guidance to support you beyond sessions.
+
+</h2>
+
+<div class="mt-16 grid lg:grid-cols-[2fr_0.9fr] gap-8 items-start">
+
+<!-- LEFT VIDEO -->
+
+<div>
+
+<div class="relative rounded-[4px] overflow-hidden">
+
+<img
+src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80"
+class="w-full h-[380px] object-cover">
+
+<div class="absolute inset-0 bg-black/15"></div>
+
+<div class="absolute top-8 left-8">
+
+<h3 class="text-white text-[38px] font-light">
+
+Dealing with Decision Fatigue
+
+</h3>
+
+</div>
+
+<button class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+
+<div class="w-[72px] h-[72px] rounded-full bg-white flex items-center justify-center">
+
+▶
+
+</div>
+
+</button>
+
+<div class="absolute bottom-0 left-0 right-0 h-[5px] bg-white/20">
+
+<div class="w-[18%] h-full bg-[#77C043]"></div>
+
+</div>
+
+</div>
+
+<div class="flex justify-between mt-4 text-[12px] text-[#1E1E1E]">
+
+<span>120 Likes</span>
+<span>5 Comments</span>
+<span>612 Views</span>
+
+</div>
+
+<div class="mt-6 flex justify-between items-center gap-8">
+
+<p class="text-[14px]
+leading-[1.8]
+text-[#4D5A46]
+max-w-[650px]">
+
+We regularly share insights, reflections, and practical guidance
+to support you in your everyday life.
+Follow along and explore more on our social platforms.
+
+</p>
+
+<a href="pages/resources.html" class="inline-block bg-[#77C043]
+text-white
+text-[13px]
+px-7
+py-3
+rounded-full">
+
+Explore More →
+
+</a>
+
+</div>
+
+</div>
+
+<!-- RIGHT LIST -->
+
+<div class="space-y-3">
+
+<div class="bg-[#EFE7D3] p-3 flex gap-3">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+class="w-[76px] h-[76px] object-cover">
+
+<div class="flex-1">
+
+<h4 class="text-[14px] leading-[1.5]">
+
+Why you shouldn't be desperate?
+
+</h4>
+
+<div class="flex gap-4 mt-4 text-[11px] text-[#666]">
+
+<span>112 👍</span>
+<span>05 💬</span>
+<span>580 Views</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bg-[#EFE7D3] p-3 flex gap-3">
+
+<img
+src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=300&q=80"
+class="w-[76px] h-[76px] object-cover">
+
+<div class="flex-1">
+
+<h4 class="text-[14px] leading-[1.5]">
+
+Recognising your inner voice
+
+</h4>
+
+<div class="flex gap-4 mt-4 text-[11px] text-[#666]">
+
+<span>112 👍</span>
+<span>05 💬</span>
+<span>580 Views</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bg-[#EFE7D3] p-3 flex gap-3">
+
+<img
+src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80"
+class="w-[76px] h-[76px] object-cover">
+
+<div class="flex-1">
+
+<h4 class="text-[14px] leading-[1.5]">
+
+An aid to your milestone anxiety
+
+</h4>
+
+<div class="flex gap-4 mt-4 text-[11px] text-[#666]">
+
+<span>112 👍</span>
+<span>05 💬</span>
+<span>580 Views</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bg-[#EFE7D3] p-3 flex gap-3">
+
+<img
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80"
+class="w-[76px] h-[76px] object-cover">
+
+<div class="flex-1">
+
+<h4 class="text-[14px] leading-[1.5]">
+
+Navigating complex relationships
+
+</h4>
+
+<div class="flex gap-4 mt-4 text-[11px] text-[#666]">
+
+<span>112 👍</span>
+<span>05 💬</span>
+<span>580 Views</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== FAQ ===== -->
+
+<section id="faq" class="bg-[#F4EFD8] py-[110px]">
+
+<div class="max-w-[1240px] mx-auto px-6">
+  <div class="flex items-center gap-4">
+      <p class="uppercase tracking-[3px] text-sm text-[#7A8C62]">
+        FREQUENTLY ASKED QUESTIONS
+      </p>
+
+      <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
+    </div><br>
+
+<h2 class="text-[#1E1E1E]
+text-[58px]
+leading-[1.1]
+font-light
+max-w-[700px]">
+
+Answers to help you feel informed and at ease.
+
+</h2>
+
+<div class="mt-16 space-y-4">
+
+<!-- FAQ 1 -->
+
+<div class="faq-item border border-[#E5DEC9] bg-[#F7F1DE]">
+
+<button class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left">
+
+<span class="text-[15px] font-medium">
+
+Is everything I share confidential?
+
+</span>
+
+<span class="faq-icon text-[24px]">
+
+−
+
+</span>
+
+</button>
+
+<div class="faq-content px-8 pb-7">
+
+<p class="text-[13px] leading-[2] text-[#666]">
+
+Yes, absolutely. Your privacy and trust are very important to us.
+Everything discussed during your sessions remains strictly confidential.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ 2 -->
+
+<div class="faq-item border border-[#E5DEC9]">
+
+<button class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left">
+
+<span>
+
+How long is a typical session?
+
+</span>
+
+<span class="faq-icon text-[24px]">
+
++
+
+</span>
+
+</button>
+
+<div class="faq-content hidden px-8 pb-7">
+
+<p class="text-[#666] text-[13px] leading-[2]">
+
+Most counselling sessions last between 45–60 minutes.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ 3 -->
+
+<div class="faq-item border border-[#E5DEC9]">
+
+<button class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left">
+
+<span>
+
+Do you offer online sessions?
+
+</span>
+
+<span class="faq-icon text-[24px]">
+
++
+
+</span>
+
+</button>
+
+<div class="faq-content hidden px-8 pb-7">
+
+<p class="text-[#666] text-[13px] leading-[2]">
+
+Yes. We offer both online and in-person counselling sessions.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ 4 -->
+
+<div class="faq-item border border-[#E5DEC9]">
+
+<button class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left">
+
+<span>
+
+What happens during a session?
+
+</span>
+
+<span class="faq-icon text-[24px]">
+
++
+
+</span>
+
+</button>
+
+<div class="faq-content hidden px-8 pb-7">
+
+<p class="text-[#666] text-[13px] leading-[2]">
+
+Sessions provide a safe space to talk openly,
+understand challenges,
+and receive personalised guidance.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ 5 -->
+
+<div class="faq-item border border-[#E5DEC9]">
+
+<button class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left">
+
+<span>
+
+Do I need to prepare anything before my session?
+
+</span>
+
+<span class="faq-icon text-[24px]">
+
++
+
+</span>
+
+</button>
+
+<div class="faq-content hidden px-8 pb-7">
+
+<p class="text-[#666] text-[13px] leading-[2]">
+
+No preparation is required.
+Just come as you are.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== CONTACT ===== -->
+
+<section class="bg-[#DCE5D1] py-[110px]" id="contact">
+
+<div class="max-w-[1240px] mx-auto px-6">
+  <div class="flex items-center gap-4">
+      <p class="uppercase tracking-[3px] text-sm text-[#7A8C62]">
+        CONTACT US
+      </p>
+
+      <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
+    </div><br>
+
+<h2 class="text-[#2D4327]
+text-[56px]
+leading-[1.12]
+font-light
+max-w-[820px]">
+
+Whether you have a question or want to book a session, we’re here to help.
+
+</h2>
+
+<form class="mt-16">
+
+<div class="grid lg:grid-cols-2 gap-8">
+
+<input
+type="text"
+placeholder="Name"
+class="h-[56px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.12)]  px-5 outline-none">
+
+<input
+type="email"
+placeholder="Email Address"
+class="h-[56px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.12)]  px-5 outline-none">
+
+</div>
+
+<textarea
+placeholder="Write your query here"
+class="mt-8 w-[430px] max-w-full h-[120px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] shadow-[0_20px_40px_rgba(0,0,0,0.12)] rounded-md p-5 outline-none"></textarea>
+
+<div class="mt-8">
+
+<button class="bg-[#77C043]
+text-white
+px-10
+py-4
+rounded-full">
+
+Send →
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ===== FOOTER SECTION ===== -->
+
+<footer class="relative">
+
+<div class="absolute inset-0">
+
+<img
+src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80"
+class="w-full h-full object-cover">
+
+<div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+
+</div>
+
+<div class="relative max-w-[1240px] mx-auto px-6 py-[70px]">
+
+<div class="border border-white/15
+rounded-[10px]
+bg-white/6
+backdrop-blur-xl
+p-12">
+
+<div class="grid lg:grid-cols-4 gap-16">
+
+<div>
+
+<h3 class="text-[#89D34A]
+text-[52px]
+font-extralight">
+
+Z EDGE
+
+</h3>
+
+<p class="text-white/75
+text-[13px]
+leading-[1.9]
+mt-5">
+
+A space where you can feel truly seen and make sense of what you're going through.
+
+</p>
+
+</div>
+
+<div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+
+<span class="font-semibold text-white">Quick Links</span>
+<a href="pages/about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
+<a href="pages/Services/services.html" class="hover:text-[#89D34A] transition">Services</a>
+<a href="#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+
+</div>
+
+<div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+
+<span class="font-semibold text-white">Important Links</span>
+<a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
+<a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
+
+</div>
+
+<div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+
+<span class="font-semibold text-white">Help Center</span>
+<a href="pages/contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
+<a href="tel:930123456" class="hover:text-[#89D34A] transition">📞 930-123-456</a>
+<a href="mailto:info@zedge.in" class="hover:text-[#89D34A] transition">✉ info@zedge.in</a>
+
+</div>
+
+</div>
+
+<div class="border-t border-white/10 mt-12 pt-8 text-center text-white/60 text-[13px]">
+
+© 2025 All rights reserved.
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FAQ JS -->
+
+<script>
+
+const faqBtns = document.querySelectorAll('.faq-btn');
+
+faqBtns.forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+const parent = btn.parentElement;
+
+const content = parent.querySelector('.faq-content');
+
+const icon = parent.querySelector('.faq-icon');
+
+const isOpen = !content.classList.contains('hidden');
+
+document.querySelectorAll('.faq-content').forEach(el=>{
+
+el.classList.add('hidden');
+
+});
+
+document.querySelectorAll('.faq-icon').forEach(el=>{
+
+el.textContent='+';
+
+});
+
+if(!isOpen){
+
+content.classList.remove('hidden');
+
+icon.textContent='−';
+
+}
+
+});
+
+});
+
+</script>
+
+</footer>
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div
+      style="background:#fdf8ee;border-radius:18px;max-width:570px;width:100%;padding:36px 34px 30px;position:relative;max-height:92vh;overflow-y:auto">
+      <button onclick="closeModal()"
+        style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:#aaa;cursor:pointer;line-height:1">✕</button>
+      <h3 class="font-display" style="font-size:22px;font-weight:700;color:#2d4a28;margin-bottom:20px">Book Your
+        Appointment</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px" id="chipRow">
+        <button class="chip active" onclick="chipSel(this)">Personal counselling</button>
+        <button class="chip" onclick="chipSel(this)">Career counselling</button>
+        <button class="chip" onclick="chipSel(this)">Relationship &amp; Marriage Counselling</button>
+        <button class="chip" onclick="chipSel(this)">Personality Assessment</button>
+        <button class="chip" onclick="chipSel(this)">Family &amp; Parental</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+        <input class="input-field" type="text" placeholder="Name*" />
+        <input class="input-field" type="email" placeholder="Email Address*" />
+      </div>
+      <div style="margin-bottom:10px">
+        <input class="input-field" style="max-width:calc(50% - 5px)" type="tel" placeholder="Phone Number*" />
+      </div>
+      <textarea class="input-field" rows="4" placeholder="Write your query" style="margin-bottom:8px"></textarea>
+      <p style="color:#aaa;font-size:12px;margin-bottom:20px">We'll get in touch with you at earliest</p>
+      <button class="book-btn">Request Appointment <svg style="width:16px;height:16px" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg></button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

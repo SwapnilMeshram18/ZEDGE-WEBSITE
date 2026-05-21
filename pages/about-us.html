@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z-Edge | About Us</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F7F4EA;
+    }
+    .hero-bg {
+      background: linear-gradient(rgba(18, 28, 14, .75), rgba(18, 28, 14, .65)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height: 320px;
+    }
+  </style>
+</head>
+<body class="scroll-smooth text-[#22301E]">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="fixed top-5 left-0 w-full z-50 px-5">
+    <nav class="max-w-7xl mx-auto">
+      <div class="backdrop-blur-xl bg-white/10 border border-white/10 rounded-full flex items-center justify-between px-7 py-4">
+        <!-- LOGO -->
+        <a href="../index.html" class="flex flex-col leading-none">
+          <span style="font-size:28px;font-weight:900;color:#6aaa50;line-height:1">Z</span>
+          <span style="font-size:11.5px;letter-spacing:.22em;color:rgba(255,255,255,.75);text-transform:uppercase">Edge</span>
+          <span style="font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase">counselling</span>
+        </a>
+
+        <!-- CENTER NAV -->
+        <div class="hidden lg:flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
+          <a href="../index.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Home
+          </a>
+
+          <!-- DROPDOWN -->
+          <div class="relative" id="servicesParent">
+            <button onclick="toggleDD()" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
+              Services
+              <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <!-- DROPDOWN MENU -->
+            <div class="dropdown-menu" id="servicesDD">
+              <a href="Services/services.html" class="dropdown-item font-semibold border-b border-[#e2eeda]">
+                All Services
+              </a>
+              <a href="Services/personal-counselling.html" class="dropdown-item">
+                Personal Counselling
+              </a>
+              <a href="Services/career-counselling.html" class="dropdown-item">
+                Career Counselling
+              </a>
+              <a href="Services/relationship-counselling.html" class="dropdown-item">
+                Relationship &amp; Marriage Counselling
+              </a>
+              <a href="Services/family-counselling.html" class="dropdown-item">
+                Family &amp; Parental Counselling
+              </a>
+              <a href="Services/mbti-assessment.html" class="dropdown-item">
+                Personality Assessment – MBTI
+              </a>
+            </div>
+          </div>
+
+          <a href="resources.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Resources
+          </a>
+          <a href="about-us.html" class="px-4 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
+            About Us
+          </a>
+          <a href="our-team.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Our Team
+          </a>
+        </div>
+
+        <!-- CONTACT BUTTON -->
+        <a href="contact-us.html" class="hidden lg:flex bg-[#84C441] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm">
+          Contact Us
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-bg flex flex-col items-center justify-center text-center pt-40 pb-20 px-4">
+    <h1 class="font-display text-5xl font-bold text-white tracking-widest mb-4">ABOUT US</h1>
+    <p class="text-white/85 text-sm max-w-xl leading-relaxed">
+      A space built on trust, confidentiality, and deep professional expertise to help you navigate life's transitions.
+    </p>
+  </section>
+
+  <!-- ===== INTRODUCTION ===== -->
+  <section class="bg-[#F5F2EA] py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Images Display -->
+        <div class="grid grid-cols-2 gap-6 relative">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Renu Daga Founder" class="rounded-2xl shadow-xl w-full h-[400px] object-cover mt-8">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Counselling Session" class="rounded-2xl shadow-xl w-full h-[400px] object-cover">
+          <!-- decorative circle -->
+          <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-[#84C441]/10 rounded-full blur-xl"></div>
+        </div>
+
+        <!-- Bio Content -->
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <p class="uppercase text-sm tracking-[2px] text-[#5D7A4E] font-semibold">OUR FOUNDER</p>
+            <div class="w-16 h-[1px] bg-[#8EB36A]"></div>
+          </div>
+          <h2 class="text-4xl font-light text-[#29461F] leading-tight mb-6">
+            Meet Renu Daga, <br><span class="font-semibold text-[#50792F]">Founder of Z-Edge Counselling</span>
+          </h2>
+          <p class="text-[#2F2F2F] leading-relaxed mb-6">
+            With over 30+ years of dedicated professional experience, Renu Daga has helped hundreds of individuals and families find clear directions in their personal lives, relationships, and professional careers.
+          </p>
+          <p class="text-[#2F2F2F] leading-relaxed mb-6">
+            At Z-Edge Counselling in Nagpur, our philosophy is simple: we do not define you; we guide you to discover your own unique potential. We believe in providing a compassionate, non-judgmental, and highly confidential environment where you can speak your truth and explore paths to growth.
+          </p>
+          <button onclick="openModal()" class="bg-[#78BE43] hover:bg-[#6DA83C] transition-all duration-300 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 shadow-md mt-4">
+            Book an Appointment
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PILLARS / VALUES ===== -->
+  <section class="bg-[#EAE4D3] py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="uppercase tracking-[3px] text-xs font-semibold text-[#5D7A4E] mb-3">OUR CORE VALUES</p>
+        <h2 class="text-4xl font-light text-[#29461F]">Pillars that define our practice</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-[#F5F2EA]/80 border border-white/50 backdrop-blur rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 rounded-full bg-[#5D7A4E]/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#5D7A4E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#29461F] mb-4">Deep Empathy</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Every conversation starts with understanding. We meet you exactly where you are, offering unconditional positive regard and a completely non-judgmental ear.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-[#F5F2EA]/80 border border-white/50 backdrop-blur rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 rounded-full bg-[#5D7A4E]/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#5D7A4E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#29461F] mb-4">Clarity & Insights</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            We help you cut through the mental noise, identify internal and external obstacles, and gain the insight required to make decisions with confidence.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#F5F2EA]/80 border border-white/50 backdrop-blur rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition duration-300">
+          <div class="w-12 h-12 rounded-full bg-[#5D7A4E]/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#5D7A4E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#29461F] mb-4">Empowered Growth</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Counselling is not just about coping — it is about thriving. We provide actionable, structured guidance that equips you to take charge of your life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="bg-[#2D4A28] py-20 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        <div>
+          <h3 class="text-5xl font-bold text-[#89D34A] mb-2">30+</h3>
+          <p class="text-white/70 text-sm uppercase tracking-wider">Years Experience</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-[#89D34A] mb-2">1,000+</h3>
+          <p class="text-white/70 text-sm uppercase tracking-wider">Counselled Clients</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-[#89D34A] mb-2">50+</h3>
+          <p class="text-white/70 text-sm uppercase tracking-wider">Workshops Conducted</p>
+        </div>
+        <div>
+          <h3 class="text-5xl font-bold text-[#89D34A] mb-2">99%</h3>
+          <p class="text-white/70 text-sm uppercase tracking-wider">Satisfaction Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer class="relative">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+    </div>
+
+    <div class="relative max-w-[1240px] mx-auto px-6 py-[70px]">
+      <div class="border border-white/15 rounded-[10px] bg-white/6 backdrop-blur-xl p-12">
+        <div class="grid lg:grid-cols-4 gap-16">
+          <div>
+            <h3 class="text-[#89D34A] text-[52px] font-extralight">Z EDGE</h3>
+            <p class="text-white/75 text-[13px] leading-[1.9] mt-5">
+              A space where you can feel truly seen and make sense of what you're going through.
+            </p>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Quick Links</span>
+            <a href="about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
+            <a href="Services/services.html" class="hover:text-[#89D34A] transition">Services</a>
+            <a href="../index.html#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Important Links</span>
+            <a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Help Center</span>
+            <a href="contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
+            <a href="tel:930123456" class="hover:text-[#89D34A] transition">📞 930-123-456</a>
+            <a href="mailto:info@zedge.in" class="hover:text-[#89D34A] transition">✉ info@zedge.in</a>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/60 text-[13px]">
+          © 2025 All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div style="background:#fdf8ee;border-radius:18px;max-width:570px;width:100%;padding:36px 34px 30px;position:relative;max-height:92vh;overflow-y:auto">
+      <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:#aaa;cursor:pointer;line-height:1">✕</button>
+      <h3 class="font-display" style="font-size:22px;font-weight:700;color:#2d4a28;margin-bottom:20px">Book Your Appointment</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px" id="chipRow">
+        <button class="chip active" onclick="chipSel(this)">Personal counselling</button>
+        <button class="chip" onclick="chipSel(this)">Career counselling</button>
+        <button class="chip" onclick="chipSel(this)">Relationship &amp; Marriage Counselling</button>
+        <button class="chip" onclick="chipSel(this)">Personality Assessment</button>
+        <button class="chip" onclick="chipSel(this)">Family &amp; Parental</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+        <input class="input-field" type="text" placeholder="Name*" />
+        <input class="input-field" type="email" placeholder="Email Address*" />
+      </div>
+      <div style="margin-bottom:10px">
+        <input class="input-field" style="max-width:calc(50% - 5px)" type="tel" placeholder="Phone Number*" />
+      </div>
+      <textarea class="input-field" rows="4" placeholder="Write your query" style="margin-bottom:8px"></textarea>
+      <p style="color:#aaa;font-size:12px;margin-bottom:20px">We'll get in touch with you at earliest</p>
+      <button class="book-btn">Request Appointment <svg style="width:16px;height:16px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg></button>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
