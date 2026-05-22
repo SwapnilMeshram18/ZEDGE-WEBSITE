@@ -61,7 +61,8 @@ if (bookingModalEl) {
 
 // Mark active nav link
 document.querySelectorAll(".dropdown-item").forEach(function (a) {
-    if (location.href.indexOf(a.getAttribute("href")) > -1) {
+    const href = a.getAttribute("href");
+    if (href && location.href.indexOf(href) > -1) {
         a.classList.add("active-link");
     }
 });
@@ -78,3 +79,44 @@ window.addEventListener("scroll", function () {
         }
     }
 });
+
+// Mobile menu toggle utilities
+function toggleMobileMenu() {
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+    if (btn && menu) {
+        const isOpen = menu.classList.contains("menu-open");
+        if (isOpen) {
+            menu.classList.remove("menu-open");
+            btn.classList.remove("open");
+            menu.style.display = "none";
+        } else {
+            menu.classList.add("menu-open");
+            btn.classList.add("open");
+            menu.style.display = "flex";
+        }
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener("click", function (e) {
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+    if (menu && btn && menu.classList.contains("menu-open")) {
+        if (!e.target.closest("#mobileMenu") && !e.target.closest("#mobileMenuBtn")) {
+            menu.classList.remove("menu-open");
+            btn.classList.remove("open");
+            menu.style.display = "none";
+        }
+    }
+});
+
+function toggleMobileServices() {
+    const links = document.getElementById("mobileServicesLinks");
+    const arrow = document.getElementById("mobileServicesArrow");
+    if (links && arrow) {
+        links.classList.toggle("hidden");
+        links.classList.toggle("flex");
+        arrow.classList.toggle("rotate-180");
+    }
+}
