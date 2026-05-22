@@ -1,366 +1,754 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Z-Edge | Our Team</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Edge | Our Team</title>
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #F7F4EA;
-    }
-    .hero-bg {
-      background: linear-gradient(rgba(18, 28, 14, .75), rgba(18, 28, 14, .65)), url('https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      min-height: 320px;
-    }
-    .team-card {
-      transition: all 0.3s ease;
-    }
-    .team-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(74, 124, 64, 0.15);
-    }
-    .team-img-container {
-      overflow: hidden;
-      position: relative;
-    }
-    .team-img {
-      transition: transform 0.5s ease;
-    }
-    .team-card:hover .team-img {
-      transform: scale(1.06);
-    }
-  </style>
-</head>
-<body class="scroll-smooth text-[#22301E]">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="fixed top-5 left-0 w-full z-50 px-5">
-    <nav class="max-w-7xl mx-auto relative">
-      <div class="backdrop-blur-xl bg-[#1C2218]/80 xl:bg-white/10 border border-white/10 rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4">
-        <!-- LOGO -->
-        <a href="../index.html" class="flex flex-col leading-none">
-          <span style="font-size:28px;font-weight:900;color:#6aaa50;line-height:1">Z</span>
-          <span style="font-size:11.5px;letter-spacing:.22em;color:rgba(255,255,255,.75);text-transform:uppercase">Edge</span>
-          <span style="font-size:8px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase">counselling</span>
-        </a>
-
-        <!-- CENTER NAV -->
-        <div class="hidden xl:flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-          <a href="../index.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
-            Home
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f7f4ea;
+      }
+      .hero-bg {
+        background:
+          linear-gradient(rgba(18, 28, 14, 0.75), rgba(18, 28, 14, 0.65)),
+          url("https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&q=80")
+            center/cover no-repeat;
+        min-height: 320px;
+      }
+      .team-card {
+        transition: all 0.3s ease;
+      }
+      .team-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(74, 124, 64, 0.15);
+      }
+      .team-img-container {
+        overflow: hidden;
+        position: relative;
+      }
+      .team-img {
+        transition: transform 0.5s ease;
+      }
+      .team-card:hover .team-img {
+        transform: scale(1.06);
+      }
+    </style>
+  </head>
+  <body class="scroll-smooth text-[#22301E]">
+    <!-- ===== NAVBAR ===== -->
+    <header class="fixed top-5 left-0 w-full z-50 px-5">
+      <nav class="max-w-7xl mx-auto relative">
+        <div
+          class="backdrop-blur-xl bg-[#1C2218]/80 xl:bg-white/10 border border-white/10 rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4"
+        >
+          <!-- LOGO -->
+          <a href="../index.html" class="flex flex-col leading-none">
+            <span
+              style="
+                font-size: 28px;
+                font-weight: 900;
+                color: #6aaa50;
+                line-height: 1;
+              "
+              >Z</span
+            >
+            <span
+              style="
+                font-size: 11.5px;
+                letter-spacing: 0.22em;
+                color: rgba(255, 255, 255, 0.75);
+                text-transform: uppercase;
+              "
+              >Edge</span
+            >
+            <span
+              style="
+                font-size: 8px;
+                letter-spacing: 0.1em;
+                color: rgba(255, 255, 255, 0.4);
+                text-transform: uppercase;
+              "
+              >counselling</span
+            >
           </a>
 
-          <!-- DROPDOWN -->
-          <div class="relative" id="servicesParent">
-            <button onclick="toggleDD()" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
-              Services
-              <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+          <!-- CENTER NAV -->
+          <div
+            class="hidden xl:flex items-center gap-2 bg-white/10 rounded-full px-4 py-2"
+          >
+            <a
+              href="../index.html"
+              class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
+            >
+              Home
+            </a>
 
-            <!-- DROPDOWN MENU -->
-            <div class="dropdown-menu" id="servicesDD">
-              <a href="Services/services.html" class="dropdown-item font-semibold border-b border-[#e2eeda]">
-                All Services
-              </a>
-              <a href="Services/personal-counselling.html" class="dropdown-item">
-                Personal Counselling
-              </a>
-              <a href="Services/career-counselling.html" class="dropdown-item">
-                Career Counselling
-              </a>
-              <a href="Services/relationship-counselling.html" class="dropdown-item">
-                Relationship &amp; Marriage Counselling
-              </a>
-              <a href="Services/family-counselling.html" class="dropdown-item">
-                Family &amp; Parental Counselling
-              </a>
-              <a href="Services/mbti-assessment.html" class="dropdown-item">
-                Personality Assessment – MBTI
-              </a>
+            <!-- DROPDOWN -->
+            <div class="relative" id="servicesParent">
+              <button
+                onclick="toggleDD()"
+                class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1"
+              >
+                Services
+                <svg
+                  class="w-3.5 h-3.5 mt-px"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <!-- DROPDOWN MENU -->
+              <div class="dropdown-menu" id="servicesDD">
+                <a
+                  href="Services/services.html"
+                  class="dropdown-item font-semibold border-b border-[#e2eeda]"
+                >
+                  All Services
+                </a>
+                <a
+                  href="Services/personal-counselling.html"
+                  class="dropdown-item"
+                >
+                  Personal Counselling
+                </a>
+                <a
+                  href="Services/career-counselling.html"
+                  class="dropdown-item"
+                >
+                  Career Counselling
+                </a>
+                <a
+                  href="Services/relationship-counselling.html"
+                  class="dropdown-item"
+                >
+                  Relationship &amp; Marriage Counselling
+                </a>
+                <a
+                  href="Services/family-counselling.html"
+                  class="dropdown-item"
+                >
+                  Family &amp; Parental Counselling
+                </a>
+                <a href="Services/mbti-assessment.html" class="dropdown-item">
+                  Personality Assessment – MBTI
+                </a>
+              </div>
             </div>
+
+            <a
+              href="resources.html"
+              class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
+            >
+              Resources
+            </a>
+            <a
+              href="about-us.html"
+              class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
+            >
+              About Us
+            </a>
+            <a
+              href="our-team.html"
+              class="px-4 py-2 rounded-full text-white text-sm hover:bg-white/10 transition"
+            >
+              Our Team
+            </a>
           </div>
 
-          <a href="resources.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
-            Resources
+          <!-- CONTACT BUTTON -->
+          <a
+            href="contact-us.html"
+            class="hidden xl:flex bg-[#84C441] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm"
+          >
+            Contact Us
           </a>
-          <a href="about-us.html" class="px-4 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
-            About Us
+
+          <!-- Hamburger Button (Mobile Only) -->
+          <button
+            id="mobileMenuBtn"
+            onclick="toggleMobileMenu()"
+            class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50"
+          >
+            <span class="w-5 h-0.5 bg-white"></span>
+            <span class="w-5 h-0.5 bg-white"></span>
+            <span class="w-5 h-0.5 bg-white"></span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN CARD -->
+        <div
+          id="mobileMenu"
+          class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50"
+        >
+          <div class="flex flex-col gap-2">
+            <a
+              href="../index.html"
+              class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium"
+              >Home</a
+            >
+
+            <!-- Services Accordion -->
+            <div class="flex flex-col">
+              <button
+                onclick="toggleMobileServices()"
+                class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full"
+              >
+                <span>Services</span>
+                <svg
+                  id="mobileServicesArrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="mobileServicesLinks"
+                class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4"
+              >
+                <a
+                  href="Services/services.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >All Services</a
+                >
+                <a
+                  href="Services/personal-counselling.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >Personal Counselling</a
+                >
+                <a
+                  href="Services/career-counselling.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >Career Counselling</a
+                >
+                <a
+                  href="Services/relationship-counselling.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >Relationship &amp; Marriage Counselling</a
+                >
+                <a
+                  href="Services/family-counselling.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >Family &amp; Parental Counselling</a
+                >
+                <a
+                  href="Services/mbti-assessment.html"
+                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
+                  >Personality Assessment – MBTI</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="resources.html"
+              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
+              >Resources</a
+            >
+            <a
+              href="about-us.html"
+              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
+              >About Us</a
+            >
+            <a
+              href="our-team.html"
+              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
+              >Our Team</a
+            >
+          </div>
+          <hr class="border-white/10 my-1" />
+          <a
+            href="contact-us.html"
+            class="bg-[#84C441] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#84C441]/20"
+          >
+            Contact Us
           </a>
-          <a href="our-team.html" class="px-4 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
-            Our Team
-          </a>
         </div>
+      </nav>
+    </header>
 
-        <!-- CONTACT BUTTON -->
-        <a href="contact-us.html" class="hidden xl:flex bg-[#84C441] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm">
-          Contact Us
-        </a>
-
-        <!-- Hamburger Button (Mobile Only) -->
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50">
-          <span class="w-5 h-0.5 bg-white"></span>
-          <span class="w-5 h-0.5 bg-white"></span>
-          <span class="w-5 h-0.5 bg-white"></span>
-        </button>
-      </div>
-
-      <!-- MOBILE MENU DROPDOWN CARD -->
-      <div id="mobileMenu" class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50">
-        <div class="flex flex-col gap-2">
-          <a href="../index.html" class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium">Home</a>
-          
-          <!-- Services Accordion -->
-          <div class="flex flex-col">
-            <button onclick="toggleMobileServices()" class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full">
-              <span>Services</span>
-              <svg id="mobileServicesArrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="mobileServicesLinks" class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4">
-              <a href="Services/services.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">All Services</a>
-              <a href="Services/personal-counselling.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personal Counselling</a>
-              <a href="Services/career-counselling.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Career Counselling</a>
-              <a href="Services/relationship-counselling.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Relationship &amp; Marriage Counselling</a>
-              <a href="Services/family-counselling.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Family &amp; Parental Counselling</a>
-              <a href="Services/mbti-assessment.html" class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personality Assessment – MBTI</a>
-            </div>
-          </div>
-
-          <a href="resources.html" class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Resources</a>
-          <a href="about-us.html" class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">About Us</a>
-          <a href="our-team.html" class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Our Team</a>
-        </div>
-        <hr class="border-white/10 my-1">
-        <a href="contact-us.html" class="bg-[#84C441] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#84C441]/20">
-          Contact Us
-        </a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero-bg flex flex-col items-center justify-center text-center pt-40 pb-20 px-4">
-    <h1 class="font-display text-5xl font-bold text-white tracking-widest mb-4">OUR TEAM</h1>
-    <p class="text-white/85 text-sm max-w-xl leading-relaxed">
-      A group of compassionate, qualified professionals dedicated to guide you with clinical expertise and genuine empathy.
-    </p>
-  </section>
-
-  <!-- ===== TEAM GRID ===== -->
-  <section class="py-24 bg-[#F5F2EA]">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <!-- Lead Founder Spotlight Card -->
-      <div class="mb-20">
-        <div class="flex items-center gap-4 mb-8">
-          <p class="uppercase text-sm tracking-[2px] text-[#5D7A4E] font-semibold">LEADERSHIP SPOTLIGHT</p>
-          <div class="w-16 h-[1px] bg-[#8EB36A]"></div>
-        </div>
-
-        <div class="bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-[28px] overflow-hidden p-8 lg:p-12 shadow-sm hover:shadow-md transition duration-300">
-          <div class="grid lg:grid-cols-[320px_1fr] gap-12 items-center">
-            <div class="team-img-container rounded-2xl h-[400px] w-full">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Renu Daga" class="team-img w-full h-full object-cover">
-            </div>
-            <div>
-              <span class="inline-block bg-[#84C441] text-white text-[11px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-4">Founder &amp; Principal Counselor</span>
-              <h2 class="text-4xl font-light text-[#29461F] mb-3">Renu Daga</h2>
-              <p class="text-xs text-[#5D7A4E] font-semibold tracking-wider uppercase mb-6">30+ Years Professional Experience | Nagpur</p>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                Renu Daga founded Z-Edge Counselling with a single-minded vision: to build a premier counselling institution in Nagpur that helps individuals unlock their maximum potential. Over her distinguished career of three decades, she has pioneered comprehensive coaching systems in personal crisis management, personality mapping through MBTI diagnostics, family systems counselling, and mid-career transitions.
-              </p>
-              <p class="text-gray-700 leading-relaxed mb-6">
-                She guides Z-Edge with clinical precision and heartfelt dedication, ensuring that all associate psychologists maintain the highest ethical standards of patient privacy and therapeutic integrity.
-              </p>
-              <button onclick="openModal('Personal')" class="bg-[#4a7c40] hover:bg-[#2d4a28] transition text-white px-7 py-3.5 rounded-full text-sm font-medium">Book Session with Renu</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Associate Counselors Section -->
-      <div>
-        <div class="flex items-center gap-4 mb-10">
-          <p class="uppercase text-sm tracking-[2px] text-[#5D7A4E] font-semibold">OUR SPECIALISTS</p>
-          <div class="w-16 h-[1px] bg-[#8EB36A]"></div>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- Specialist 1 -->
-          <div class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col">
-            <div class="team-img-container h-72">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Dr. Amit Sharma" class="team-img w-full h-full object-cover">
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Clinical Psychologist</span>
-                <h3 class="text-2xl font-bold text-[#29461F] mb-2">Dr. Amit Sharma</h3>
-                <p class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4">12+ Years Experience</p>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Specializes in Cognitive Behavioral Therapy (CBT), handling depression, workplace stress management, and adolescent behavioral counseling.
-                </p>
-              </div>
-              <div class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center">
-                <button onclick="openModal('Personal')" class="text-[#4a7c40] text-sm font-semibold hover:underline">Book Session</button>
-                <span class="text-gray-400 text-xs">Nagpur Clinic</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specialist 2 -->
-          <div class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col">
-            <div class="team-img-container h-72">
-              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Sarah Jenkins" class="team-img w-full h-full object-cover">
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Family &amp; Parental Coach</span>
-                <h3 class="text-2xl font-bold text-[#29461F] mb-2">Sarah Jenkins</h3>
-                <p class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4">8+ Years Experience</p>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Expertise in solving parent-child communications, resolving marital distance issues, and conducting positive parenting workshops.
-                </p>
-              </div>
-              <div class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center">
-                <button onclick="openModal('Family')" class="text-[#4a7c40] text-sm font-semibold hover:underline">Book Session</button>
-                <span class="text-gray-400 text-xs">Online / Clinic</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specialist 3 -->
-          <div class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col">
-            <div class="team-img-container h-72">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Vikram Aditya" class="team-img w-full h-full object-cover">
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Career Assessor</span>
-                <h3 class="text-2xl font-bold text-[#29461F] mb-2">Vikram Aditya</h3>
-                <p class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4">10+ Years Experience</p>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                  Focuses on high school stream alignment, corporate professional career transition pathways, and standard MBTI profiling analysis.
-                </p>
-              </div>
-              <div class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center">
-                <button onclick="openModal('Career')" class="text-[#4a7c40] text-sm font-semibold hover:underline">Book Session</button>
-                <span class="text-gray-400 text-xs">Nagpur / Online</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== ETHICAL COMMITMENT SECTION ===== -->
-  <section class="bg-[#2D4A28] py-24 text-white">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-light mb-6">Our Commitment to Care</h2>
-      <p class="text-white/80 leading-8 max-w-3xl mx-auto mb-12">
-        Every counselor at Z-Edge adheres strictly to the code of ethics and practices defined by professional psychological associations. All sessions are 100% confidential, keeping your security, comfort, and clinical safety as our highest priority.
+    <!-- ===== HERO ===== -->
+    <section
+      class="hero-bg flex flex-col items-center justify-center text-center pt-40 pb-20 px-4"
+    >
+      <h1
+        class="font-display text-5xl font-bold text-white tracking-widest mb-4"
+      >
+        OUR TEAM
+      </h1>
+      <p class="text-white/85 text-sm max-w-xl leading-relaxed">
+        A group of compassionate, qualified professionals dedicated to guide you
+        with clinical expertise and genuine empathy.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-8">
-        <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
-          <h4 class="font-bold text-lg text-[#89D34A] mb-3">Licensed Experts</h4>
-          <p class="text-white/70 text-sm leading-relaxed">Every member has undergone strict validation and is formally trained in counseling sciences.</p>
+    </section>
+
+    <!-- ===== TEAM GRID ===== -->
+    <section class="py-24 bg-[#F5F2EA]">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Lead Founder Spotlight Card -->
+        <div class="mb-20">
+          <div class="flex items-center gap-4 mb-8">
+            <p
+              class="uppercase text-sm tracking-[2px] text-[#5D7A4E] font-semibold"
+            >
+              LEADERSHIP SPOTLIGHT
+            </p>
+            <div class="w-16 h-[1px] bg-[#8EB36A]"></div>
+          </div>
+
+          <div
+            class="bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-[28px] overflow-hidden p-8 lg:p-12 shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div class="grid lg:grid-cols-[320px_1fr] gap-12 items-center">
+              <div class="team-img-container rounded-2xl h-[400px] w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                  alt="Renu Daga"
+                  class="team-img w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <span
+                  class="inline-block bg-[#84C441] text-white text-[11px] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-4"
+                  >Founder &amp; Principal Counselor</span
+                >
+                <h2 class="text-4xl font-light text-[#29461F] mb-3">
+                  Renu Daga
+                </h2>
+                <p
+                  class="text-xs text-[#5D7A4E] font-semibold tracking-wider uppercase mb-6"
+                >
+                  30+ Years Professional Experience | Nagpur
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                  Renu Daga founded Z-Edge Counselling with a single-minded
+                  vision: to build a premier counselling institution in Nagpur
+                  that helps individuals unlock their maximum potential. Over
+                  her distinguished career of three decades, she has pioneered
+                  comprehensive coaching systems in personal crisis management,
+                  personality mapping through MBTI diagnostics, family systems
+                  counselling, and mid-career transitions.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                  She guides Z-Edge with clinical precision and heartfelt
+                  dedication, ensuring that all associate psychologists maintain
+                  the highest ethical standards of patient privacy and
+                  therapeutic integrity.
+                </p>
+                <button
+                  onclick="openModal('Personal')"
+                  class="bg-[#4a7c40] hover:bg-[#2d4a28] transition text-white px-7 py-3.5 rounded-full text-sm font-medium"
+                >
+                  Book Session with Renu
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
-          <h4 class="font-bold text-lg text-[#89D34A] mb-3">Confidentiality Guarantee</h4>
-          <p class="text-white/70 text-sm leading-relaxed">What is discussed in the room, stays in the room. No details are ever shared without written consent.</p>
-        </div>
-        <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
-          <h4 class="font-bold text-lg text-[#89D34A] mb-3">Supervised Care</h4>
-          <p class="text-white/70 text-sm leading-relaxed">Our specialists regularly coordinate with medical supervisors to offer optimal, rounded care.</p>
+
+        <!-- Associate Counselors Section -->
+        <div>
+          <div class="flex items-center gap-4 mb-10">
+            <p
+              class="uppercase text-sm tracking-[2px] text-[#5D7A4E] font-semibold"
+            >
+              OUR SPECIALISTS
+            </p>
+            <div class="w-16 h-[1px] bg-[#8EB36A]"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Specialist 1 -->
+            <div
+              class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
+            >
+              <div class="team-img-container h-72">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                  alt="Dr. Amit Sharma"
+                  class="team-img w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span
+                    class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
+                    >Clinical Psychologist</span
+                  >
+                  <h3 class="text-2xl font-bold text-[#29461F] mb-2">
+                    Dr. Amit Sharma
+                  </h3>
+                  <p
+                    class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4"
+                  >
+                    12+ Years Experience
+                  </p>
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Specializes in Cognitive Behavioral Therapy (CBT), handling
+                    depression, workplace stress management, and adolescent
+                    behavioral counseling.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center"
+                >
+                  <button
+                    onclick="openModal('Personal')"
+                    class="text-[#4a7c40] text-sm font-semibold hover:underline"
+                  >
+                    Book Session
+                  </button>
+                  <span class="text-gray-400 text-xs">Nagpur Clinic</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Specialist 2 -->
+            <div
+              class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
+            >
+              <div class="team-img-container h-72">
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80"
+                  alt="Sarah Jenkins"
+                  class="team-img w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span
+                    class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
+                    >Family &amp; Parental Coach</span
+                  >
+                  <h3 class="text-2xl font-bold text-[#29461F] mb-2">
+                    Sarah Jenkins
+                  </h3>
+                  <p
+                    class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4"
+                  >
+                    8+ Years Experience
+                  </p>
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Expertise in solving parent-child communications, resolving
+                    marital distance issues, and conducting positive parenting
+                    workshops.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center"
+                >
+                  <button
+                    onclick="openModal('Family')"
+                    class="text-[#4a7c40] text-sm font-semibold hover:underline"
+                  >
+                    Book Session
+                  </button>
+                  <span class="text-gray-400 text-xs">Online / Clinic</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Specialist 3 -->
+            <div
+              class="team-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
+            >
+              <div class="team-img-container h-72">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                  alt="Vikram Aditya"
+                  class="team-img w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span
+                    class="inline-block bg-[#5D7A4E]/10 text-[#5D7A4E] text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3"
+                    >Career Assessor</span
+                  >
+                  <h3 class="text-2xl font-bold text-[#29461F] mb-2">
+                    Vikram Aditya
+                  </h3>
+                  <p
+                    class="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-4"
+                  >
+                    10+ Years Experience
+                  </p>
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                    Focuses on high school stream alignment, corporate
+                    professional career transition pathways, and standard MBTI
+                    profiling analysis.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-[#c8dbbf]/40 flex justify-between items-center"
+                >
+                  <button
+                    onclick="openModal('Career')"
+                    class="text-[#4a7c40] text-sm font-semibold hover:underline"
+                  >
+                    Book Session
+                  </button>
+                  <span class="text-gray-400 text-xs">Nagpur / Online</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FOOTER SECTION ===== -->
-  <footer class="relative">
-    <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
-    </div>
-
-    <div class="relative max-w-[1240px] mx-auto px-6 py-[70px]">
-      <div class="border border-white/15 rounded-[10px] bg-white/6 backdrop-blur-xl p-12">
-        <div class="grid lg:grid-cols-4 gap-16">
-          <div>
-            <h3 class="text-[#89D34A] text-[52px] font-extralight">Z EDGE</h3>
-            <p class="text-white/75 text-[13px] leading-[1.9] mt-5">
-              A space where you can feel truly seen and make sense of what you're going through.
+    <!-- ===== ETHICAL COMMITMENT SECTION ===== -->
+    <section class="bg-[#2D4A28] py-24 text-white">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-light mb-6">Our Commitment to Care</h2>
+        <p class="text-white/80 leading-8 max-w-3xl mx-auto mb-12">
+          Every counselor at Z-Edge adheres strictly to the code of ethics and
+          practices defined by professional psychological associations. All
+          sessions are 100% confidential, keeping your security, comfort, and
+          clinical safety as our highest priority.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-8">
+          <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
+            <h4 class="font-bold text-lg text-[#89D34A] mb-3">
+              Licensed Experts
+            </h4>
+            <p class="text-white/70 text-sm leading-relaxed">
+              Every member has undergone strict validation and is formally
+              trained in counseling sciences.
             </p>
           </div>
-
-          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
-            <span class="font-semibold text-white">Quick Links</span>
-            <a href="about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
-            <a href="Services/services.html" class="hover:text-[#89D34A] transition">Services</a>
-            <a href="../index.html#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+          <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
+            <h4 class="font-bold text-lg text-[#89D34A] mb-3">
+              Confidentiality Guarantee
+            </h4>
+            <p class="text-white/70 text-sm leading-relaxed">
+              What is discussed in the room, stays in the room. No details are
+              ever shared without written consent.
+            </p>
           </div>
-
-          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
-            <span class="font-semibold text-white">Important Links</span>
-            <a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
-            <a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
-          </div>
-
-          <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
-            <span class="font-semibold text-white">Help Center</span>
-            <a href="contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
-            <a href="tel:930123456" class="hover:text-[#89D34A] transition">📞 930-123-456</a>
-            <a href="mailto:info@zedge.in" class="hover:text-[#89D34A] transition">✉ info@zedge.in</a>
+          <div class="border border-white/10 rounded-xl p-6 bg-white/[0.04]">
+            <h4 class="font-bold text-lg text-[#89D34A] mb-3">
+              Supervised Care
+            </h4>
+            <p class="text-white/70 text-sm leading-relaxed">
+              Our specialists regularly coordinate with medical supervisors to
+              offer optimal, rounded care.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/60 text-[13px]">
-          © 2025 All rights reserved.
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="relative">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2000&q=80"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+      </div>
+
+      <div class="relative max-w-[1240px] mx-auto px-6 py-[70px]">
+        <div
+          class="border border-white/15 rounded-[10px] bg-white/6 backdrop-blur-xl p-12"
+        >
+          <div class="grid lg:grid-cols-4 gap-16">
+            <div>
+              <h3 class="text-[#89D34A] text-[52px] font-extralight">Z EDGE</h3>
+              <p class="text-white/75 text-[13px] leading-[1.9] mt-5">
+                A space where you can feel truly seen and make sense of what
+                you're going through.
+              </p>
+            </div>
+
+            <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+              <span class="font-semibold text-white">Quick Links</span>
+              <a href="about-us.html" class="hover:text-[#89D34A] transition"
+                >About Us</a
+              >
+              <a
+                href="Services/services.html"
+                class="hover:text-[#89D34A] transition"
+                >Services</a
+              >
+              <a
+                href="../index.html#faq"
+                class="hover:text-[#89D34A] transition"
+                >FAQs</a
+              >
+            </div>
+
+            <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+              <span class="font-semibold text-white">Important Links</span>
+              <a href="#" class="hover:text-[#89D34A] transition"
+                >Terms & Conditions</a
+              >
+              <a href="#" class="hover:text-[#89D34A] transition"
+                >Privacy Policy</a
+              >
+            </div>
+
+            <div class="text-white/75 text-[14px] space-y-4 flex flex-col">
+              <span class="font-semibold text-white">Help Center</span>
+              <a href="contact-us.html" class="hover:text-[#89D34A] transition"
+                >Contact Us</a
+              >
+              <a href="tel:930123456" class="hover:text-[#89D34A] transition"
+                >📞 800-123-456</a
+              >
+              <a
+                href="mailto:info@z-edge.in"
+                class="hover:text-[#89D34A] transition"
+                >✉ info@z-edge.in</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="border-t border-white/10 mt-12 pt-8 text-center text-white/60 text-[13px]"
+          >
+            © 2025 All rights reserved.
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- ===== BOOKING MODAL ===== -->
-  <div class="modal-overlay" id="bookingModal">
-    <div style="background:#fdf8ee;border-radius:18px;max-width:570px;width:100%;padding:36px 34px 30px;position:relative;max-height:92vh;overflow-y:auto">
-      <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;color:#aaa;cursor:pointer;line-height:1">✕</button>
-      <h3 class="font-display" style="font-size:22px;font-weight:700;color:#2d4a28;margin-bottom:20px">Book Your Appointment</h3>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px" id="chipRow">
-        <button class="chip active" onclick="chipSel(this)">Personal counselling</button>
-        <button class="chip" onclick="chipSel(this)">Career counselling</button>
-        <button class="chip" onclick="chipSel(this)">Relationship &amp; Marriage Counselling</button>
-        <button class="chip" onclick="chipSel(this)">Personality Assessment</button>
-        <button class="chip" onclick="chipSel(this)">Family &amp; Parental</button>
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="modal-overlay" id="bookingModal">
+      <div
+        style="
+          background: #fdf8ee;
+          border-radius: 18px;
+          max-width: 570px;
+          width: 100%;
+          padding: 36px 34px 30px;
+          position: relative;
+          max-height: 92vh;
+          overflow-y: auto;
+        "
+      >
+        <button
+          onclick="closeModal()"
+          style="
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+          "
+        >
+          ✕
+        </button>
+        <h3
+          class="font-display"
+          style="
+            font-size: 22px;
+            font-weight: 700;
+            color: #2d4a28;
+            margin-bottom: 20px;
+          "
+        >
+          Book Your Appointment
+        </h3>
+        <div
+          style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px"
+          id="chipRow"
+        >
+          <button class="chip active" onclick="chipSel(this)">
+            Personal counselling
+          </button>
+          <button class="chip" onclick="chipSel(this)">
+            Career counselling
+          </button>
+          <button class="chip" onclick="chipSel(this)">
+            Relationship &amp; Marriage Counselling
+          </button>
+          <button class="chip" onclick="chipSel(this)">
+            Personality Assessment
+          </button>
+          <button class="chip" onclick="chipSel(this)">
+            Family &amp; Parental
+          </button>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+          "
+        >
+          <input class="input-field" type="text" placeholder="Name*" />
+          <input
+            class="input-field"
+            type="email"
+            placeholder="Email Address*"
+          />
+        </div>
+        <div style="margin-bottom: 10px">
+          <input
+            class="input-field"
+            style="max-width: calc(50% - 5px)"
+            type="tel"
+            placeholder="Phone Number*"
+          />
+        </div>
+        <textarea
+          class="input-field"
+          rows="4"
+          placeholder="Write your query"
+          style="margin-bottom: 8px"
+        ></textarea>
+        <p style="color: #aaa; font-size: 12px; margin-bottom: 20px">
+          We'll get in touch with you at earliest
+        </p>
+        <button class="book-btn">
+          Request Appointment
+          <svg
+            style="width: 16px; height: 16px"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </button>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-        <input class="input-field" type="text" placeholder="Name*" />
-        <input class="input-field" type="email" placeholder="Email Address*" />
-      </div>
-      <div style="margin-bottom:10px">
-        <input class="input-field" style="max-width:calc(50% - 5px)" type="tel" placeholder="Phone Number*" />
-      </div>
-      <textarea class="input-field" rows="4" placeholder="Write your query" style="margin-bottom:8px"></textarea>
-      <p style="color:#aaa;font-size:12px;margin-bottom:20px">We'll get in touch with you at earliest</p>
-      <button class="book-btn">Request Appointment <svg style="width:16px;height:16px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg></button>
     </div>
-  </div>
 
-  <script src="../assets/js/main.js"></script>
-</body>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>
