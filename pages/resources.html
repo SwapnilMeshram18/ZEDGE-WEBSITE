@@ -18,7 +18,7 @@
         background: #f7f4ea;
       }
       .hero-bg {
-        background:
+        background: 
           linear-gradient(rgba(18, 28, 14, 0.75), rgba(18, 28, 14, 0.65)),
           url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80")
             center/cover no-repeat;
@@ -309,315 +309,544 @@
     </section>
 
     <!-- ===== RESOURCES GRID & CATEGORIES ===== -->
-    <section class="py-20 bg-[#F5F2EA]">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- Filter Chips & Search -->
-        <div
-          class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16"
-        >
-          <div class="flex flex-wrap gap-3">
-            <button
-              class="category-chip active px-6 py-2 rounded-full text-sm font-medium"
-            >
-              All Resources
-            </button>
-            <button
-              class="category-chip px-6 py-2 rounded-full text-sm font-medium"
-            >
-              Articles
-            </button>
-            <button
-              class="category-chip px-6 py-2 rounded-full text-sm font-medium"
-            >
-              Self-Help Videos
-            </button>
-            <button
-              class="category-chip px-6 py-2 rounded-full text-sm font-medium"
-            >
-              Guides &amp; Worksheets
-            </button>
-          </div>
-          <div class="relative w-full max-w-xs">
-            <input
-              type="text"
-              placeholder="Search resources..."
-              class="w-full bg-[#EAE4D3] text-gray-800 placeholder:text-gray-500 border border-[#c8dbbf] px-5 py-3 pr-10 rounded-full outline-none focus:border-[#4a7c40] text-sm"
-            />
-            <svg
-              class="w-4.5 h-4.5 text-[#5D7A4E] absolute right-4 top-3.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-        </div>
+  <!-- ===== RESOURCES CONTENT ONLY (KEEP YOUR EXISTING HEADER / HERO / FOOTER) ===== -->
 
-        <!-- Main Resources Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Resource 1 (Featured Video Card) -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56 bg-black">
-              <img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
-                alt="Decision fatigue"
-                class="w-full h-full object-cover opacity-85"
-              />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <button
-                  class="w-14 h-14 rounded-full bg-white text-[#4a7c40] flex items-center justify-center shadow-lg hover:scale-105 transition"
-                >
-                  ▶
-                </button>
-              </div>
-              <span
-                class="absolute top-4 left-4 bg-[#84C441] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Video</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  Dealing with Decision Fatigue
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  Constantly making choices can leave us mentally exhausted.
-                  Learn how to structure your day to reduce decisions.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>8 mins watch</span>
-                <span>120 Likes</span>
-              </div>
-            </div>
-          </div>
+<section class="bg-[#F5F1E6] py-16">
+  <div class="max-w-7xl mx-auto px-6">
 
-          <!-- Resource 2 -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56">
-              <img
-                src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
-                alt="Inner voice"
-                class="w-full h-full object-cover"
-              />
-              <span
-                class="absolute top-4 left-4 bg-[#5D7A4E] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Article</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  Recognising Your Inner Voice
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  How to differentiate between fear, anxiety, social
-                  expectations, and your true self-intuition.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>5 mins read</span>
-                <span>580 Views</span>
-              </div>
-            </div>
-          </div>
+    <!-- ================= SHORTS SECTION ================= -->
+    <div class="mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[28px] font-semibold text-[#1E2A1B]">Shorts</h2>
 
-          <!-- Resource 3 -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56">
-              <img
-                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
-                alt="Milestone anxiety"
-                class="w-full h-full object-cover"
-              />
-              <span
-                class="absolute top-4 left-4 bg-[#5D7A4E] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Article</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  An Aid to Your Milestone Anxiety
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  Feeling behind in career, marriage, or finance? Let's talk
-                  about the pressure of imaginary timelines.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>6 mins read</span>
-                <span>320 Views</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Resource 4 -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56">
-              <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
-                alt="Complex relationships"
-                class="w-full h-full object-cover"
-              />
-              <span
-                class="absolute top-4 left-4 bg-[#5D7A4E] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Article</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  Navigating Complex Relationships
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  Practical techniques for establishing clear, loving, and firm
-                  boundaries in family and romantic partnerships.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>7 mins read</span>
-                <span>450 Views</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Resource 5 -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56 bg-black">
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
-                alt="Mindfulness video"
-                class="w-full h-full object-cover opacity-85"
-              />
-              <div class="absolute inset-0 flex items-center justify-center">
-                <button
-                  class="w-14 h-14 rounded-full bg-white text-[#4a7c40] flex items-center justify-center shadow-lg hover:scale-105 transition"
-                >
-                  ▶
-                </button>
-              </div>
-              <span
-                class="absolute top-4 left-4 bg-[#84C441] text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Video</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  5-Minute Grounding for Anxiety
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  Follow along with this quick somatic exercise designed to
-                  bring you back to the present when feeling overwhelmed.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>5 mins watch</span>
-                <span>230 Likes</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Resource 6 -->
-          <div
-            class="resource-card bg-[#EAE4D3]/50 border border-[#dfe7d4] rounded-2xl overflow-hidden shadow-sm flex flex-col"
-          >
-            <div class="relative h-56">
-              <img
-                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80"
-                alt="Saying no"
-                class="w-full h-full object-cover"
-              />
-              <span
-                class="absolute top-4 left-4 bg-[#6A8B57] text-[#fff] text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full"
-                >Guide</span
-              >
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3
-                  class="font-display text-xl font-bold text-[#29461F] mb-3 leading-snug"
-                >
-                  The Boundaries Worksheet
-                </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                  A downloadable PDF guide designed to map out your emotional
-                  energy and plan assertive statements.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between text-xs text-gray-500 pt-4 border-t border-[#c8dbbf]/40"
-              >
-                <span>PDF Worksheet</span>
-                <span>180 Downloads</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="flex justify-center items-center gap-2 mt-16">
+        <div class="flex items-center gap-3">
           <button
-            class="w-10 h-10 rounded-full border border-[#c8dbbf] flex items-center justify-center text-gray-600 hover:bg-[#5D7A4E] hover:text-white transition"
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
           >
-            ←
+            &#10094;
           </button>
+
           <button
-            class="w-10 h-10 rounded-full bg-[#5D7A4E] text-white flex items-center justify-center font-semibold"
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
           >
-            1
-          </button>
-          <button
-            class="w-10 h-10 rounded-full border border-[#c8dbbf] flex items-center justify-center text-gray-600 hover:bg-[#5D7A4E] hover:text-white transition"
-          >
-            2
-          </button>
-          <button
-            class="w-10 h-10 rounded-full border border-[#c8dbbf] flex items-center justify-center text-gray-600 hover:bg-[#5D7A4E] hover:text-white transition"
-          >
-            →
+            &#10095;
           </button>
         </div>
       </div>
-    </section>
 
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+        <!-- CARD -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <div class="relative aspect-[9/16] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-black/15"></div>
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M6 4l10 6-10 6V4z"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-wide"
+            >
+              PART 1
+            </div>
+          </div>
+
+          <div class="px-3 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <div class="relative aspect-[9/16] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M6 4l10 6-10 6V4z"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-wide"
+            >
+              PART 2
+            </div>
+          </div>
+
+          <div class="px-3 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <div class="relative aspect-[9/16] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M6 4l10 6-10 6V4z"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-wide"
+            >
+              PART 1
+            </div>
+          </div>
+
+          <div class="px-3 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <div class="relative aspect-[9/16] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M6 4l10 6-10 6V4z"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-wide"
+            >
+              PART 2
+            </div>
+          </div>
+
+          <div class="px-3 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
+        >
+          <div class="relative aspect-[9/16] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M6 4l10 6-10 6V4z"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full tracking-wide"
+            >
+              PART 3
+            </div>
+          </div>
+
+          <div class="px-3 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= YOUTUBE VIDEOS ================= -->
+    <div class="mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[28px] font-semibold text-[#1E2A1B]">
+          YouTube Videos
+        </h2>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
+          >
+            &#10094;
+          </button>
+
+          <button
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
+          >
+            &#10095;
+          </button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- VIDEO -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+        >
+          <div class="relative aspect-video">
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
+              >
+                <svg
+                  class="w-7 h-7 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M6 4l10 6-10 6V4z" />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute bottom-4 left-4 text-white text-xl font-medium"
+            >
+              Evolution of Friendships
+            </div>
+
+            <div
+              class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+            >
+              04:35
+            </div>
+          </div>
+
+          <div class="px-4 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+        >
+          <div class="relative aspect-video">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
+              >
+                <svg
+                  class="w-7 h-7 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M6 4l10 6-10 6V4z" />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute bottom-4 left-4 text-white text-xl font-medium"
+            >
+              Commitment Phobia
+            </div>
+
+            <div
+              class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+            >
+              03:46
+            </div>
+          </div>
+
+          <div class="px-4 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div
+          class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+        >
+          <div class="relative aspect-video">
+            <img
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
+              class="w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <button
+              class="absolute inset-0 flex items-center justify-center"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
+              >
+                <svg
+                  class="w-7 h-7 text-[#5E7655] ml-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M6 4l10 6-10 6V4z" />
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="absolute bottom-4 left-4 text-white text-xl font-medium"
+            >
+              How to not be desperate
+            </div>
+
+            <div
+              class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+            >
+              05:02
+            </div>
+          </div>
+
+          <div class="px-4 py-3 bg-[#8FA97D]">
+            <div class="flex items-center justify-between text-white text-sm">
+              <span>112 👍</span>
+              <span>05 💬</span>
+              <span>580 👁</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= BLOGS ================= -->
+    <div>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-[28px] font-semibold text-[#1E2A1B]">Blogs</h2>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
+          >
+            &#10094;
+          </button>
+
+          <button
+            class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
+          >
+            &#10095;
+          </button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- BLOG -->
+        <div
+          class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80"
+            class="w-full h-[220px] object-cover"
+          />
+
+          <div class="p-6">
+            <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
+              How to Choose the Right Career Path When You Feel Lost
+            </h3>
+
+            <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
+              Feeling unsure about your career is more common than you think.
+              Whether you're a student, a recent graduate...
+            </p>
+
+            <button
+              class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all"
+            >
+              Read more
+              <span>&#10095;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOG -->
+        <div
+          class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1000&q=80"
+            class="w-full h-[220px] object-cover"
+          />
+
+          <div class="p-6">
+            <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
+              5 Signs You Might Benefit from Talking to a Counsellor
+            </h3>
+
+            <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
+              Many people wait until things feel unbearable before seeking
+              help. But counselling isn’t just for crisis...
+            </p>
+
+            <button
+              class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all"
+            >
+              Read more
+              <span>&#10095;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- BLOG -->
+        <div
+          class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1000&q=80"
+            class="w-full h-[220px] object-cover"
+          />
+
+          <div class="p-6">
+            <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
+              How to Improve Communication in Relationships
+            </h3>
+
+            <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
+              Communication is at the heart of every relationship, but it’s
+              also where many challenges begin...
+            </p>
+
+            <button
+              class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all"
+            >
+              Read more
+              <span>&#10095;</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
     <!-- ===== FOOTER SECTION ===== -->
     <footer class="relative">
       <div class="absolute inset-0">
