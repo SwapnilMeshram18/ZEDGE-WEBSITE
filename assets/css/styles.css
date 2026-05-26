@@ -192,16 +192,23 @@
    background-color: rgba(28, 34, 24, 0.92) !important; /* Premium dark forest green matching branding */
    border-color: rgba(255, 255, 255, 0.15) !important;
    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25) !important;
-   padding-top: 0.75rem !important; /* Slightly shrunken py-3 padding for scrolled layout */
-   padding-bottom: 0.75rem !important;
+   padding-top: 0.45rem !important; /* Slightly shrunken py-3 padding for scrolled layout */
+   padding-bottom: 0.45rem !important;
    backdrop-filter: blur(20px) !important;
  }
 
  header.scrolled nav > div > div {
    background-color: transparent !important;
+  background: transparent !important;
    border-color: transparent !important;
    box-shadow: none !important;
+   backdrop-filter: none !important;
  }
+
+ header.scrolled nav img {
+  width: 60px !important;
+  transform: scale(0.92);
+}
 
  /* Mobile Menu Hamburger Animation */
  #mobileMenuBtn span {
