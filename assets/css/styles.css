@@ -298,7 +298,7 @@ textarea.input-field {
     min-width: 28px;
   }
 
-  .service-main .step-num {
+  .step-num {
     width: 28px;
     height: 28px;
     font-size: 12px;
@@ -319,16 +319,16 @@ textarea.input-field {
     line-height: 1.65;
   }
 
-  .service-main .step-border {
+  .step-border {
     padding-left: 12px;
   }
 
-  .service-main .tag-row {
+  .tag-row {
     gap: 8px;
     flex-wrap: wrap;
   }
 
-  .service-main .tag-row::after {
+  .tag-row::after {
     width: 38px;
   }
 
