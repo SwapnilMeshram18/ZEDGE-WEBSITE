@@ -249,11 +249,13 @@
       class="hero-bg flex flex-col items-center justify-center text-center pt-32 pb-14 px-4"
     >
       <h1
-        class="font-display text-5xl font-bold text-white tracking-widest mb-5"
+        class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-[6px] sm:tracking-widest mb-5"
       >
         SERVICES
       </h1>
-      <p class="text-white/75 text-sm max-w-md leading-relaxed">
+      <p
+        class="text-white/85 text-sm sm:text-base max-w-[95%] sm:max-w-2xl leading-5"
+      >
         Every journey is different, and so are the challenges that come with it.
         Our services are designed to support you through moments of uncertainty,
         growth, and change, offering thoughtful guidance tailored to your unique
@@ -652,23 +654,22 @@
       </div>
     </main>
 
-    <section class="ml-[280px]">
+    <section class="px-4 sm:px-6 lg:ml-[280px] lg:px-0">
       <div class="max-w-[1240px] mx-auto">
         <!-- WRAPPER -->
-        <div class="relative grid lg:grid-cols-[20%_80%] overflow-hidden">
+        <div class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden">
           <!-- LEFT BG -->
-          <div class="bg-[#9DB885]"></div>
+          <div class="bg-[#9DB885] min-h-[190px] sm:min-h-[230px] lg:min-h-[320px]"></div>
 
           <!-- RIGHT CONTENT -->
           <div
-            class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center"
-            style="padding-left: 204px"
+            class="bg-[#DDE6D0] px-5 py-8 sm:px-10 sm:py-12 lg:py-14 lg:pl-[204px] lg:pr-16 flex flex-col justify-center"
           >
-            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+            <h2 class="text-[#5B7645] text-[26px] sm:text-[30px] lg:text-[34px] leading-tight font-display mb-4 sm:mb-5">
               A Gentle Reminder...
             </h2>
 
-            <p class="text-[#495248] text-[14px] leading-8 mb-5">
+            <p class="text-[#495248] text-[14px] sm:text-[15px] lg:text-[14px] leading-7 lg:leading-8 mb-0">
               The MBTI is a tool for understanding, not a life sentence. Your
               type reflects your natural tendencies, it doesn't define your
               limits or predict your future. Many people find that having
@@ -679,17 +680,17 @@
 
           <!-- CENTER IMAGE -->
           <div
-            class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            class="absolute left-1/2 top-[95px] sm:top-[115px] lg:left-[20%] lg:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
           >
             <img
               src="../../assets/Images/Services-Ings/plant.png"
-              class="w-[320px] object-contain"
-              alt=""
+              class="w-[220px] sm:w-[280px] lg:w-[320px] max-h-[170px] sm:max-h-[210px] lg:max-h-none object-contain"
+              alt="Plant illustration"
             />
           </div>
         </div>
 
-        <div style="margin-top: 40px">
+        <div class="mt-8 sm:mt-10 flex justify-center lg:justify-start">
           <button onclick="openModal('family')" class="book-btn">
             Book a session
             <svg

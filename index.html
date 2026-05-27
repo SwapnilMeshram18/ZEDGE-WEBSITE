@@ -278,7 +278,7 @@
 
     <section
       id="home"
-      class="relative min-h-screen bg-cover bg-center"
+      class="relative min-h-[100svh] bg-cover bg-center overflow-hidden"
       style="
         background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
       "
@@ -286,24 +286,26 @@
       <div class="absolute inset-0 hero-overlay"></div>
 
       <div
-        class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-24 lg:pb-32"
+        class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-24 lg:pb-32"
       >
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
+        >
           <!-- LEFT -->
           <div class="text-white">
             <h1
-              class="text-3xl sm:text-5xl lg:text-7xl font-md leading-tight mb-2 sm:mb-3"
+              class="text-[2.3rem] sm:text-5xl lg:text-7xl font-md leading-[1.15] mb-2 sm:mb-3 max-w-xl"
             >
               Clarity starts with a
             </h1>
             <h1
-              class="bg-[#50792F] text-3xl sm:text-5xl lg:text-7xl font-md max-w-md mb-5 sm:mb-7 px-2 sm:px-0"
+              class="inline-block bg-[#50792F] text-[2.3rem] sm:text-5xl lg:text-7xl font-md max-w-fit mb-5 sm:mb-7 px-3 py-1 rounded-md"
             >
               Conversation
             </h1>
 
             <p
-              class="text-white/80 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-sm sm:text-base"
+              class="text-white/80 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-[15px] sm:text-base"
             >
               Whether you're feeling stuck in your career, navigating
               relationships, or seeking deeper meaning, we're here to listen,
@@ -312,21 +314,21 @@
 
             <button
               onclick="openModal()"
-              class="bg-[#6FB646] hover:bg-[#76B438] transition text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium"
+              class="bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium shadow-xl"
             >
               Book a session
             </button>
           </div>
 
           <!-- RIGHT — hidden on mobile, visible on lg+ -->
-          <div class="relative hidden lg:block">
+          <div class="relative hidden md:block lg:block">
             <img
               src="./assets/Images/homePageImages/counselling.jpg"
-              class="rounded-xl w-full max-w-[520px] ml-auto shadow-2xl"
+              class="rounded-2xl w-full max-w-[420px] lg:max-w-[520px] mx-auto lg:ml-auto shadow-2xl"
             />
 
             <div
-              class="absolute left-0 bottom-10 bg-white/20 backdrop-blur-xl rounded-2xl p-5 w-[220px] text-white"
+              class="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 bottom-6 lg:bottom-10 bg-white/20 backdrop-blur-xl rounded-2xl p-4 sm:p-5 w-[200px] sm:w-[220px] text-white"
             >
               <div class="text-[#8AD64B] text-lg">★★★★★</div>
               <p class="font-medium mt-2">500+ Healed Lives</p>
@@ -350,9 +352,11 @@
 
         <!-- STATS -->
 
-        <div class="flex flex-wrap gap-8 sm:gap-16 mt-10 sm:mt-24 text-white">
+        <div
+          class="grid grid-cols-3 sm:flex sm:flex-wrap gap-6 sm:gap-16 mt-12 sm:mt-24 text-white text-center sm:text-left"
+        >
           <div>
-            <h3 class="text-3xl sm:text-5xl font-semibold">25+</h3>
+            <h3 class="text-2xl sm:text-5xl font-semibold">25+</h3>
             <p class="text-white/70 mt-2 text-sm sm:text-base">
               Years Experience
             </p>
@@ -802,8 +806,11 @@
     </section>
 
     <!-- RESOURCES SECTION -->
-    <section class="bg-[#F8F6EE] py-[110px]" id="resources">
-      <div class="max-w-[1240px] mx-auto px-6">
+    <section
+      class="bg-[#F8F6EE] py-16 sm:py-24 lg:py-[110px] overflow-hidden"
+      id="resources"
+    >
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
         <div class="flex items-center gap-4">
           <p class="uppercase tracking-[1.5px] text-sm text-[#47752C]">
             RESOURCES
@@ -814,25 +821,29 @@
         <br />
 
         <h2
-          class="text-[#32452D] text-[48px] leading-[1.08] font-md max-w-[680px]"
+          class="text-[#32452D] text-3xl sm:text-5xl leading-[1.15] font-md max-w-[680px]"
         >
           Insights and guidance to support you beyond sessions.
         </h2>
 
-        <div class="mt-16 grid lg:grid-cols-[2fr_0.9fr] gap-8 items-start">
+        <div
+          class="mt-10 sm:mt-16 grid grid-cols-1 lg:grid-cols-[2fr_0.9fr] gap-8 items-start"
+        >
           <!-- LEFT VIDEO -->
 
           <div>
             <div class="relative rounded-[4px] overflow-hidden">
               <img
                 src="./assets/Images/homePageImages/img3.jpg"
-                class="w-full h-[440px] object-cover"
+                class="w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover"
               />
 
               <div class="absolute inset-0 bg-black/15"></div>
 
               <div class="absolute top-8 left-8">
-                <h3 class="text-white text-[38px] font-md">
+                <h3
+                  class="text-white text-2xl sm:text-4xl leading-tight font-md max-w-[90%]"
+                >
                   Dealing with Decision Fatigue
                 </h3>
               </div>
@@ -841,7 +852,7 @@
                 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
               >
                 <div
-                  class="w-[72px] h-[72px] rounded-full bg-white flex items-center justify-center"
+                  class="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] rounded-full bg-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110"
                 >
                   ▶
                 </div>
@@ -862,10 +873,12 @@
           <!-- RIGHT LIST -->
 
           <div class="space-y-3">
-            <div class="bg-[#EFE7D3] p-3 flex gap-3">
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
               <img
                 src="./assets/Images/homePageImages/img4.jpg"
-                class="w-[76px] h-[76px] object-cover"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
               />
 
               <div class="flex-1">
@@ -881,10 +894,12 @@
               </div>
             </div>
 
-            <div class="bg-[#EFE7D3] p-3 flex gap-3">
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
               <img
                 src="./assets/Images/homePageImages/img5.jpg"
-                class="w-[76px] h-[76px] object-cover"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
               />
 
               <div class="flex-1">
@@ -900,10 +915,12 @@
               </div>
             </div>
 
-            <div class="bg-[#EFE7D3] p-3 flex gap-3">
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
               <img
                 src="./assets/Images/homePageImages/img4.jpg"
-                class="w-[76px] h-[76px] object-cover"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
               />
 
               <div class="flex-1">
@@ -919,10 +936,12 @@
               </div>
             </div>
 
-            <div class="bg-[#EFE7D3] p-3 flex gap-3">
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
               <img
                 src="./assets/Images/homePageImages/img5.jpg"
-                class="w-[76px] h-[76px] object-cover"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
               />
 
               <div class="flex-1">
@@ -940,9 +959,11 @@
           </div>
         </div>
         <div
-          class="max-w-[70%] mr-[200px] mt-6 flex justify-between items-center gap-8"
+          class="max-w-full lg:max-w-[75%] mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6"
         >
-          <p class="text-[16px] leading-[1.8] text-[#4D5A46] max-w-[550px]">
+          <p
+            class="text-[15px] sm:text-[16px] leading-7 text-[#4D5A46] max-w-full sm:max-w-[550px]"
+          >
             We regularly share insights, reflections, and practical guidance to
             support you in your everyday life. Follow along and explore more on
             our social platforms.
@@ -950,7 +971,7 @@
 
           <a
             href="pages/resources.html"
-            class="inline-block bg-[#6FB646] hover:bg-[#6DA83C] transition-all duration-300 text-white text-[15px] px-7 py-3 rounded-2xl mr-9"
+            class="inline-block bg-[#6FB646] hover:bg-[#6DA83C] transition-all duration-300 hover:scale-105 text-white text-[15px] px-7 py-3 rounded-2xl w-fit shadow-lg mr-[90px]"
           >
             Explore More →
           </a>
@@ -960,8 +981,11 @@
 
     <!-- ===== FAQ ===== -->
 
-    <section id="faq" class="bg-[#F4EFD8] py-[110px]">
-      <div class="max-w-[1240px] mx-auto px-6">
+    <section
+      id="faq"
+      class="bg-[#FFF5D5] py-14 sm:py-20 lg:py-[110px] overflow-hidden"
+    >
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
         <div class="flex items-center gap-4">
           <p class="uppercase tracking-[1.5px] text-md text-[#264415]">
             FREQUENTLY ASKED QUESTIONS
@@ -972,27 +996,33 @@
         <br />
 
         <h2
-          class="text-[#1E1E1E] text-[48px] leading-[1.1] font-md max-w-[700px]"
+          class="text-[#1E1E1E] text-[2rem] sm:text-4xl lg:text-[48px] leading-[1.2] font-md max-w-[700px]"
         >
           Answers to help you feel informed and at ease.
         </h2>
 
-        <div class="mt-16 space-y-4">
+        <div class="mt-10 sm:mt-16 space-y-4 sm:space-y-5">
           <!-- FAQ 1 -->
 
-          <div class="faq-item border border-[#E5DEC9] bg-[#F7F1DE]">
+          <div
+            class="faq-item border border-[rgba(255,255,255,0.50)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(255,255,255,0.28),rgba(255,255,255,0.14))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+          >
             <button
-              class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left"
+              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
             >
-              <span class="text-[15px] font-medium">
-                Is everything I share confidential?
-              </span>
+              <span> Is everything I share confidential? </span>
 
-              <span class="faq-icon text-[24px]"> − </span>
+              <span
+                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
+              >
+                −
+              </span>
             </button>
 
-            <div class="faq-content px-8 pb-7">
-              <p class="text-[13px] leading-[2] text-[#666]">
+            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+              <p
+                class="text-[13px] sm:text-[14px] leading-7 sm:leading-8 text-[#666]"
+              >
                 Yes, absolutely. Your privacy and trust are very important to
                 us. Everything discussed during your sessions remains strictly
                 confidential.
@@ -1002,16 +1032,22 @@
 
           <!-- FAQ 2 -->
 
-          <div class="faq-item border border-[#E5DEC9]">
+          <div
+            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+          >
             <button
-              class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left"
+              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
             >
               <span> How long is a typical session? </span>
 
-              <span class="faq-icon text-[24px]"> + </span>
+              <span
+                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
+              >
+                +
+              </span>
             </button>
 
-            <div class="faq-content hidden px-8 pb-7">
+            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
               <p class="text-[#666] text-[13px] leading-[2]">
                 Most counselling sessions last between 45–60 minutes.
               </p>
@@ -1020,16 +1056,22 @@
 
           <!-- FAQ 3 -->
 
-          <div class="faq-item border border-[#E5DEC9]">
+          <div
+            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+          >
             <button
-              class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left"
+              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
             >
               <span> Do you offer online sessions? </span>
 
-              <span class="faq-icon text-[24px]"> + </span>
+              <span
+                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
+              >
+                +
+              </span>
             </button>
 
-            <div class="faq-content hidden px-8 pb-7">
+            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
               <p class="text-[#666] text-[13px] leading-[2]">
                 Yes. We offer both online and in-person counselling sessions.
               </p>
@@ -1038,16 +1080,22 @@
 
           <!-- FAQ 4 -->
 
-          <div class="faq-item border border-[#E5DEC9]">
+          <div
+            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+          >
             <button
-              class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left"
+              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
             >
               <span> What happens during a session? </span>
 
-              <span class="faq-icon text-[24px]"> + </span>
+              <span
+                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
+              >
+                +
+              </span>
             </button>
 
-            <div class="faq-content hidden px-8 pb-7">
+            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
               <p class="text-[#666] text-[13px] leading-[2]">
                 Sessions provide a safe space to talk openly, understand
                 challenges, and receive personalised guidance.
@@ -1057,16 +1105,22 @@
 
           <!-- FAQ 5 -->
 
-          <div class="faq-item border border-[#E5DEC9]">
+          <div
+            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
+          >
             <button
-              class="faq-btn w-full px-8 py-7 flex justify-between items-center text-left"
+              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
             >
               <span> Do I need to prepare anything before my session? </span>
 
-              <span class="faq-icon text-[24px]"> + </span>
+              <span
+                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
+              >
+                +
+              </span>
             </button>
 
-            <div class="faq-content hidden px-8 pb-7">
+            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
               <p class="text-[#666] text-[13px] leading-[2]">
                 No preparation is required. Just come as you are.
               </p>
@@ -1078,8 +1132,11 @@
 
     <!-- ===== CONTACT ===== -->
 
-    <section class="bg-[#DCE5D1] py-[110px]" id="contact">
-      <div class="max-w-[1240px] mx-auto px-6">
+    <section
+      class="bg-[#DCE5D1] py-20 sm:py-[110px] overflow-hidden"
+      id="contact"
+    >
+      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
         <div class="flex items-center gap-4">
           <p class="uppercase tracking-[1.5px] text-md text-[#7A8C62]">
             CONTACT US
@@ -1090,34 +1147,36 @@
         <br />
 
         <h2
-          class="text-[#264415] text-[48px] leading-[1.12] font-md max-w-[820px]"
+          class="text-[#264415] text-3xl sm:text-5xl leading-[1.2] font-md max-w-[820px]"
         >
           Whether you have a question or want to book a session, we’re here to
           help.
         </h2>
 
         <form class="mt-16">
-          <div class="grid lg:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
             <input
               type="text"
               placeholder="Name"
-              class="h-[56px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-5 outline-none"
+              class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
             />
 
             <input
               type="email"
               placeholder="Email Address"
-              class="h-[56px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.12)] px-5 outline-none"
+              class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
             />
           </div>
 
           <textarea
             placeholder="Write your query here"
-            class="mt-8 w-[430px] max-w-full h-[120px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/15 backdrop-blur-[12px] shadow-[0_20px_40px_rgba(0,0,0,0.12)] rounded-md p-5 outline-none"
+            class="mt-5 sm:mt-8 w-full lg:w-[430px] h-[130px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl p-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
           ></textarea>
 
           <div class="mt-8">
-            <button class="bg-[#6FB646] text-white px-9 py-3 rounded-full">
+            <button
+              class="bg-[#6FB646] hover:bg-[#5ea336] transition-all duration-300 hover:scale-105 text-white px-7 sm:px-9 py-3 rounded-full shadow-xl text-sm sm:text-base"
+            >
               Send →
             </button>
           </div>
