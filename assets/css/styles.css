@@ -209,6 +209,140 @@ textarea.input-field {
   background: #2d4a28;
 }
 
+.service-main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 52px 28px 60px;
+}
+
+.service-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #4a7c40;
+  font-size: 32px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 36px;
+}
+
+.service-back-link svg {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+}
+
+.service-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.service-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 34px;
+}
+
+.service-step-content {
+  padding-bottom: 40px;
+  min-width: 0;
+}
+
+.service-step-content-last {
+  padding-bottom: 0;
+}
+
+.service-step-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2a18;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.service-step-copy {
+  color: #555;
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+.service-book-actions {
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) {
+  .service-main {
+    padding: 36px 18px 44px;
+  }
+
+  .service-back-link {
+    align-items: flex-start;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+  .service-back-link svg {
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
+  }
+
+  .service-step {
+    gap: 12px;
+  }
+
+  .service-step-marker {
+    min-width: 28px;
+  }
+
+  .service-main .step-num {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .service-step-content {
+    padding-bottom: 30px;
+  }
+
+  .service-step-title {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .service-step-copy {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .service-main .step-border {
+    padding-left: 12px;
+  }
+
+  .service-main .tag-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .service-main .tag-row::after {
+    width: 38px;
+  }
+
+  .service-book-actions {
+    margin-top: 28px;
+  }
+
+  .service-book-actions .book-btn {
+    width: 55%;
+    justify-content: center;
+   margin-inline: 69px;
+  }
+}
+
 /* Header Scroll Transitions and Styles */
 header nav > div {
   transition: all 0.3s ease-in-out;

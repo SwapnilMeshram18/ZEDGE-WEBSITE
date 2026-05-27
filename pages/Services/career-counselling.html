@@ -176,6 +176,115 @@
       .book-btn:hover {
         background: #2d4a28;
       }
+      .career-main {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 52px 28px 60px;
+      }
+      .career-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: #4a7c40;
+        font-size: 32px;
+        font-weight: 500;
+        text-decoration: none;
+        margin-bottom: 36px;
+      }
+      .career-back-link svg {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 auto;
+      }
+      .career-step {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .career-step-marker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 34px;
+      }
+      .career-step-content {
+        padding-bottom: 40px;
+        min-width: 0;
+      }
+      .career-step-content-last {
+        padding-bottom: 0;
+      }
+      .career-step-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1a2a18;
+        margin-bottom: 12px;
+        line-height: 1.25;
+      }
+      .career-step-copy {
+        color: #555;
+        font-size: 13.5px;
+        line-height: 1.75;
+      }
+      .career-book-actions {
+        margin-top: 40px;
+      }
+      @media (max-width: 640px) {
+        .career-main {
+          padding: 36px 18px 44px;
+        }
+        .career-back-link {
+          align-items: flex-start;
+          font-size: 24px;
+          line-height: 1.2;
+          margin-bottom: 30px;
+        }
+        .career-back-link svg {
+          width: 26px;
+          height: 26px;
+          margin-top: 1px;
+        }
+        .career-step {
+          gap: 12px;
+        }
+        .career-step-marker {
+          min-width: 28px;
+        }
+        .step-num {
+          width: 28px;
+          height: 28px;
+          font-size: 12px;
+        }
+        .career-step-content {
+          padding-bottom: 30px;
+        }
+        .career-step-title {
+          font-size: 18px;
+          line-height: 1.35;
+          margin-bottom: 10px;
+        }
+        .career-step-copy {
+          font-size: 13px;
+          line-height: 1.65;
+        }
+        .step-border {
+          padding-left: 12px;
+        }
+        .tag-row {
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+        .tag-row::after {
+          width: 38px;
+        }
+        .career-book-actions {
+          margin-top: 28px;
+        }
+        .career-book-actions .book-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
     </style>
   </head>
   <body style="background: #fff; margin: 0">
@@ -425,22 +534,12 @@
       </p>
     </div>
 
-    <main style="max-width: 1040px; margin: 0 auto; padding: 52px 28px 60px">
+    <main class="career-main">
       <a
         href="services.html"
-        style="
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          color: #4a7c40;
-          font-size: 32px;
-          font-weight: 500;
-          text-decoration: none;
-          margin-bottom: 36px;
-        "
+        class="career-back-link"
       >
         <svg
-          style="width: 32px; height: 32px"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -454,35 +553,20 @@
         </svg>
         Career Counselling
       </a>
-      <div style="display: flex; gap: 20px; align-items: flex-start">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 34px;
-          "
-        >
+      <div class="career-step">
+        <div class="career-step-marker">
           <div class="step-num">1</div>
           <div class="step-vline"></div>
         </div>
-        <div style="padding-bottom: 40px">
+        <div class="career-step-content">
           <div class="tag-row">
             <span class="tag-label">First Meeting</span>
           </div>
-          <h3
-            class="font-display"
-            style="
-              font-size: 22px;
-              font-weight: 700;
-              color: #1a2a18;
-              margin-bottom: 12px;
-            "
-          >
+          <h3 class="font-display career-step-title">
             We start with a real conversation
           </h3>
           <div class="step-border">
-            <div style="color: #555; font-size: 13.5px; line-height: 1.75">
+            <div class="career-step-copy">
               Before any assessment or advice, we listen. In your first session,
               we create a calm, unhurried space for you to share where you are
               right now — what's working, what isn't, and what's been weighing
@@ -492,35 +576,20 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; gap: 20px; align-items: flex-start">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 34px;
-          "
-        >
+      <div class="career-step">
+        <div class="career-step-marker">
           <div class="step-num">2</div>
           <div class="step-vline"></div>
         </div>
-        <div style="padding-bottom: 40px">
+        <div class="career-step-content">
           <div class="tag-row">
             <span class="tag-label">Self-Discovery</span>
           </div>
-          <h3
-            class="font-display"
-            style="
-              font-size: 22px;
-              font-weight: 700;
-              color: #1a2a18;
-              margin-bottom: 12px;
-            "
-          >
+          <h3 class="font-display career-step-title">
             Mapping your strengths, values &amp; interests
           </h3>
           <div class="step-border">
-            <div style="color: #555; font-size: 13.5px; line-height: 1.75">
+            <div class="career-step-copy">
               Using structured reflection exercises and, where useful, validated
               assessment tools, we help you get a clearer picture of who you are
               professionally. We explore what genuinely energises you, what
@@ -531,33 +600,18 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; gap: 20px; align-items: flex-start">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 34px;
-          "
-        >
+      <div class="career-step">
+        <div class="career-step-marker">
           <div class="step-num">3</div>
           <div class="step-vline"></div>
         </div>
-        <div style="padding-bottom: 40px">
+        <div class="career-step-content">
           <div class="tag-row"><span class="tag-label">Exploration</span></div>
-          <h3
-            class="font-display"
-            style="
-              font-size: 22px;
-              font-weight: 700;
-              color: #1a2a18;
-              margin-bottom: 12px;
-            "
-          >
+          <h3 class="font-display career-step-title">
             Exploring what's actually possible for you
           </h3>
           <div class="step-border">
-            <div style="color: #555; font-size: 13.5px; line-height: 1.75">
+            <div class="career-step-copy">
               This is where we expand the horizon. Together, we look at career
               options, industries, and roles that align with your strengths and
               values — including paths you may not have considered yet. We help
@@ -568,35 +622,20 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; gap: 20px; align-items: flex-start">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 34px;
-          "
-        >
+      <div class="career-step">
+        <div class="career-step-marker">
           <div class="step-num">4</div>
           <div class="step-vline"></div>
         </div>
-        <div style="padding-bottom: 40px">
+        <div class="career-step-content">
           <div class="tag-row">
             <span class="tag-label">Decision Making</span>
           </div>
-          <h3
-            class="font-display"
-            style="
-              font-size: 22px;
-              font-weight: 700;
-              color: #1a2a18;
-              margin-bottom: 12px;
-            "
-          >
+          <h3 class="font-display career-step-title">
             Making sense of your options, without the overwhelm
           </h3>
           <div class="step-border">
-            <div style="color: #555; font-size: 13.5px; line-height: 1.75">
+            <div class="career-step-copy">
               Having options is only helpful if you can actually decide. We work
               through the practical and emotional sides of your choices —
               weighing trade-offs, addressing fears, and cutting through the
@@ -607,34 +646,19 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; gap: 20px; align-items: flex-start">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 34px;
-          "
-        >
+      <div class="career-step">
+        <div class="career-step-marker">
           <div class="step-num">5</div>
         </div>
-        <div style="padding-bottom: 0">
+        <div class="career-step-content career-step-content-last">
           <div class="tag-row">
             <span class="tag-label">Defining Next Steps</span>
           </div>
-          <h3
-            class="font-display"
-            style="
-              font-size: 22px;
-              font-weight: 700;
-              color: #1a2a18;
-              margin-bottom: 12px;
-            "
-          >
+          <h3 class="font-display career-step-title">
             A clear, honest plan for what comes next
           </h3>
           <div class="step-border">
-            <div style="color: #555; font-size: 13.5px; line-height: 1.75">
+            <div class="career-step-copy">
               Clarity without action stays a feeling. We help you build a
               concrete, realistic plan — broken into steps that feel manageable,
               not overwhelming. Whether that's updating your skills, having a
@@ -645,7 +669,7 @@
           </div>
         </div>
       </div>
-      <div style="margin-top: 40px">
+      <div class="career-book-actions">
         <button onclick="openModal('career')" class="book-btn">
           Book a session
           <svg
