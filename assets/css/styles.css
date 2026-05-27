@@ -122,14 +122,21 @@ header button.nav-active {
   box-shadow: none !important;
 }
 
-#mobileServicesLinks a.nav-active {
-  background: rgba(111, 182, 70, 0.18) !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-}
+ #mobileServicesLinks a.nav-active {
+   background: rgba(111, 182, 70, 0.18) !important;
+   color: #fff !important;
+   font-weight: 700 !important;
+ }
 
-.modal-overlay {
-  display: none;
+ footer p,
+ footer a,
+ footer span,
+ footer .border-t {
+   font-size: 16px !important;
+ }
+
+ .modal-overlay {
+   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
