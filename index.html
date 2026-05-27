@@ -27,6 +27,17 @@
           rgba(28, 34, 24, 0.48)
         );
       }
+
+      @media (max-width: 640px) {
+        .hero-overlay {
+          background: linear-gradient(
+            180deg,
+            rgba(28, 34, 24, 0.92) 0%,
+            rgba(28, 34, 24, 0.82) 48%,
+            rgba(28, 34, 24, 0.9) 100%
+          );
+        }
+      }
     </style>
   </head>
 
@@ -278,7 +289,7 @@
 
     <section
       id="home"
-      class="relative min-h-[100svh] bg-cover bg-center overflow-hidden"
+      class="relative min-h-[100svh] bg-cover bg-[center_top] sm:bg-center overflow-hidden"
       style="
         background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
       "
@@ -286,26 +297,26 @@
       <div class="absolute inset-0 hero-overlay"></div>
 
       <div
-        class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-24 lg:pb-32"
+        class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-24 lg:pb-32"
       >
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center"
         >
           <!-- LEFT -->
-          <div class="text-white">
+          <div class="text-white max-w-[620px]">
             <h1
-              class="text-[2.3rem] sm:text-5xl lg:text-7xl font-md leading-[1.15] mb-2 sm:mb-3 max-w-xl"
+              class="text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] mb-2 sm:mb-3 max-w-xl"
             >
               Clarity starts with a
             </h1>
             <h1
-              class="inline-block bg-[#50792F] text-[2.3rem] sm:text-5xl lg:text-7xl font-md max-w-fit mb-5 sm:mb-7 px-3 py-1 rounded-md"
+              class="inline-block bg-[#50792F] text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] max-w-fit mb-5 sm:mb-7 px-3 py-1.5 rounded-md"
             >
               Conversation
             </h1>
 
             <p
-              class="text-white/80 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-[15px] sm:text-base"
+              class="text-white/85 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-[20px] sm:text-base"
             >
               Whether you're feeling stuck in your career, navigating
               relationships, or seeking deeper meaning, we're here to listen,
@@ -314,16 +325,17 @@
 
             <button
               onclick="openModal()"
-              class="bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium shadow-xl"
+              class="w-full sm:w-auto bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-xl"
             >
               Book a session
             </button>
           </div>
 
           <!-- RIGHT — hidden on mobile, visible on lg+ -->
-          <div class="relative hidden md:block lg:block">
+          <div class="relative hidden lg:block">
             <img
               src="./assets/Images/homePageImages/counselling.jpg"
+              alt="Counselling session"
               class="rounded-2xl w-full max-w-[420px] lg:max-w-[520px] mx-auto lg:ml-auto shadow-2xl"
             />
 
@@ -353,25 +365,46 @@
         <!-- STATS -->
 
         <div
-          class="grid grid-cols-3 sm:flex sm:flex-wrap gap-6 sm:gap-16 mt-12 sm:mt-24 text-white text-center sm:text-left"
+          class="grid grid-cols-1 min-[430px]:grid-cols-3 sm:flex sm:flex-wrap gap-3 sm:gap-16 mt-10 sm:mt-24 text-white"
         >
-          <div>
-            <h3 class="text-2xl sm:text-5xl font-semibold">25+</h3>
-            <p class="text-white/70 mt-2 text-sm sm:text-base">
+          <div class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+            <h3
+              class="text-3xl sm:text-5xl font-semibold"
+              data-counter
+              data-target="25"
+              data-suffix="+"
+            >
+              0+
+            </h3>
+            <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
               Years Experience
             </p>
           </div>
 
-          <div>
-            <h3 class="text-3xl sm:text-5xl font-semibold">50+</h3>
-            <p class="text-white/70 mt-2 text-sm sm:text-base">
+          <div class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+            <h3
+              class="text-3xl sm:text-5xl font-semibold"
+              data-counter
+              data-target="50"
+              data-suffix="+"
+            >
+              0+
+            </h3>
+            <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
               Active Members
             </p>
           </div>
 
-          <div>
-            <h3 class="text-3xl sm:text-5xl font-semibold">99%</h3>
-            <p class="text-white/70 mt-2 text-sm sm:text-base">
+          <div class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+            <h3
+              class="text-3xl sm:text-5xl font-semibold"
+              data-counter
+              data-target="99"
+              data-suffix="%"
+            >
+              0%
+            </h3>
+            <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
               Satisfied Client
             </p>
           </div>

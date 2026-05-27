@@ -137,6 +137,54 @@ function markActiveNavigation() {
 
 markActiveNavigation();
 
+// Animate hero stats when the page loads.
+function startStatsCounters() {
+  const counters = document.querySelectorAll("[data-counter]");
+  if (!counters.length) return;
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  counters.forEach(function (counter) {
+    const target = Number(counter.dataset.target || "0");
+    const suffix = counter.dataset.suffix || "";
+
+    if (counter.dataset.animated === "true") return;
+    counter.dataset.animated = "true";
+
+    if (reduceMotion) {
+      counter.textContent = target + suffix;
+      return;
+    }
+
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function updateCounter(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.round(target * easedProgress);
+
+      counter.textContent = currentValue + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent = target + suffix;
+      }
+    }
+
+    requestAnimationFrame(updateCounter);
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startStatsCounters);
+} else {
+  startStatsCounters();
+}
+
 // Change navbar background on scroll
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
