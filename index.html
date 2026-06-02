@@ -1466,6 +1466,23 @@
           });
         });
       </script>
+      <script>
+        document.querySelectorAll(".faq-item").forEach((item, index) => {
+          const content = item.querySelector(".faq-content");
+          const icon = item.querySelector(".faq-icon");
+          const button = item.querySelector(".faq-btn");
+          const shouldOpen = index === 0;
+
+          if (content) content.classList.toggle("hidden", !shouldOpen);
+          if (icon) icon.textContent = shouldOpen ? "−" : "+";
+          if (button) {
+            button.setAttribute(
+              "aria-expanded",
+              shouldOpen ? "true" : "false",
+            );
+          }
+        });
+      </script>
     </footer>
     <!-- ===== BOOKING MODAL ===== -->
     <div class="modal-overlay" id="bookingModal">
