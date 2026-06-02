@@ -45,6 +45,51 @@
         color: white;
         border-color: #4a7c40;
       }
+      .hide-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .shorts-card {
+        flex: 0 0 100%;
+      }
+      @media (min-width: 640px) {
+        .shorts-card {
+          flex-basis: calc((100% - 24px) / 2);
+        }
+      }
+      @media (min-width: 768px) {
+        .shorts-card {
+          flex-basis: calc((100% - 48px) / 3);
+        }
+      }
+      @media (min-width: 1024px) {
+        .shorts-card {
+          flex-basis: calc((100% - 96px) / 5);
+        }
+      }
+      .youtube-card {
+        flex: 0 0 100%;
+      }
+      .videoPlayer:fullscreen,
+      .videoPlayer:-webkit-full-screen {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+      }
+      @media (min-width: 768px) {
+        .youtube-card {
+          flex-basis: calc((100% - 32px) / 2);
+        }
+      }
+      @media (min-width: 1024px) {
+        .youtube-card {
+          flex-basis: calc((100% - 64px) / 3);
+        }
+      }
     </style>
   </head>
   <body class="scroll-smooth text-[#22301E]">
@@ -318,12 +363,18 @@
 
               <div class="flex items-center gap-3">
                 <button
+                  id="shortsPrev"
+                  type="button"
+                  aria-label="Previous shorts"
                   class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
                 >
                   &#10094;
                 </button>
 
                 <button
+                  id="shortsNext"
+                  type="button"
+                  aria-label="Next shorts"
                   class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
                 >
                   &#10095;
@@ -332,24 +383,34 @@
             </div>
 
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6 w-full"
+              id="shortsSlider"
+              class="hide-scrollbar flex gap-5 sm:gap-6 w-full overflow-x-auto scroll-smooth snap-x snap-mandatory pb-3"
             >
               <!-- CARD -->
               <div
-                class="bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div
                   class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
                 >
                   <img
                     src="../assets/Images/Resources-Imgs/sh5.jpg"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class="thumbnail w-full h-full object-cover"
                   />
 
-                  <div class="absolute inset-0 bg-black/15"></div>
+                  <video
+                    class="videoPlayer hidden w-full h-full object-cover"
+                    controls
+                  >
+                    <source
+                      src="../assets/shorts/Commitment phobia.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
                   <button
                     class="absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
                   >
                     <div
                       class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
@@ -369,27 +430,61 @@
                   <div
                     class="flex items-center justify-between text-white text-sm"
                   >
-                    <span>112 👍</span>
-                    <span>05 💬</span>
-                    <span>580 👁</span>
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>
 
               <!-- CARD -->
               <div
-                class="bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div
                   class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
                 >
                   <img
                     src="../assets/Images/Resources-Imgs/sh4.jpg"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class="thumbnail w-full h-full object-cover"
                   />
+
+                  <video
+                    class="videoPlayer hidden w-full h-full object-cover"
+                    controls
+                  >
+                    <source
+                      src="../assets/shorts/commitment-phobia-part 2.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
                   <button
                     class="absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
                   >
                     <div
                       class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
@@ -409,27 +504,61 @@
                   <div
                     class="flex items-center justify-between text-white text-sm"
                   >
-                    <span>112 👍</span>
-                    <span>05 💬</span>
-                    <span>580 👁</span>
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>
 
               <!-- CARD -->
               <div
-                class="bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div
                   class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
                 >
                   <img
                     src="../assets/Images/Resources-Imgs/sh3.jpg"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class="thumbnail w-full h-full object-cover"
                   />
+
+                  <video
+                    class="videoPlayer hidden w-full h-full object-cover"
+                    controls
+                  >
+                    <source
+                      src="../assets/shorts/EVOLUTION part 1.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
                   <button
                     class="absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
                   >
                     <div
                       class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
@@ -449,27 +578,61 @@
                   <div
                     class="flex items-center justify-between text-white text-sm"
                   >
-                    <span>112 👍</span>
-                    <span>05 💬</span>
-                    <span>580 👁</span>
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>
 
               <!-- CARD -->
               <div
-                class="bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div
                   class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
                 >
                   <img
                     src="../assets/Images/Resources-Imgs/sh2.jpg"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class="thumbnail w-full h-full object-cover"
                   />
+
+                  <video
+                    class="videoPlayer hidden w-full h-full object-cover"
+                    controls
+                  >
+                    <source
+                      src="../assets/shorts/EVOLUTION part 2.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
                   <button
                     class="absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
                   >
                     <div
                       class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
@@ -495,27 +658,61 @@
                   <div
                     class="flex items-center justify-between text-white text-sm"
                   >
-                    <span>112 👍</span>
-                    <span>05 💬</span>
-                    <span>580 👁</span>
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>
 
               <!-- CARD -->
               <div
-                class="bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div
                   class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
                 >
                   <img
                     src="../assets/Images/Resources-Imgs/sh1.jpg"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    class="thumbnail w-full h-full object-cover"
                   />
+
+                  <video
+                    class="videoPlayer hidden w-full h-full object-cover"
+                    controls
+                  >
+                    <source
+                      src="../assets/shorts/EVOLUTION part 3.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
                   <button
                     class="absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
                   >
                     <div
                       class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
@@ -535,9 +732,101 @@
                   <div
                     class="flex items-center justify-between text-white text-sm"
                   >
-                    <span>112 👍</span>
-                    <span>05 💬</span>
-                    <span>580 👁</span>
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD -->
+              <div
+                class="shorts-card snap-start bg-[#9DB48A] rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
+                <div
+                  class="relative aspect-[9/14] sm:aspect-[9/15] lg:aspect-[9/16] overflow-hidden"
+                >
+                  <video
+                    class="videoPlayer w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    <source
+                      src="../assets/shorts/Burn out .mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+
+                  <button
+                    class="playBtn absolute inset-0 flex items-center justify-center"
+                    onclick="playVideo(this)"
+                  >
+                    <div
+                      class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+                    >
+                      <svg
+                        class="w-6 h-6 text-[#5E7655] ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M6 4l10 6-10 6V4z" />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="px-3 py-3 bg-[#8FA97D]">
+                  <div
+                    class="flex items-center justify-between text-white text-sm"
+                  >
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="../assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="../assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="../assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px]"
+                      />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -556,12 +845,18 @@
 
             <div class="flex items-center gap-3">
               <button
+                id="youtubePrev"
+                type="button"
+                aria-label="Previous YouTube videos"
                 class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
               >
                 &#10094;
               </button>
 
               <button
+                id="youtubeNext"
+                type="button"
+                aria-label="Next YouTube videos"
                 class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition"
               >
                 &#10095;
@@ -569,21 +864,35 @@
             </div>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            id="youtubeSlider"
+            class="hide-scrollbar flex gap-8 w-full overflow-x-auto scroll-smooth snap-x snap-mandatory pb-3"
+          >
             <!-- VIDEO -->
             <div
-              class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+              class="youtube-card snap-start bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
             >
               <div class="relative aspect-video">
                 <img
                   src="../assets/Images/Resources-Imgs/YT.jpg"
-                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  class="thumbnail videoPoster w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
 
-                <div class="absolute inset-0 bg-black/20"></div>
+                <video
+                  class="videoPlayer hidden absolute inset-0 w-full h-full object-cover"
+                  preload="metadata"
+                >
+                  <source
+                    src="../assets/YT/EVOLUTION of friends.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <div class="videoPoster absolute inset-0 bg-black/20"></div>
 
                 <button
-                  class="absolute inset-0 flex items-center justify-center"
+                  class="videoPoster absolute inset-0 flex items-center justify-center"
+                  onclick="playVideo(this)"
                 >
                   <div
                     class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
@@ -599,13 +908,13 @@
                 </button>
 
                 <div
-                  class="absolute bottom-4 left-4 text-white text-xl font-medium"
+                  class="videoPoster absolute bottom-4 left-4 text-white text-xl font-medium"
                 >
                   Evolution of Friendships
                 </div>
 
                 <div
-                  class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+                  class="videoPoster absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
                 >
                   04:35
                 </div>
@@ -615,27 +924,61 @@
                 <div
                   class="flex items-center justify-between text-white text-sm"
                 >
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 👁</span>
+                  <span class="flex items-center gap-1">
+                    112
+                    <img
+                      src="../assets/Images/icons/like.png"
+                      alt="Like"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img
+                      src="../assets/Images/icons/cmnt.png"
+                      alt="Comments"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img
+                      src="../assets/Images/icons/view.png"
+                      alt="Views"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
                 </div>
               </div>
             </div>
 
             <!-- VIDEO -->
             <div
-              class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+              class="youtube-card snap-start bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
             >
               <div class="relative aspect-video">
                 <img
                   src="../assets/Images/Resources-Imgs/YT.jpg"
-                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  class="thumbnail videoPoster w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
 
-                <div class="absolute inset-0 bg-black/20"></div>
+                <video
+                  class="videoPlayer hidden absolute inset-0 w-full h-full object-cover"
+                  preload="metadata"
+                >
+                  <source
+                    src="../assets/YT/Why do people overxplain .mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <div class="videoPoster absolute inset-0 bg-black/20"></div>
 
                 <button
-                  class="absolute inset-0 flex items-center justify-center"
+                  class="videoPoster absolute inset-0 flex items-center justify-center"
+                  onclick="playVideo(this)"
                 >
                   <div
                     class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
@@ -651,13 +994,13 @@
                 </button>
 
                 <div
-                  class="absolute bottom-4 left-4 text-white text-xl font-medium"
+                  class="videoPoster absolute bottom-4 left-4 text-white text-xl font-medium"
                 >
-                  Commitment Phobia
+                  Why do people overxplain
                 </div>
 
                 <div
-                  class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+                  class="videoPoster absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
                 >
                   03:46
                 </div>
@@ -667,27 +1010,61 @@
                 <div
                   class="flex items-center justify-between text-white text-sm"
                 >
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 👁</span>
+                  <span class="flex items-center gap-1">
+                    112
+                    <img
+                      src="../assets/Images/icons/like.png"
+                      alt="Like"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img
+                      src="../assets/Images/icons/cmnt.png"
+                      alt="Comments"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img
+                      src="../assets/Images/icons/view.png"
+                      alt="Views"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
                 </div>
               </div>
             </div>
 
             <!-- VIDEO -->
             <div
-              class="bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
+              class="youtube-card snap-start bg-[#9DB48A] rounded-md overflow-hidden hover:shadow-xl transition"
             >
               <div class="relative aspect-video">
                 <img
                   src="../assets/Images/Resources-Imgs/YT.jpg"
-                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  class="thumbnail videoPoster w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
 
-                <div class="absolute inset-0 bg-black/20"></div>
+                <video
+                  class="videoPlayer hidden absolute inset-0 w-full h-full object-cover"
+                  preload="metadata"
+                >
+                  <source
+                    src="../assets/YT/How to not feel incomplete .mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <div class="videoPoster absolute inset-0 bg-black/20"></div>
 
                 <button
-                  class="absolute inset-0 flex items-center justify-center"
+                  class="videoPoster absolute inset-0 flex items-center justify-center"
+                  onclick="playVideo(this)"
                 >
                   <div
                     class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center"
@@ -703,13 +1080,13 @@
                 </button>
 
                 <div
-                  class="absolute bottom-4 left-4 text-white text-xl font-medium"
+                  class="videoPoster absolute bottom-4 left-4 text-white text-xl font-medium"
                 >
-                  How to not be desperate
+                  How to not feel incomplete
                 </div>
 
                 <div
-                  class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
+                  class="videoPoster absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded"
                 >
                   05:02
                 </div>
@@ -719,9 +1096,32 @@
                 <div
                   class="flex items-center justify-between text-white text-sm"
                 >
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 👁</span>
+                  <span class="flex items-center gap-1">
+                    112
+                    <img
+                      src="../assets/Images/icons/like.png"
+                      alt="Like"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img
+                      src="../assets/Images/icons/cmnt.png"
+                      alt="Comments"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img
+                      src="../assets/Images/icons/view.png"
+                      alt="Views"
+                      class="w-[18px] h-[18px]"
+                    />
+                  </span>
                 </div>
               </div>
             </div>

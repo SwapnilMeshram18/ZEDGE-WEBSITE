@@ -38,6 +38,14 @@
           );
         }
       }
+
+      .videoPlayer:fullscreen,
+      .videoPlayer:-webkit-full-screen {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+      }
     </style>
   </head>
 
@@ -327,7 +335,7 @@
               onclick="openModal()"
               class="w-full sm:w-auto bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-xl"
             >
-              Lets Talk &rarr;  
+              Lets Talk &rarr;
             </button>
           </div>
 
@@ -880,12 +888,22 @@
             <div class="relative rounded-[4px] overflow-hidden">
               <img
                 src="./assets/Images/homePageImages/img3.jpg"
-                class="w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover"
+                class="thumbnail videoPoster w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover object-[center_60%]"
               />
 
-              <div class="absolute inset-0 bg-black/15"></div>
+              <video
+                class="videoPlayer hidden w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover"
+                preload="metadata"
+              >
+                <source
+                  src="./assets/YT/How to not feel incomplete .mp4"
+                  type="video/mp4"
+                />
+              </video>
 
-              <div class="absolute top-8 left-8">
+              <div class="videoPoster absolute inset-0 bg-black/15"></div>
+
+              <div class="videoPoster absolute top-8 left-8">
                 <h3
                   class="text-white text-2xl sm:text-4xl leading-tight font-md max-w-[90%]"
                 >
@@ -894,7 +912,8 @@
               </div>
 
               <button
-                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                class="videoPoster absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                onclick="playVideo(this)"
               >
                 <div
                   class="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] rounded-full bg-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110"
@@ -903,7 +922,9 @@
                 </div>
               </button>
 
-              <div class="absolute bottom-0 left-0 right-0 h-[5px] bg-white/20">
+              <div
+                class="videoPoster absolute bottom-0 left-0 right-0 h-[5px] bg-white/20"
+              >
                 <div class="w-[18%] h-full bg-[#6FB646]"></div>
               </div>
             </div>
@@ -916,92 +937,185 @@
           </div>
 
           <!-- RIGHT LIST -->
+          <a href="pages/resources.html">
+            <div class="space-y-3">
+              <div
+                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <img
+                  src="./assets/Images/homePageImages/img4.jpg"
+                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
+                />
 
-          <div class="space-y-3">
-            <div
-              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img
-                src="./assets/Images/homePageImages/img4.jpg"
-                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-              />
+                <div class="flex-1">
+                  <h4 class="text-[15px] leading-[1.5]">
+                    Why you shouldn't be desperate?
+                  </h4>
 
-              <div class="flex-1">
-                <h4 class="text-[15px] leading-[1.5]">
-                  Why you shouldn't be desperate?
-                </h4>
+                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="./assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
 
-                <div class="flex gap-4 mt-4 text-[11px] text-[#666]">
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 Views</span>
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="./assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="./assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <img
+                  src="./assets/Images/homePageImages/img5.jpg"
+                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
+                />
+
+                <div class="flex-1">
+                  <h4 class="text-[14px] leading-[1.5]">
+                    Recognising your inner voice
+                  </h4>
+
+                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="./assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="./assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="./assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <img
+                  src="./assets/Images/homePageImages/img4.jpg"
+                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
+                />
+
+                <div class="flex-1">
+                  <h4 class="text-[14px] leading-[1.5]">
+                    An aid to your milestone anxiety
+                  </h4>
+
+                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="./assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="./assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="./assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <img
+                  src="./assets/Images/homePageImages/img5.jpg"
+                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
+                />
+
+                <div class="flex-1">
+                  <h4 class="text-[14px] leading-[1.5]">
+                    Navigating complex relationships
+                  </h4>
+
+                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                    <span class="flex items-center gap-1">
+                      112
+                      <img
+                        src="./assets/Images/icons/like.png"
+                        alt="Like"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      05
+                      <img
+                        src="./assets/Images/icons/cmnt.png"
+                        alt="Comments"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+
+                    <span class="flex items-center gap-1">
+                      580
+                      <img
+                        src="./assets/Images/icons/view.png"
+                        alt="Views"
+                        class="w-[18px] h-[18px] brightness-0 saturate-100"
+                      />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div
-              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img
-                src="./assets/Images/homePageImages/img5.jpg"
-                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-              />
-
-              <div class="flex-1">
-                <h4 class="text-[14px] leading-[1.5]">
-                  Recognising your inner voice
-                </h4>
-
-                <div class="flex gap-4 mt-4 text-[11px] text-[#666]">
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 Views</span>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img
-                src="./assets/Images/homePageImages/img4.jpg"
-                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-              />
-
-              <div class="flex-1">
-                <h4 class="text-[14px] leading-[1.5]">
-                  An aid to your milestone anxiety
-                </h4>
-
-                <div class="flex gap-4 mt-4 text-[11px] text-[#666]">
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 Views</span>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img
-                src="./assets/Images/homePageImages/img5.jpg"
-                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-              />
-
-              <div class="flex-1">
-                <h4 class="text-[14px] leading-[1.5]">
-                  Navigating complex relationships
-                </h4>
-
-                <div class="flex gap-4 mt-4 text-[11px] text-[#666]">
-                  <span>112 👍</span>
-                  <span>05 💬</span>
-                  <span>580 Views</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
         <div
           class="max-w-full lg:max-w-[75%] mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6"
@@ -1242,7 +1356,7 @@
       </div>
 
       <div
-        class="relative max-w-[1340px] mx-auto px-5 sm:px-6 lg:px-8  py-14 sm:py-[70px]"
+        class="relative max-w-[1340px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]"
       >
         <div
           class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden"

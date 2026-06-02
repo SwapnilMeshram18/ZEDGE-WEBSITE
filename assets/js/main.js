@@ -242,3 +242,94 @@ function toggleMobileServices() {
     arrow.classList.toggle("rotate-180");
   }
 }
+
+function playVideo(button) {
+  const container = button.parentElement;
+  const thumbnail = container.querySelector(".thumbnail");
+  const posterElements = container.querySelectorAll(".videoPoster");
+  const video = container.querySelector(".videoPlayer");
+
+  if (!video) return;
+  document.querySelectorAll(".videoPlayer").forEach(function (otherVideo) {
+    if (otherVideo === video) return;
+
+    const otherContainer = otherVideo.parentElement;
+    const otherThumbnail = otherContainer.querySelector(".thumbnail");
+    const otherPosterElements = otherContainer.querySelectorAll(".videoPoster");
+    const otherButton = otherContainer.querySelector("button");
+
+    otherVideo.pause();
+    otherVideo.currentTime = 0;
+    otherVideo.removeAttribute("controls");
+
+    otherPosterElements.forEach(function (posterElement) {
+      posterElement.classList.remove("hidden");
+    });
+
+    if (otherThumbnail) {
+      otherThumbnail.classList.remove("hidden");
+      otherVideo.classList.add("hidden");
+    }
+
+    if (otherButton) {
+      otherButton.classList.remove("hidden");
+    }
+  });
+
+  posterElements.forEach(function (posterElement) {
+    posterElement.classList.add("hidden");
+  });
+
+  if (thumbnail) thumbnail.classList.add("hidden");
+  button.classList.add("hidden");
+
+  video.classList.remove("hidden");
+  video.setAttribute("controls", "controls");
+  video.play();
+}
+
+
+function setupHorizontalCarousel(sliderId, prevId, nextId, cardSelector) {
+  const slider = document.getElementById(sliderId);
+  const prev = document.getElementById(prevId);
+  const next = document.getElementById(nextId);
+
+  if (!slider || !prev || !next) return;
+
+  function getScrollAmount() {
+    const firstCard = slider.querySelector(cardSelector);
+    if (!firstCard) return slider.clientWidth;
+
+    const styles = window.getComputedStyle(slider);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  next.addEventListener("click", function () {
+    slider.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+
+  prev.addEventListener("click", function () {
+    slider.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth",
+    });
+  });
+}
+
+setupHorizontalCarousel(
+  "shortsSlider",
+  "shortsPrev",
+  "shortsNext",
+  ".shorts-card",
+);
+setupHorizontalCarousel(
+  "youtubeSlider",
+  "youtubePrev",
+  "youtubeNext",
+  ".youtube-card",
+);
