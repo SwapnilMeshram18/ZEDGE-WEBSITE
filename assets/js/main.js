@@ -344,3 +344,117 @@ setupHorizontalCarousel(
   "youtubeNext",
   ".youtube-card",
 );
+
+function setupServicesAccordion() {
+  const accordion = document.getElementById("servicesAccordion");
+  if (!accordion) return;
+
+  const cards = accordion.querySelectorAll(".service-card");
+  if (!cards.length) return;
+
+  function activate(activeCard) {
+    cards.forEach((card) => {
+      const header = card.querySelector(".service-card-header");
+      const vertical = card.querySelector(".service-card-vertical");
+      const expanded = card.querySelector(".service-card-expanded");
+
+      if (card === activeCard) {
+        card.classList.add("active");
+
+        // Container styling
+        card.classList.remove(
+          "lg:flex-[0.42]",
+          "bg-[#DDE5CF]",
+          "text-[#5D7A4E]",
+          "min-h-[140px]",
+          "sm:min-h-[220px]"
+        );
+        card.classList.add(
+          "lg:flex-[1.1]",
+          "bg-[#95AE7E]",
+          "text-white",
+          "min-h-[420px]"
+        );
+
+        // Header styling
+        if (header) {
+          header.classList.remove("bg-[#C8D4B6]", "justify-center", "text-[#5D7A4E]");
+          header.classList.add("bg-[#A8BE95]", "px-10", "text-white");
+        }
+
+        // Vertical text
+        if (vertical) {
+          vertical.classList.remove("opacity-100");
+          vertical.classList.add("opacity-0", "pointer-events-none", "hidden");
+        }
+
+        // Expanded content
+        if (expanded) {
+          expanded.classList.remove("hidden", "opacity-0", "pointer-events-none");
+          expanded.classList.add("flex", "opacity-100");
+        }
+      } else {
+        card.classList.remove("active");
+
+        // Container styling
+        card.classList.remove(
+          "lg:flex-[1.1]",
+          "bg-[#95AE7E]",
+          "text-white",
+          "min-h-[420px]"
+        );
+        card.classList.add(
+          "lg:flex-[0.42]",
+          "bg-[#DDE5CF]",
+          "text-[#5D7A4E]",
+          "min-h-[140px]",
+          "sm:min-h-[220px]"
+        );
+
+        // Header styling
+        if (header) {
+          header.classList.remove("bg-[#A8BE95]", "px-10", "text-white");
+          header.classList.add("bg-[#C8D4B6]", "justify-center", "text-[#5D7A4E]");
+        }
+
+        // Vertical text
+        if (vertical) {
+          vertical.classList.remove("opacity-0", "pointer-events-none", "hidden");
+          vertical.classList.add("opacity-100");
+        }
+
+        // Expanded content
+        if (expanded) {
+          expanded.classList.remove("flex", "opacity-100");
+          expanded.classList.add("hidden", "opacity-0", "pointer-events-none");
+        }
+      }
+    });
+  }
+
+  cards.forEach((card) => {
+    // Intercept clicks
+    card.addEventListener("click", function (e) {
+      if (!card.classList.contains("active")) {
+        e.preventDefault();
+        e.stopPropagation();
+        activate(card);
+      }
+    });
+
+    // Hover effect for desktop
+    card.addEventListener("mouseenter", function () {
+      if (window.innerWidth >= 1024) {
+        activate(card);
+      }
+    });
+  });
+}
+
+// Initialize accordion on load
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupServicesAccordion);
+} else {
+  setupServicesAccordion();
+}
+

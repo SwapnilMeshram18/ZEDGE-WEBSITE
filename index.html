@@ -1,1500 +1,1208 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Z-Edge | Counselling & Training</title>
-    <link rel="icon" type="image/png" href="assets/Images/Logo.png" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Z-Edge | Counselling & Training</title>
+  <link rel="icon" type="image/png" href="assets/Images/Logo.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-      body {
-        font-family: Lato, sans-serif;
-        background: #f7f4ea;
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-      .hero-overlay {
-        background: linear-gradient(
-          90deg,
+  <style>
+    body {
+      font-family: Lato, sans-serif;
+      background: #f7f4ea;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(90deg,
           rgba(28, 34, 24, 0.84),
-          rgba(28, 34, 24, 0.48)
-        );
-      }
+          rgba(28, 34, 24, 0.48));
+    }
 
-      @media (max-width: 640px) {
-        .hero-overlay {
-          background: linear-gradient(
-            180deg,
+    @media (max-width: 640px) {
+      .hero-overlay {
+        background: linear-gradient(180deg,
             rgba(28, 34, 24, 0.92) 0%,
             rgba(28, 34, 24, 0.82) 48%,
-            rgba(28, 34, 24, 0.9) 100%
-          );
-        }
+            rgba(28, 34, 24, 0.9) 100%);
       }
+    }
 
-      .videoPlayer:fullscreen,
-      .videoPlayer:-webkit-full-screen {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background: #000;
-      }
-    </style>
-  </head>
+    .videoPlayer:fullscreen,
+    .videoPlayer:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+  </style>
+</head>
 
-  <body class="scroll-smooth text-[#22301E]">
-    <!-- NAVBAR -->
+<body class="scroll-smooth text-[#22301E]">
+  <!-- NAVBAR -->
 
-    <header class="fixed top-5 left-0 w-full z-50 px-5">
-      <nav class="max-w-[1410px] mx-auto relative">
+  <header class="fixed top-5 left-0 w-full z-50 px-5">
+    <nav class="max-w-[1410px] mx-auto relative">
+      <div class="rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4">
+        <!-- LOGO -->
+
+        <a href="#home" class="flex flex-col leading-none">
+          <img src="./assets/Images/Logo.png" class="w-20 sm:w-[128px]" alt="Z EDGE Logo" />
+        </a>
+
+        <!-- CENTER NAV -->
+
         <div
-          class="rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4"
-        >
-          <!-- LOGO -->
-
-          <a href="#home" class="flex flex-col leading-none">
-            <img
-              src="./assets/Images/Logo.png"
-              class="w-20 sm:w-[128px]"
-              alt="Z EDGE Logo"
-            />
+          class="hidden xl:flex items-center gap-2 rounded-full px-6 py-2.5 ml-60 xl:ml-40 2xl:ml-60 border border-[rgba(255,255,255,0.66)] bg-gradient-to-r from-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.30)] backdrop-blur-xl">
+          <a href="#home" class="px-8 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
+            Home
           </a>
+          <div class="border-l border-white/70 h-6"></div>
 
-          <!-- CENTER NAV -->
+          <!-- DROPDOWN -->
 
-          <div
-            class="hidden xl:flex items-center gap-2 rounded-full px-6 py-2.5 ml-60 xl:ml-40 2xl:ml-60 border border-[rgba(255,255,255,0.66)] bg-gradient-to-r from-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.30)] backdrop-blur-xl"
-          >
-            <a
-              href="#home"
-              class="px-8 py-2 rounded-full text-white text-sm hover:bg-white/10 transition"
-            >
-              Home
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
+          <div class="relative" id="servicesParent">
+            <button onclick="toggleDD()"
+              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
+              Services
 
-            <!-- DROPDOWN -->
+              <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
 
-            <div class="relative" id="servicesParent">
-              <button
-                onclick="toggleDD()"
-                class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1"
-              >
-                Services
+            <!-- DROPDOWN MENU -->
 
-                <svg
-                  class="w-3.5 h-3.5 mt-px"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
+            <div class="dropdown-menu" id="servicesDD">
+              <a href="pages/Services/services.html" class="dropdown-item font-semibold border-b border-[#e2eeda]">
+                All Services
+              </a>
 
-              <!-- DROPDOWN MENU -->
+              <a href="pages/Services/personal-counselling.html" class="dropdown-item">
+                Personal Counselling
+              </a>
 
-              <div class="dropdown-menu" id="servicesDD">
-                <a
-                  href="pages/Services/services.html"
-                  class="dropdown-item font-semibold border-b border-[#e2eeda]"
-                >
-                  All Services
-                </a>
+              <a href="pages/Services/career-counselling.html" class="dropdown-item">
+                Career Counselling
+              </a>
 
-                <a
-                  href="pages/Services/personal-counselling.html"
-                  class="dropdown-item"
-                >
-                  Personal Counselling
-                </a>
+              <a href="pages/Services/relationship-counselling.html" class="dropdown-item">
+                Relationship &amp; Marriage Counselling
+              </a>
 
-                <a
-                  href="pages/Services/career-counselling.html"
-                  class="dropdown-item"
-                >
-                  Career Counselling
-                </a>
+              <a href="pages/Services/family-counselling.html" class="dropdown-item">
+                Family &amp; Parental Counselling
+              </a>
 
-                <a
-                  href="pages/Services/relationship-counselling.html"
-                  class="dropdown-item"
-                >
-                  Relationship &amp; Marriage Counselling
-                </a>
-
-                <a
-                  href="pages/Services/family-counselling.html"
-                  class="dropdown-item"
-                >
-                  Family &amp; Parental Counselling
-                </a>
-
-                <a
-                  href="pages/Services/mbti-assessment.html"
-                  class="dropdown-item"
-                >
-                  Personality Assessment – MBTI
-                </a>
-              </div>
+              <a href="pages/Services/mbti-assessment.html" class="dropdown-item">
+                Personality Assessment – MBTI
+              </a>
             </div>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="pages/resources.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              Resources
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="pages/about-us.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              About Us
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="pages/our-team.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              Our Team
-            </a>
+          </div>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="pages/resources.html"
+            class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Resources
+          </a>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="pages/about-us.html"
+            class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            About Us
+          </a>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="pages/our-team.html"
+            class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Our Team
+          </a>
+        </div>
+
+        <!-- CONTACT BUTTON -->
+
+        <a href="pages/contact-us.html"
+          class="hidden xl:flex bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm">
+          Contact Us
+        </a>
+
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+          class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50">
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-5 h-0.5 bg-white"></span>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU DROPDOWN CARD -->
+      <div id="mobileMenu"
+        class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50">
+        <div class="flex flex-col gap-2">
+          <a href="#home" onclick="toggleMobileMenu()"
+            class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium">Home</a>
+
+          <!-- Services Accordion -->
+          <div class="flex flex-col">
+            <button onclick="toggleMobileServices()"
+              class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full">
+              <span>Services</span>
+              <svg id="mobileServicesArrow" class="w-4 h-4 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobileServicesLinks" class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4">
+              <a href="pages/Services/services.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">All
+                Services</a>
+              <a href="pages/Services/personal-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personal
+                Counselling</a>
+              <a href="pages/Services/career-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Career
+                Counselling</a>
+              <a href="pages/Services/relationship-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Relationship
+                &amp; Marriage Counselling</a>
+              <a href="pages/Services/family-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Family
+                &amp; Parental Counselling</a>
+              <a href="pages/Services/mbti-assessment.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personality
+                Assessment – MBTI</a>
+            </div>
           </div>
 
-          <!-- CONTACT BUTTON -->
+          <a href="pages/resources.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Resources</a>
+          <a href="pages/about-us.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">About
+            Us</a>
+          <a href="pages/our-team.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Our
+            Team</a>
+        </div>
+        <hr class="border-white/10 my-1" />
+        <a href="pages/contact-us.html"
+          class="bg-[#6FB646] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#6FB646]/20">
+          Contact Us
+        </a>
+      </div>
+    </nav>
+  </header>
 
-          <a
-            href="pages/contact-us.html"
-            class="hidden xl:flex bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm"
-          >
-            Contact Us
-          </a>
+  <!-- HERO -->
 
-          <!-- Hamburger Button (Mobile Only) -->
-          <button
-            id="mobileMenuBtn"
-            onclick="toggleMobileMenu()"
-            class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50"
-          >
-            <span class="w-5 h-0.5 bg-white"></span>
-            <span class="w-5 h-0.5 bg-white"></span>
-            <span class="w-5 h-0.5 bg-white"></span>
+  <section id="home" class="relative min-h-[100svh] bg-cover bg-[center_top] sm:bg-center overflow-hidden" style="
+        background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
+      ">
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <div class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-24 lg:pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <!-- LEFT -->
+        <div class="text-white max-w-[620px]">
+          <h1
+            class="text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] mb-2 sm:mb-3 max-w-xl">
+            Clarity starts with a
+          </h1>
+          <h1
+            class="inline-block bg-[#50792F] text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] max-w-fit mb-5 sm:mb-7 px-3 py-1.5 rounded-md">
+            Conversation
+          </h1>
+
+          <p class="text-white/85 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-[20px] sm:text-base">
+            Whether you're feeling stuck in your career, navigating
+            relationships, or seeking deeper meaning, we're here to listen,
+            guide, and support you with care.
+          </p>
+
+          <button onclick="openModal()"
+            class="w-full sm:w-auto bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-xl">
+            Lets Talk &rarr;
           </button>
         </div>
 
-        <!-- MOBILE MENU DROPDOWN CARD -->
-        <div
-          id="mobileMenu"
-          class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50"
-        >
-          <div class="flex flex-col gap-2">
-            <a
-              href="#home"
-              onclick="toggleMobileMenu()"
-              class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium"
-              >Home</a
-            >
+        <!-- RIGHT — hidden on mobile, visible on lg+ -->
+        <div class="relative hidden lg:block">
+          <img src="./assets/Images/homePageImages/counselling.jpg" alt="Counselling session"
+            class="rounded-lg w-full max-w-[420px] lg:max-w-[500px] mx-auto lg:ml-auto shadow-2xl" />
 
-            <!-- Services Accordion -->
-            <div class="flex flex-col">
-              <button
-                onclick="toggleMobileServices()"
-                class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full"
-              >
-                <span>Services</span>
-                <svg
-                  id="mobileServicesArrow"
-                  class="w-4 h-4 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="mobileServicesLinks"
-                class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4"
-              >
-                <a
-                  href="pages/Services/services.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >All Services</a
-                >
-                <a
-                  href="pages/Services/personal-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Personal Counselling</a
-                >
-                <a
-                  href="pages/Services/career-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Career Counselling</a
-                >
-                <a
-                  href="pages/Services/relationship-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Relationship &amp; Marriage Counselling</a
-                >
-                <a
-                  href="pages/Services/family-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Family &amp; Parental Counselling</a
-                >
-                <a
-                  href="pages/Services/mbti-assessment.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Personality Assessment – MBTI</a
-                >
-              </div>
+          <div
+            class="absolute left-1/2 lg:left-[-60px] -translate-x-1/2 lg:translate-x-0 bottom-6 lg:bottom-10 bg-white/20 backdrop-blur-xl rounded-xl border border-white/20 p-4 sm:p-5 w-[250px] sm:w-[240px] text-white flex flex-col items-center">
+            <div class="text-[#8AD64B] text-lg">★★★★★</div>
+            <p class="font-medium mt-2">500+ Healed Lives</p>
+            <div class="flex -space-x-3 mt-5">
+              <img src="https://i.pravatar.cc/50?img=12" class="w-10 h-10 rounded-full border-2 border-white" />
+              <img src="https://i.pravatar.cc/50?img=5" class="w-10 h-10 rounded-full border-2 border-white" />
+              <img src="https://i.pravatar.cc/50?img=8" class="w-10 h-10 rounded-full border-2 border-white" />
             </div>
-
-            <a
-              href="pages/resources.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >Resources</a
-            >
-            <a
-              href="pages/about-us.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >About Us</a
-            >
-            <a
-              href="pages/our-team.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >Our Team</a
-            >
           </div>
-          <hr class="border-white/10 my-1" />
-          <a
-            href="pages/contact-us.html"
-            class="bg-[#6FB646] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#6FB646]/20"
-          >
-            Contact Us
-          </a>
         </div>
-      </nav>
-    </header>
+      </div>
 
-    <!-- HERO -->
-
-    <section
-      id="home"
-      class="relative min-h-[100svh] bg-cover bg-[center_top] sm:bg-center overflow-hidden"
-      style="
-        background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
-      "
-    >
-      <div class="absolute inset-0 hero-overlay"></div>
+      <!-- STATS -->
 
       <div
-        class="relative z-10 max-w-[1410px] mx-auto px-5 sm:px-6 pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-24 lg:pb-32"
-      >
+        class="grid grid-cols-1 min-[430px]:grid-cols-3 sm:flex sm:flex-wrap gap-3 sm:gap-16 mt-10 sm:mt-24 text-white">
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center"
-        >
-          <!-- LEFT -->
-          <div class="text-white max-w-[620px]">
-            <h1
-              class="text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] mb-2 sm:mb-3 max-w-xl"
-            >
-              Clarity starts with a
-            </h1>
-            <h1
-              class="inline-block bg-[#50792F] text-[2.3rem] min-[390px]:text-[2.7rem] sm:text-5xl lg:text-[56px] font-medium leading-[1.08] max-w-fit mb-5 sm:mb-7 px-3 py-1.5 rounded-md"
-            >
-              Conversation
-            </h1>
-
-            <p
-              class="text-white/85 leading-7 sm:leading-8 max-w-xl mb-7 sm:mb-9 text-[20px] sm:text-base"
-            >
-              Whether you're feeling stuck in your career, navigating
-              relationships, or seeking deeper meaning, we're here to listen,
-              guide, and support you with care.
-            </p>
-
-            <button
-              onclick="openModal()"
-              class="w-full sm:w-auto bg-[#6FB646] hover:bg-[#76B438] transition-all duration-300 hover:scale-105 text-white text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-xl"
-            >
-              Lets Talk &rarr;
-            </button>
-          </div>
-
-          <!-- RIGHT — hidden on mobile, visible on lg+ -->
-          <div class="relative hidden lg:block">
-            <img
-              src="./assets/Images/homePageImages/counselling.jpg"
-              alt="Counselling session"
-              class="rounded-lg w-full max-w-[420px] lg:max-w-[500px] mx-auto lg:ml-auto shadow-2xl"
-            />
-
-            <div
-              class="absolute left-1/2 lg:left-[-60px] -translate-x-1/2 lg:translate-x-0 bottom-6 lg:bottom-10 bg-white/20 backdrop-blur-xl rounded-xl border border-white/20 p-4 sm:p-5 w-[250px] sm:w-[240px] text-white flex flex-col items-center"
-            >
-              <div class="text-[#8AD64B] text-lg">★★★★★</div>
-              <p class="font-medium mt-2">500+ Healed Lives</p>
-              <div class="flex -space-x-3 mt-5">
-                <img
-                  src="https://i.pravatar.cc/50?img=12"
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                />
-                <img
-                  src="https://i.pravatar.cc/50?img=5"
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                />
-                <img
-                  src="https://i.pravatar.cc/50?img=8"
-                  class="w-10 h-10 rounded-full border-2 border-white"
-                />
-              </div>
-            </div>
-          </div>
+          class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+          <h3 class="text-3xl sm:text-5xl font-semibold" data-counter data-target="25" data-suffix="+">
+            0+
+          </h3>
+          <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
+            Years Experience
+          </p>
         </div>
-
-        <!-- STATS -->
 
         <div
-          class="grid grid-cols-1 min-[430px]:grid-cols-3 sm:flex sm:flex-wrap gap-3 sm:gap-16 mt-10 sm:mt-24 text-white"
-        >
-          <div
-            class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left"
-          >
-            <h3
-              class="text-3xl sm:text-5xl font-semibold"
-              data-counter
-              data-target="25"
-              data-suffix="+"
-            >
-              0+
-            </h3>
-            <p
-              class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug"
-            >
-              Years Experience
-            </p>
-          </div>
-
-          <div
-            class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left"
-          >
-            <h3
-              class="text-3xl sm:text-5xl font-semibold"
-              data-counter
-              data-target="50"
-              data-suffix="+"
-            >
-              0+
-            </h3>
-            <p
-              class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug"
-            >
-              Active Members
-            </p>
-          </div>
-
-          <div
-            class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left"
-          >
-            <h3
-              class="text-3xl sm:text-5xl font-semibold"
-              data-counter
-              data-target="99"
-              data-suffix="%"
-            >
-              0%
-            </h3>
-            <p
-              class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug"
-            >
-              Satisfied Client
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-
-    <section class="bg-[#F0E8D0] py-16 sm:py-28">
-      <div class="max-w-[1410px] mx-auto px-5 sm:px-6">
-        <div class="flex items-center gap-4">
-          <p class="uppercase tracking-[3px] text-md text-[#47752c]">
-            SERVICES
+          class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+          <h3 class="text-3xl sm:text-5xl font-semibold" data-counter data-target="50" data-suffix="+">
+            0+
+          </h3>
+          <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
+            Active Members
           </p>
-          <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
         </div>
-
-        <h2 class="text-3xl sm:text-5xl font-md max-w-2xl mt-6">
-          Guidance that adapts to your unique situation.
-        </h2>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[0.42fr_1.1fr_0.42fr_0.42fr] gap-5 mt-10 sm:mt-16"
-        >
-          <!-- Card 01 -->
-          <div
-            class="bg-[#DDE5CF] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative"
-          >
-            <!-- Number -->
-            <div
-              class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm"
-            >
-              01
-            </div>
-
-            <!-- Vertical Text -->
-             <a href="pages/Services/career-counselling.html">
-            <div
-              class="absolute inset-0 flex items-center justify-center sm:mt-6"
-            >
-              <h3
-                class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4"
-              >
-                Career Counselling
-              </h3>
-            </div>
-            </a>
-          </div>
-
-          <!-- Main Active Card -->
-          <div
-            class="bg-[#95AE7E] rounded-lg min-h-[420px] lg:h-[480px] overflow-hidden"
-          >
-            <!-- Number -->
-            <div
-              class="h-12 bg-[#A8BE95] flex items-center px-10 text-white text-sm"
-            >
-              02
-            </div>
-            
-            <a href="pages/Services/personal-counselling.html">
-            <div class="p-12 text-white">
-              <h3 class="text-3xl mb-8 font-bold">Personal Counselling</h3>
-
-              <p class="leading-8 text-[15px] max-w-xl">
-                Life can feel overwhelming at times, whether you're dealing with
-                stress, uncertainty, emotional struggles, or simply feeling
-                stuck. You don’t have to navigate it alone.Our personal
-                counselling sessions are designed to give you a safe,
-                confidential space to talk openly and explore what you’re going
-                through at your own pace. We listen without judgment, helping
-                you make sense of your thoughts, understand your emotions, and
-                find clarity in moments that feel uncertain. Whether you're
-                seeking guidance, healing, or simply someone who understands,
-                we’re here to support you every step of the way.
-              </p>
-            </div>
-            </a>
-          </div>
-
-          <!-- Card 03 -->
-          <div
-            class="bg-[#DDE5CF] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative"
-          >
-            <!-- Number -->
-            <div
-              class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm"
-            >
-              03
-            </div>
-
-            <!-- Vertical Text -->
-            <a href="pages/Services/relationship-counselling.html">
-            <div
-              class="absolute inset-0 flex items-center justify-center sm:mt-6"
-            >
-              <h3
-                class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4"
-              >
-                Relationship Counselling
-              </h3>
-            </div>
-            </a>
-          </div>
-
-          <!-- Card 04 -->
-          <div
-            class="bg-[#DDE5CF] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative"
-          >
-            <!-- Number -->
-            <div
-              class="h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm"
-            >
-              04
-            </div>
-
-            <!-- Vertical Text -->
-            <a href="#">
-            <div
-              class="absolute inset-0 flex items-center justify-center sm:mt-6"
-            >
-              <h3
-                class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4"
-              >
-                Workshops & Corporate Training
-              </h3>
-            </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="text-center mt-10 sm:mt-14">
-          <a
-            href="pages/Services/services.html"
-            class="inline-block bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base"
-          >
-            View all services &rarr;
-          </a>
+          class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-4 text-center sm:border-0 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 sm:text-left">
+          <h3 class="text-3xl sm:text-5xl font-semibold" data-counter data-target="99" data-suffix="%">
+            0%
+          </h3>
+          <p class="text-white/75 mt-1.5 sm:mt-2 text-sm sm:text-base leading-snug">
+            Satisfied Client
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- HOW IT WORKS -->
+  <!-- SERVICES -->
 
-    <section class="bg-[#C9D5B6] py-16 lg:py-20 overflow-hidden">
-      <div class="max-w-[1280px] mx-auto px-5 lg:px-10">
-        <!-- Top Label -->
-        <div class="flex items-center gap-5">
-          <p
-            class="text-[18px] tracking-[1.8px] uppercase text-black font-normal"
-          >
-            HOW IT WORKS
-          </p>
-
-          <div class="w-[125px] h-[1px] bg-[#4CAE13]"></div>
-        </div>
-
-        <!-- Heading -->
-        <h2
-          class="mt-8 text-black text-[42px] lg:text-[58px] leading-[1.12] font-normal max-w-[620px]"
-        >
-          Just a few steps to begin your journey
-        </h2>
-
-        <!-- Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-16">
-          <!-- Card 1 -->
-          <div
-            class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white"
-          >
-            <span class="text-[17px] text-black">01</span>
-
-            <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
-              Choose a service
-            </h3>
-
-            <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
-              Explore our range of services and choose what feels right for you.
-              Whether you're seeking clarity, support, or deeper understanding,
-              you can start where you feel most comfortable.
-            </p>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white"
-          >
-            <span class="text-[17px] text-black">02</span>
-
-            <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
-              Book a session
-            </h3>
-
-            <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
-              Pick a time that works for you and schedule your session. Our
-              booking process is simple, flexible, and designed around your
-              convenience.
-            </p>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white"
-          >
-            <span class="text-[17px] text-black">03</span>
-
-            <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
-              Talk to expert
-            </h3>
-
-            <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
-              Connect with a trusted expert in a safe, confidential space where
-              you can speak openly and feel truly heard, without judgement or
-              pressure.
-            </p>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white"
-          >
-            <span class="text-[17px] text-black">04</span>
-
-            <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
-              Get personalised guidance
-            </h3>
-
-            <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
-              Receive thoughtful guidance tailored to your situation, helping
-              you gain clarity, perspective, and confidence to move forward..
-            </p>
-          </div>
-        </div>
+  <section class="bg-[#F0E8D0] py-16 sm:py-28">
+    <div class="max-w-[1410px] mx-auto px-5 sm:px-6">
+      <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[3px] text-md text-[#47752c]">
+          SERVICES
+        </p>
+        <div class="w-24 h-[1px] bg-[#7A8C62]"></div>
       </div>
-    </section>
 
-    <!-- ABOUT -->
+      <h2 class="text-3xl sm:text-5xl font-md max-w-2xl mt-6">
+        Guidance that adapts to your unique situation.
+      </h2>
 
-    <section class="bg-[#F5F2EA] py-16 sm:py-32 overflow-hidden" id="about-us">
-      <div class="max-w-[1410px] mx-auto px-5 sm:px-6">
-        <!-- Label -->
-        <div class="flex items-center gap-4">
-          <p
-            class="uppercase text-md tracking-[2px] font-regular text-[#47752c]"
-          >
-            ABOUT US
-          </p>
-          <div class="w-24 h-[1px] bg-[#4CAE13]"></div>
-        </div>
-
-        <!-- Heading -->
-        <h2
-          class="text-3xl sm:text-5xl lg:text-[64px] leading-tight lg:leading-[1.08] font-md text-[#29461F] max-w-4xl mt-6 sm:mt-8"
-        >
-          A space built on trust, care, and meaningful conversations.
-        </h2>
-
-        <!-- Main Layout -->
+      <div id="servicesAccordion" class="flex flex-col lg:flex-row gap-5 mt-10 sm:mt-16 w-full items-stretch">
+        <!-- Card 01: Career Counselling -->
         <div
-          class="grid lg:grid-cols-[220px_320px_1fr] gap-10 mt-10 sm:mt-24 items-start"
-        >
-          <!-- Left Small Image -->
-          <div class="relative mt-0 hidden lg:block">
-            <img
-              src="./assets/Images/homePageImages/img1.jpg"
-              class="rounded-lg h-[290px] w-full object-cover"
-            />
-            <!-- Bottom Decoration -->
-            <div
-              class="absolute -bottom-6 left-0 flex flex-col items-center gap-3"
-            >
-              <div
-                class="w-28 h-[2px] bg-[#7AC142] flex items-center justify-end"
-              >
-                <div class="w-2 h-2 rounded-full bg-[#7AC142]"></div>
-              </div>
-              <div
-                class="w-20 h-[2px] bg-[#7AC142] flex items-center justify-end mr-8"
-              >
-                <div class="w-2 h-2 rounded-full bg-[#7AC142]"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Center Large Image -->
-          <div class="relative mt-28 hidden lg:block">
-            <img
-              src="./assets/Images/homePageImages/img2.png"
-              class="rounded-lg h-[430px] w-full object-cover"
-            />
-            <!-- Vertical Decoration -->
-            <div class="absolute top-0 -right-5 flex items-start gap-2.5">
-              <!-- First line -->
-              <div class="relative h-28 w-[2px] bg-[#7AC142]">
-                <div
-                  class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#7AC142]"
-                ></div>
-              </div>
-
-              <!-- Second line -->
-              <div class="relative h-40 w-[2px] bg-[#7AC142]">
-                <div
-                  class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#7AC142]"
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Text Content -->
-          <div class="pt-0 lg:pt-40">
-            <p
-              class="text-[#2F2F2F] leading-8 sm:leading-10 text-base sm:text-[18px]"
-            >
-              Z-Edge Counselling is a trusted counselling and training
-              organisation in Nagpur, dedicated to helping individuals and
-              organisations grow with clarity and purpose.
-            </p>
-
-            <p
-              class="text-[#2F2F2F] leading-8 sm:leading-10 text-base sm:text-[18px] mt-6"
-            >
-              Founded by Renu Daga, with over 30+ years of experience, Z-Edge
-              has guided countless individuals in making life-changing decisions
-              related to career, relationships, and personal growth. We don't
-              define you, we help you discover your true potential.
-            </p>
-
-            <!-- Button -->
-            <a
-              href="pages/about-us.html"
-              class="mt-8 sm:mt-10 inline-flex bg-[#78BE43] hover:bg-[#6DA83C] transition-all duration-300 text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full items-center gap-3 shadow-md text-sm sm:text-base"
-            >
-              Read more <span>&rarr;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-
-    <section
-      class="relative py-28 overflow-hidden bg-cover bg-center"
-      style="
-        background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
-      "
-    >
-      <!-- Dark Overlay -->
-      <div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
-
-      <!-- Content -->
-      <div class="relative z-10 max-w-[1410px] mx-auto px-6 lg:px-10">
-        <!-- Top Label -->
-        <div class="flex items-center gap-4">
-          <p class="uppercase tracking-[3px] text-sm text-white/80">
-            Testimonials
-          </p>
-
-          <div class="w-24 h-[1px] bg-white/30"></div>
-        </div>
-
-        <!-- Heading -->
-        <h2
-          class="mt-6 text-white text-4xl md:text-5xl lg:text-[58px] leading-[1.1] font-light max-w-2xl"
-        >
-          Life-changing stories <br />
-          from our clients
-        </h2>
-
-        <!-- Cards -->
-        <div class="grid lg:grid-cols-3 gap-10 mt-20 items-start">
-          <!-- Card 1 -->
+          class="service-card bg-[#DDE5CF] text-[#5D7A4E] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out lg:flex-[0.42] w-full lg:w-auto"
+          data-index="1">
+          <!-- Number -->
           <div
-            class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30"
-          >
-            <!-- Quote -->
-            <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
-
-            <!-- Text -->
-            <p class="mt-4 text-white/85 leading-8 text-[15px]">
-              We were struggling to communicate and felt distant for months.
-              These sessions helped us understand each other in a way we never
-              had before. It honestly changed our relationship.
-            </p>
-
-            <!-- Footer -->
-            <div
-              class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
-            >
-              <span class="text-white/90 text-sm">Priya & Kunal</span>
-
-              <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
-            </div>
+            class="service-card-header h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm transition-all duration-500 font-medium">
+            01
           </div>
 
-          <!-- Card 2 -->
+          <!-- Vertical Text -->
           <div
-            class="lg:mt-[-55px] border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30"
-          >
-            <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
-
-            <p class="mt-4 text-white/85 leading-8 text-[15px]">
-              I was going through a really difficult phase and didn’t know who
-              to talk to. This felt like a safe space from the very first
-              session. I felt heard, understood, and supported.
-            </p>
-
-            <div
-              class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
-            >
-              <span class="text-white/90 text-sm">Neha R.</span>
-
-              <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
-            </div>
+            class="service-card-vertical absolute inset-0 flex items-center justify-center sm:mt-6 transition-all duration-500 opacity-100 pointer-events-none">
+            <h3 class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4">
+              Career Counselling
+            </h3>
           </div>
 
-          <!-- Card 3 -->
-          <div
-            class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30"
-          >
-            <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
-
-            <p class="mt-4 text-white/85 leading-8 text-[15px]">
-              I felt completely lost about my career and overwhelmed with
-              choices. Talking to them gave me clarity I didn’t even know I
-              needed. For the first time, I feel confident about my direction.
-            </p>
-
+          <!-- Expanded Content -->
+          <a href="pages/Services/career-counselling.html" class="service-card-link block h-full">
             <div
-              class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between"
-            >
-              <span class="text-white/90 text-sm">Aarav S.</span>
-
-              <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES SECTION -->
-    <section
-      class="bg-[#F8F6EE] py-16 sm:py-24 lg:py-[110px] overflow-hidden"
-      id="resources"
-    >
-      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
-        <div class="flex items-center gap-4">
-          <p class="uppercase tracking-[1.5px] text-sm text-[#47752C]">
-            RESOURCES
-          </p>
-
-          <div class="w-24 h-[1px] bg-[#47752C]"></div>
-        </div>
-        <br />
-
-        <h2
-          class="text-[#32452D] text-3xl sm:text-5xl leading-[1.15] font-md max-w-[680px]"
-        >
-          Insights and guidance to support you beyond sessions.
-        </h2>
-
-        <div
-          class="mt-10 sm:mt-16 grid grid-cols-1 lg:grid-cols-[2fr_0.9fr] gap-8 items-start"
-        >
-          <!-- LEFT VIDEO -->
-
-          <div>
-            <div class="relative rounded-[4px] overflow-hidden">
-              <img
-                src="./assets/Images/homePageImages/img3.jpg"
-                class="thumbnail videoPoster w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover object-[center_60%]"
-              />
-
-              <video
-                class="videoPlayer hidden w-full h-[260px] sm:h-[360px] lg:h-[440px] object-contain bg-black"
-                preload="metadata"
-              >
-                <source
-                  src="./assets/YT/How to not feel incomplete .mp4"
-                  type="video/mp4"
-                />
-              </video>
-
-              <div class="videoPoster absolute inset-0 bg-black/15"></div>
-
-              <div class="videoPoster absolute top-8 left-8">
-                <h3
-                  class="text-white text-2xl sm:text-4xl leading-tight font-md max-w-[90%]"
-                >
-                  Dealing with Decision Fatigue
+              class="service-card-expanded p-6 sm:p-12 text-white transition-all duration-500 opacity-0 pointer-events-none hidden flex-col justify-between h-[calc(100%-48px)]">
+              <div>
+                <h3 class="text-2xl sm:text-3xl mb-4 sm:mb-8 font-bold">
+                  Career Counselling
                 </h3>
+                <p class="leading-relaxed sm:leading-8 text-[14px] sm:text-[15px] max-w-xl text-white/90">
+                  Choosing the right career path can feel overwhelming, especially with so many options and
+                  expectations. Our career counselling services help students and professionals gain clarity about their
+                  strengths, interests, personality, and future opportunities. Through personalized guidance,
+                  scientifically backed assessments, and expert support, we help individuals make informed career
+                  decisions with confidence. Whether you're exploring career options, choosing a stream, planning higher
+                  education, or considering a career transition, we're here to help you discover a path that aligns with
+                  your potential and aspirations.
+                </p>
               </div>
-
-              <button
-                class="videoPoster absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                onclick="playVideo(this)"
-              >
-                <div
-                  class="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] rounded-full bg-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110"
-                >
-                  ▶
-                </div>
-              </button>
-
-              <div
-                class="videoPoster absolute bottom-0 left-0 right-0 h-[5px] bg-white/20"
-              >
-                <div class="w-[18%] h-full bg-[#6FB646]"></div>
-              </div>
-            </div>
-
-            <div class="flex justify-between mt-4 text-[12px] text-[#1E1E1E]">
-              <span>120 Likes</span>
-              <span>5 Comments</span>
-              <span>612 Views</span>
-            </div>
-          </div>
-
-          <!-- RIGHT LIST -->
-          <a href="pages/resources.html">
-            <div class="space-y-3">
-              <div
-                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <img
-                  src="./assets/Images/homePageImages/img4.jpg"
-                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-                />
-
-                <div class="flex-1">
-                  <h4 class="text-[15px] leading-[1.5]">
-                    Why you shouldn't be desperate?
-                  </h4>
-
-                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
-                    <span class="flex items-center gap-1">
-                      112
-                      <img
-                        src="./assets/Images/icons/like.png"
-                        alt="Like"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      05
-                      <img
-                        src="./assets/Images/icons/cmnt.png"
-                        alt="Comments"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      580
-                      <img
-                        src="./assets/Images/icons/view.png"
-                        alt="Views"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <img
-                  src="./assets/Images/homePageImages/img5.jpg"
-                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-                />
-
-                <div class="flex-1">
-                  <h4 class="text-[14px] leading-[1.5]">
-                    Recognising your inner voice
-                  </h4>
-
-                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
-                    <span class="flex items-center gap-1">
-                      112
-                      <img
-                        src="./assets/Images/icons/like.png"
-                        alt="Like"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      05
-                      <img
-                        src="./assets/Images/icons/cmnt.png"
-                        alt="Comments"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      580
-                      <img
-                        src="./assets/Images/icons/view.png"
-                        alt="Views"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <img
-                  src="./assets/Images/homePageImages/img4.jpg"
-                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-                />
-
-                <div class="flex-1">
-                  <h4 class="text-[14px] leading-[1.5]">
-                    An aid to your milestone anxiety
-                  </h4>
-
-                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
-                    <span class="flex items-center gap-1">
-                      112
-                      <img
-                        src="./assets/Images/icons/like.png"
-                        alt="Like"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      05
-                      <img
-                        src="./assets/Images/icons/cmnt.png"
-                        alt="Comments"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      580
-                      <img
-                        src="./assets/Images/icons/view.png"
-                        alt="Views"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <img
-                  src="./assets/Images/homePageImages/img5.jpg"
-                  class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0"
-                />
-
-                <div class="flex-1">
-                  <h4 class="text-[14px] leading-[1.5]">
-                    Navigating complex relationships
-                  </h4>
-
-                  <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
-                    <span class="flex items-center gap-1">
-                      112
-                      <img
-                        src="./assets/Images/icons/like.png"
-                        alt="Like"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      05
-                      <img
-                        src="./assets/Images/icons/cmnt.png"
-                        alt="Comments"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-
-                    <span class="flex items-center gap-1">
-                      580
-                      <img
-                        src="./assets/Images/icons/view.png"
-                        alt="Views"
-                        class="w-[18px] h-[18px] brightness-0 saturate-100"
-                      />
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <!-- <div class="mt-4">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-semibold border-b border-white pb-1 hover:gap-3 transition-all">
+                  Explore Service &rarr;
+                </span>
+              </div> -->
             </div>
           </a>
         </div>
+
+        <!-- Card 02: Personal Counselling (Active by Default) -->
         <div
-          class="max-w-full lg:max-w-[75%] mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6"
-        >
-          <p
-            class="text-[15px] sm:text-[16px] leading-7 text-[#4D5A46] max-w-full sm:max-w-[550px]"
-          >
-            We regularly share insights, reflections, and practical guidance to
-            support you in your everyday life. Follow along and explore more on
-            our social platforms.
-          </p>
+          class="service-card bg-[#95AE7E] text-white rounded-lg min-h-[420px] lg:h-[480px] overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out lg:flex-[1.1] w-full lg:w-auto active"
+          data-index="2">
+          <!-- Number -->
+          <div
+            class="service-card-header h-12 bg-[#A8BE95] flex items-center px-10 text-white text-sm transition-all duration-500 font-medium">
+            02
+          </div>
 
-          <a
-            href="pages/resources.html"
-            class="inline-block bg-[#6FB646] hover:bg-[#6DA83C] transition-all duration-300 hover:scale-105 text-white text-[15px] px-7 py-3 rounded-2xl w-fit shadow-lg mr-[90px]"
-          >
-            Explore More →
+          <!-- Vertical Text -->
+          <div
+            class="service-card-vertical absolute inset-0 flex items-center justify-center sm:mt-6 transition-all duration-500 opacity-0 pointer-events-none hidden">
+            <h3 class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4">
+              Personal Counselling
+            </h3>
+          </div>
+
+          <!-- Expanded Content -->
+          <a href="pages/Services/personal-counselling.html" class="service-card-link block h-full">
+            <div
+              class="service-card-expanded p-6 sm:p-12 text-white transition-all duration-500 opacity-100 flex flex-col justify-between h-[calc(100%-48px)]">
+              <div>
+                <h3 class="text-2xl sm:text-3xl mb-4 sm:mb-8 font-bold">
+                  Personal Counselling
+                </h3>
+                <p class="leading-relaxed sm:leading-8 text-[14px] sm:text-[15px] max-w-xl text-white/90">
+                  Life can feel overwhelming at times, whether you're dealing with
+                  stress, uncertainty, emotional struggles, or simply feeling
+                  stuck. You don’t have to navigate it alone. Our personal
+                  counselling sessions are designed to give you a safe,
+                  confidential space to talk openly and explore what you’re going
+                  through at your own pace. We listen without judgment, helping
+                  you make sense of your thoughts, understand your emotions, and
+                  find clarity in moments that feel uncertain. Whether you're
+                  seeking guidance, healing, or simply someone who understands,
+                  we’re here to support you every step of the way.
+                </p>
+              </div>
+              <!-- <div class="mt-4">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-semibold border-b border-white pb-1 hover:gap-3 transition-all">
+                  Explore Service &rarr;
+                </span>
+              </div> -->
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 03: Relationship Counselling -->
+        <div
+          class="service-card bg-[#DDE5CF] text-[#5D7A4E] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out lg:flex-[0.42] w-full lg:w-auto"
+          data-index="3">
+          <!-- Number -->
+          <div
+            class="service-card-header h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm transition-all duration-500 font-medium">
+            03
+          </div>
+
+          <!-- Vertical Text -->
+          <div
+            class="service-card-vertical absolute inset-0 flex items-center justify-center sm:mt-6 transition-all duration-500 opacity-100 pointer-events-none">
+            <h3 class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4">
+              Relationship Counselling
+            </h3>
+          </div>
+
+          <!-- Expanded Content -->
+          <a href="pages/Services/relationship-counselling.html" class="service-card-link block h-full">
+            <div
+              class="service-card-expanded p-6 sm:p-12 text-white transition-all duration-500 opacity-0 pointer-events-none hidden flex-col justify-between h-[calc(100%-48px)]">
+              <div>
+                <h3 class="text-2xl sm:text-3xl mb-4 sm:mb-8 font-bold">
+                  Relationship Counselling
+                </h3>
+                <p class="leading-relaxed sm:leading-8 text-[14px] sm:text-[15px] max-w-xl text-white/90">
+                  Healthy relationships are built on understanding, communication, and trust. Our relationship
+                  counselling services provide a safe and supportive space for individuals and couples to navigate
+                  challenges, strengthen emotional connections, and foster healthier interactions. Whether you're facing
+                  conflicts, communication difficulties, trust issues, or life transitions, our compassionate guidance
+                  helps you gain deeper insight, build stronger relationships, and move forward with greater clarity,
+                  understanding, and confidence.
+                </p>
+              </div>
+              <!-- <div class="mt-4">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-semibold border-b border-white pb-1 hover:gap-3 transition-all">
+                  Explore Service &rarr;
+                </span>
+              </div> -->
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 04: Workshops & Corporate Training -->
+        <div
+          class="service-card bg-[#DDE5CF] text-[#5D7A4E] rounded-lg min-h-[140px] sm:min-h-[220px] lg:h-[480px] overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out lg:flex-[0.42] w-full lg:w-auto"
+          data-index="4">
+          <!-- Number -->
+          <div
+            class="service-card-header h-12 bg-[#C8D4B6] flex items-center justify-center text-[#5D7A4E] text-sm transition-all duration-500 font-medium">
+            04
+          </div>
+
+          <!-- Vertical Text -->
+          <div
+            class="service-card-vertical absolute inset-0 flex items-center justify-center sm:mt-6 transition-all duration-500 opacity-100 pointer-events-none">
+            <h3 class="rotate-0 sm:-rotate-90 text-xl sm:text-2xl font-bold whitespace-nowrap text-center px-4">
+              Workshops & Corporate Training
+            </h3>
+          </div>
+
+          <!-- Expanded Content -->
+          <a href="#" class="service-card-link block h-full">
+            <div
+              class="service-card-expanded p-6 sm:p-12 text-white transition-all duration-500 opacity-0 pointer-events-none hidden flex-col justify-between h-[calc(100%-48px)]">
+              <div>
+                <h3 class="text-2xl sm:text-3xl mb-4 sm:mb-8 font-bold">
+                  Workshops & Corporate Training
+                </h3>
+                <p class="leading-relaxed sm:leading-8 text-[14px] sm:text-[15px] max-w-xl text-white/90">
+                  Empowered individuals create thriving organizations. Our workshops and corporate training programs are
+                  designed to enhance employee well-being, strengthen interpersonal skills, and foster a positive
+                  workplace culture. Through engaging, interactive sessions, we address topics such as stress
+                  management, emotional intelligence, communication, teamwork, leadership, and work-life balance,
+                  helping individuals and teams grow both personally and professionally.
+                </p>
+              </div>
+              <!-- <div class="mt-4">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-semibold border-b border-white pb-1 hover:gap-3 transition-all">
+                  Explore Service &rarr;
+                </span>
+              </div> -->
+            </div>
           </a>
         </div>
       </div>
-    </section>
 
-    <!-- ===== FAQ ===== -->
+      <div class="text-center mt-10 sm:mt-14">
+        <a href="pages/Services/services.html"
+          class="inline-block bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base">
+          View all services &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <section
-      id="faq"
-      class="bg-[#FFF5D5] py-14 sm:py-20 lg:py-[110px] overflow-hidden"
-    >
-      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
-        <div class="flex items-center gap-4">
-          <p class="uppercase tracking-[1.5px] text-md text-[#264415]">
-            FREQUENTLY ASKED QUESTIONS
+  <!-- HOW IT WORKS -->
+
+  <section class="bg-[#C9D5B6] py-16 lg:py-20 overflow-hidden">
+    <div class="max-w-[1280px] mx-auto px-5 lg:px-10">
+      <!-- Top Label -->
+      <div class="flex items-center gap-5">
+        <p class="text-[18px] tracking-[1.8px] uppercase text-black font-normal">
+          HOW IT WORKS
+        </p>
+
+        <div class="w-[125px] h-[1px] bg-[#4CAE13]"></div>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="mt-8 text-black text-[42px] lg:text-[58px] leading-[1.12] font-normal max-w-[620px]">
+        Just a few steps to begin your journey
+      </h2>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-16">
+        <!-- Card 1 -->
+        <div
+          class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white">
+          <span class="text-[17px] text-black">01</span>
+
+          <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
+            Choose a service
+          </h3>
+
+          <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
+            Explore our range of services and choose what feels right for you.
+            Whether you're seeking clarity, support, or deeper understanding,
+            you can start where you feel most comfortable.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white">
+          <span class="text-[17px] text-black">02</span>
+
+          <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
+            Book a session
+          </h3>
+
+          <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
+            Pick a time that works for you and schedule your session. Our
+            booking process is simple, flexible, and designed around your
+            convenience.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white">
+          <span class="text-[17px] text-black">03</span>
+
+          <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
+            Talk to expert
+          </h3>
+
+          <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
+            Connect with a trusted expert in a safe, confidential space where
+            you can speak openly and feel truly heard, without judgement or
+            pressure.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="rounded-[12px] px-6 py-7 min-h-[285px] border border-[rgba(255,255,255,0.80)] bg-[linear-gradient(185deg,rgba(255,255,255,0.55),rgba(255,255,255,0.30),rgba(255,255,255,0.20))] backdrop-blur-lg transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(185deg,rgba(255,255,255,0.72),rgba(255,255,255,0.42),rgba(255,255,255,0.28))] hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)] hover:border-white">
+          <span class="text-[17px] text-black">04</span>
+
+          <h3 class="mt-5 text-[30px] leading-[1.3] text-black font-normal">
+            Get personalised guidance
+          </h3>
+
+          <p class="mt-8 text-[15px] leading-[2.05] text-[#2F2F2F]">
+            Receive thoughtful guidance tailored to your situation, helping
+            you gain clarity, perspective, and confidence to move forward..
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="bg-[#F5F2EA] py-16 sm:py-32 overflow-hidden" id="about-us">
+    <div class="max-w-[1410px] mx-auto px-5 sm:px-6">
+      <!-- Label -->
+      <div class="flex items-center gap-4">
+        <p class="uppercase text-md tracking-[2px] font-regular text-[#47752c]">
+          ABOUT US
+        </p>
+        <div class="w-24 h-[1px] bg-[#4CAE13]"></div>
+      </div>
+
+      <!-- Heading -->
+      <h2
+        class="text-3xl sm:text-5xl lg:text-[64px] leading-tight lg:leading-[1.08] font-md text-[#29461F] max-w-4xl mt-6 sm:mt-8">
+        A space built on trust, care, and meaningful conversations.
+      </h2>
+
+      <!-- Main Layout -->
+      <div class="grid lg:grid-cols-[220px_320px_1fr] gap-10 mt-10 sm:mt-24 items-start">
+        <!-- Left Small Image -->
+        <div class="relative mt-0 hidden lg:block">
+          <img src="./assets/Images/homePageImages/img1.jpg" class="rounded-lg h-[290px] w-full object-cover" />
+          <!-- Bottom Decoration -->
+          <div class="absolute -bottom-6 left-0 flex flex-col items-center gap-3">
+            <div class="w-28 h-[2px] bg-[#7AC142] flex items-center justify-end">
+              <div class="w-2 h-2 rounded-full bg-[#7AC142]"></div>
+            </div>
+            <div class="w-20 h-[2px] bg-[#7AC142] flex items-center justify-end mr-8">
+              <div class="w-2 h-2 rounded-full bg-[#7AC142]"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Large Image -->
+        <div class="relative mt-28 hidden lg:block">
+          <img src="./assets/Images/homePageImages/img2.png" class="rounded-lg h-[430px] w-full object-cover" />
+          <!-- Vertical Decoration -->
+          <div class="absolute top-0 -right-5 flex items-start gap-2.5">
+            <!-- First line -->
+            <div class="relative h-28 w-[2px] bg-[#7AC142]">
+              <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#7AC142]"></div>
+            </div>
+
+            <!-- Second line -->
+            <div class="relative h-40 w-[2px] bg-[#7AC142]">
+              <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#7AC142]"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="pt-0 lg:pt-40">
+          <p class="text-[#2F2F2F] leading-8 sm:leading-10 text-base sm:text-[18px]">
+            Z-Edge Counselling is a trusted counselling and training
+            organisation in Nagpur, dedicated to helping individuals and
+            organisations grow with clarity and purpose.
           </p>
 
-          <div class="w-24 h-[1px] bg-[#4cae13]"></div>
-        </div>
-        <br />
-
-        <h2
-          class="text-[#1E1E1E] text-[2rem] sm:text-4xl lg:text-[48px] leading-[1.2] font-md max-w-[700px]"
-        >
-          Answers to help you feel informed and at ease.
-        </h2>
-
-        <div class="mt-10 sm:mt-16 space-y-4 sm:space-y-5">
-          <!-- FAQ 1 -->
-
-          <div
-            class="faq-item border border-[rgba(255,255,255,0.50)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(255,255,255,0.28),rgba(255,255,255,0.14))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-          >
-            <button
-              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
-            >
-              <span> Is everything I share confidential? </span>
-
-              <span
-                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
-              >
-                −
-              </span>
-            </button>
-
-            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
-              <p
-                class="text-[13px] sm:text-[14px] leading-7 sm:leading-8 text-[#666]"
-              >
-                Yes, absolutely. Your privacy and trust are very important to
-                us. Everything discussed during your sessions remains strictly
-                confidential.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-
-          <div
-            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-          >
-            <button
-              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
-            >
-              <span> How long is a typical session? </span>
-
-              <span
-                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
-              >
-                +
-              </span>
-            </button>
-
-            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
-              <p class="text-[#666] text-[13px] leading-[2]">
-                Most counselling sessions last between 45–60 minutes.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-
-          <div
-            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-          >
-            <button
-              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
-            >
-              <span> Do you offer online sessions? </span>
-
-              <span
-                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
-              >
-                +
-              </span>
-            </button>
-
-            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
-              <p class="text-[#666] text-[13px] leading-[2]">
-                Yes. We offer both online and in-person counselling sessions.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-
-          <div
-            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-          >
-            <button
-              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
-            >
-              <span> What happens during a session? </span>
-
-              <span
-                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
-              >
-                +
-              </span>
-            </button>
-
-            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
-              <p class="text-[#666] text-[13px] leading-[2]">
-                Sessions provide a safe space to talk openly, understand
-                challenges, and receive personalised guidance.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-
-          <div
-            class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]"
-          >
-            <button
-              class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left"
-            >
-              <span> Do I need to prepare anything before my session? </span>
-
-              <span
-                class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]"
-              >
-                +
-              </span>
-            </button>
-
-            <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
-              <p class="text-[#666] text-[13px] leading-[2]">
-                No preparation is required. Just come as you are.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-
-    <section
-      class="bg-[#DCE5D1] py-20 sm:py-[110px] overflow-hidden"
-      id="contact"
-    >
-      <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
-        <div class="flex items-center gap-4">
-          <p class="uppercase tracking-[1.5px] text-md text-[#7A8C62]">
-            CONTACT US
+          <p class="text-[#2F2F2F] leading-8 sm:leading-10 text-base sm:text-[18px] mt-6">
+            Founded by Renu Daga, with over 30+ years of experience, Z-Edge
+            has guided countless individuals in making life-changing decisions
+            related to career, relationships, and personal growth. We don't
+            define you, we help you discover your true potential.
           </p>
 
-          <div class="w-24 h-[1px] bg-[#081501]"></div>
+          <!-- Button -->
+          <a href="pages/about-us.html"
+            class="mt-8 sm:mt-10 inline-flex bg-[#78BE43] hover:bg-[#6DA83C] transition-all duration-300 text-white px-7 sm:px-8 py-3 sm:py-4 rounded-full items-center gap-3 shadow-md text-sm sm:text-base">
+            Read more <span>&rarr;</span>
+          </a>
         </div>
-        <br />
+      </div>
+    </div>
+  </section>
 
-        <h2
-          class="text-[#264415] text-3xl sm:text-5xl leading-[1.2] font-md max-w-[820px]"
-        >
-          Whether you have a question or want to book a session, we’re here to
-          help.
-        </h2>
+  <!-- TESTIMONIALS -->
 
-        <form class="mt-16">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
-            <input
-              type="text"
-              placeholder="Name"
-              class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
-            />
+  <section class="relative py-28 overflow-hidden bg-cover bg-center" style="
+        background-image: url(&quot;./assets/Images/homePageImages/Hero.jpg&quot;);
+      ">
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
 
-            <input
-              type="email"
-              placeholder="Email Address"
-              class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
-            />
+    <!-- Content -->
+    <div class="relative z-10 max-w-[1410px] mx-auto px-6 lg:px-10">
+      <!-- Top Label -->
+      <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[3px] text-sm text-white/80">
+          Testimonials
+        </p>
+
+        <div class="w-24 h-[1px] bg-white/30"></div>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="mt-6 text-white text-4xl md:text-5xl lg:text-[58px] leading-[1.1] font-light max-w-2xl">
+        Life-changing stories <br />
+        from our clients
+      </h2>
+
+      <!-- Cards -->
+      <div class="grid lg:grid-cols-3 gap-10 mt-20 items-start">
+        <!-- Card 1 -->
+        <div
+          class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30">
+          <!-- Quote -->
+          <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
+
+          <!-- Text -->
+          <p class="mt-4 text-white/85 leading-8 text-[15px]">
+            We were struggling to communicate and felt distant for months.
+            These sessions helped us understand each other in a way we never
+            had before. It honestly changed our relationship.
+          </p>
+
+          <!-- Footer -->
+          <div class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/90 text-sm">Priya & Kunal</span>
+
+            <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
           </div>
+        </div>
 
-          <textarea
-            placeholder="Write your query here"
-            class="mt-5 sm:mt-8 w-full lg:w-[430px] h-[130px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl p-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"
-          ></textarea>
+        <!-- Card 2 -->
+        <div
+          class="lg:mt-[-55px] border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30">
+          <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
 
-          <div class="mt-8">
-            <button
-              class="bg-[#6FB646] hover:bg-[#5ea336] transition-all duration-300 hover:scale-105 text-white px-7 sm:px-9 py-3 rounded-full shadow-xl text-sm sm:text-base"
-            >
-              Send →
+          <p class="mt-4 text-white/85 leading-8 text-[15px]">
+            I was going through a really difficult phase and didn’t know who
+            to talk to. This felt like a safe space from the very first
+            session. I felt heard, understood, and supported.
+          </p>
+
+          <div class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/90 text-sm">Neha R.</span>
+
+            <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.10),rgba(255,255,255,0.14))] backdrop-blur-xl px-8 py-10 text-white shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.24),rgba(255,255,255,0.14),rgba(255,255,255,0.18))] hover:shadow-[0_20px_45px_rgba(0,0,0,0.28)] hover:border-white/30">
+          <div class="text-[#B6E388] text-7xl leading-none font-sans">“</div>
+
+          <p class="mt-4 text-white/85 leading-8 text-[15px]">
+            I felt completely lost about my career and overwhelmed with
+            choices. Talking to them gave me clarity I didn’t even know I
+            needed. For the first time, I feel confident about my direction.
+          </p>
+
+          <div class="mt-10 pt-5 border-t border-white/10 flex items-center justify-between">
+            <span class="text-white/90 text-sm">Aarav S.</span>
+
+            <span class="text-[#6FB646] tracking-[3px] text-lg"> ★★★★★ </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES SECTION -->
+  <section class="bg-[#F8F6EE] py-16 sm:py-24 lg:py-[110px] overflow-hidden" id="resources">
+    <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
+      <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[1.5px] text-sm text-[#47752C]">
+          RESOURCES
+        </p>
+
+        <div class="w-24 h-[1px] bg-[#47752C]"></div>
+      </div>
+      <br />
+
+      <h2 class="text-[#32452D] text-3xl sm:text-5xl leading-[1.15] font-md max-w-[680px]">
+        Insights and guidance to support you beyond sessions.
+      </h2>
+
+      <div class="mt-10 sm:mt-16 grid grid-cols-1 lg:grid-cols-[2fr_0.9fr] gap-8 items-start">
+        <!-- LEFT VIDEO -->
+
+        <div>
+          <div class="relative rounded-[4px] overflow-hidden">
+            <img src="./assets/Images/homePageImages/img3.jpg"
+              class="thumbnail videoPoster w-full h-[260px] sm:h-[360px] lg:h-[440px] object-cover object-[center_70%]" />
+
+            <video class="videoPlayer hidden w-full h-[260px] sm:h-[360px] lg:h-[440px] object-contain bg-black"
+              preload="metadata">
+              <source src="./assets/YT/How to not feel incomplete .mp4" type="video/mp4" />
+            </video>
+
+            <div class="videoPoster absolute inset-0 bg-black/15"></div>
+
+            <div class="videoPoster absolute top-8 left-8">
+              <h3 class="text-white text-2xl sm:text-4xl leading-tight font-md max-w-[90%]">
+                Dealing with Decision Fatigue
+              </h3>
+            </div>
+
+            <button class="videoPoster absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              onclick="playVideo(this)">
+              <div
+                class="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] rounded-full bg-white flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110">
+                ▶
+              </div>
             </button>
+
+            <div class="videoPoster absolute bottom-0 left-0 right-0 h-[5px] bg-white/20">
+              <div class="w-[18%] h-full bg-[#6FB646]"></div>
+            </div>
           </div>
-        </form>
+
+          <div class="flex justify-between mt-4 text-[12px] text-[#1E1E1E]">
+            <span>120 Likes</span>
+            <span>5 Comments</span>
+            <span>612 Views</span>
+          </div>
+        </div>
+
+        <!-- RIGHT LIST -->
+        <a href="pages/resources.html">
+          <div class="space-y-3">
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <img src="./assets/Images/homePageImages/img4.jpg"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0" />
+
+              <div class="flex-1">
+                <h4 class="text-[15px] leading-[1.5]">
+                  Why you shouldn't be desperate?
+                </h4>
+
+                <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                  <span class="flex items-center gap-1">
+                    112
+                    <img src="./assets/Images/icons/like.png" alt="Like"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img src="./assets/Images/icons/cmnt.png" alt="Comments"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img src="./assets/Images/icons/view.png" alt="Views"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <img src="./assets/Images/homePageImages/img5.jpg"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0" />
+
+              <div class="flex-1">
+                <h4 class="text-[14px] leading-[1.5]">
+                  Recognising your inner voice
+                </h4>
+
+                <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                  <span class="flex items-center gap-1">
+                    112
+                    <img src="./assets/Images/icons/like.png" alt="Like"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img src="./assets/Images/icons/cmnt.png" alt="Comments"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img src="./assets/Images/icons/view.png" alt="Views"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <img src="./assets/Images/homePageImages/img4.jpg"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0" />
+
+              <div class="flex-1">
+                <h4 class="text-[14px] leading-[1.5]">
+                  An aid to your milestone anxiety
+                </h4>
+
+                <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                  <span class="flex items-center gap-1">
+                    112
+                    <img src="./assets/Images/icons/like.png" alt="Like"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img src="./assets/Images/icons/cmnt.png" alt="Comments"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img src="./assets/Images/icons/view.png" alt="Views"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#EFE7D3] rounded-xl p-3 flex gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <img src="./assets/Images/homePageImages/img5.jpg"
+                class="w-[70px] h-[70px] sm:w-[76px] sm:h-[76px] rounded-lg object-cover flex-shrink-0" />
+
+              <div class="flex-1">
+                <h4 class="text-[14px] leading-[1.5]">
+                  Navigating complex relationships
+                </h4>
+
+                <div class="flex gap-8 mt-4 text-[13px] text-[#666]">
+                  <span class="flex items-center gap-1">
+                    112
+                    <img src="./assets/Images/icons/like.png" alt="Like"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    05
+                    <img src="./assets/Images/icons/cmnt.png" alt="Comments"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+
+                  <span class="flex items-center gap-1">
+                    580
+                    <img src="./assets/Images/icons/view.png" alt="Views"
+                      class="w-[18px] h-[18px] brightness-0 saturate-100" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-    </section>
+      <div class="max-w-full lg:max-w-[75%] mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <p class="text-[15px] sm:text-[16px] leading-7 text-[#4D5A46] max-w-full sm:max-w-[550px]">
+          We regularly share insights, reflections, and practical guidance to
+          support you in your everyday life. Follow along and explore more on
+          our social platforms.
+        </p>
 
-    <!-- ===== FOOTER SECTION ===== -->
-
-    <footer class="relative">
-      <div class="absolute inset-0">
-        <img
-          src="assets/Images/homePageImages/Hero.jpg"
-          class="w-full h-full object-cover"
-        />
-
-        <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+        <a href="pages/resources.html"
+          class="inline-block bg-[#6FB646] hover:bg-[#6DA83C] transition-all duration-300 hover:scale-105 text-white text-[15px] px-7 py-3 rounded-2xl w-fit shadow-lg mr-[90px]">
+          Explore More →
+        </a>
       </div>
+    </div>
+  </section>
 
+  <!-- ===== FAQ ===== -->
+
+  <section id="faq" class="bg-[#FFF5D5] py-14 sm:py-20 lg:py-[110px] overflow-hidden">
+    <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
+      <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[1.5px] text-md text-[#264415]">
+          FREQUENTLY ASKED QUESTIONS
+        </p>
+
+        <div class="w-24 h-[1px] bg-[#4cae13]"></div>
+      </div>
+      <br />
+
+      <h2 class="text-[#1E1E1E] text-[2rem] sm:text-4xl lg:text-[48px] leading-[1.2] font-md max-w-[700px]">
+        Answers to help you feel informed and at ease.
+      </h2>
+
+      <div class="mt-10 sm:mt-16 space-y-4 sm:space-y-5">
+        <!-- FAQ 1 -->
+
+        <div
+          class="faq-item border border-[rgba(255,255,255,0.50)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.62),rgba(255,255,255,0.28),rgba(255,255,255,0.14))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+          <button class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left">
+            <span> Is everything I share confidential? </span>
+
+            <span class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]">
+              −
+            </span>
+          </button>
+
+          <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+            <p class="text-[13px] sm:text-[14px] leading-7 sm:leading-8 text-[#666]">
+              Yes, absolutely. Your privacy and trust are very important to
+              us. Everything discussed during your sessions remains strictly
+              confidential.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+
+        <div
+          class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+          <button class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left">
+            <span> How long is a typical session? </span>
+
+            <span class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]">
+              +
+            </span>
+          </button>
+
+          <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+            <p class="text-[#666] text-[13px] leading-[2]">
+              Most counselling sessions last between 45–60 minutes.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+
+        <div
+          class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+          <button class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left">
+            <span> Do you offer online sessions? </span>
+
+            <span class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]">
+              +
+            </span>
+          </button>
+
+          <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+            <p class="text-[#666] text-[13px] leading-[2]">
+              Yes. We offer both online and in-person counselling sessions.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+
+        <div
+          class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+          <button class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left">
+            <span> What happens during a session? </span>
+
+            <span class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]">
+              +
+            </span>
+          </button>
+
+          <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+            <p class="text-[#666] text-[13px] leading-[2]">
+              Sessions provide a safe space to talk openly, understand
+              challenges, and receive personalised guidance.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+
+        <div
+          class="faq-item border border-[rgba(255,255,255,0.45)] rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.55),rgba(255,255,255,0.22),rgba(255,255,255,0.12))] backdrop-blur-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)]">
+          <button class="faq-btn w-full px-5 sm:px-8 py-5 sm:py-7 flex justify-between items-center gap-4 text-left">
+            <span> Do I need to prepare anything before my session? </span>
+
+            <span class="faq-icon text-[22px] sm:text-[24px] flex-shrink-0 text-[#50792F]">
+              +
+            </span>
+          </button>
+
+          <div class="faq-content px-5 sm:px-8 pb-5 sm:pb-7">
+            <p class="text-[#666] text-[13px] leading-[2]">
+              No preparation is required. Just come as you are.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+
+  <section class="bg-[#DCE5D1] py-20 sm:py-[110px] overflow-hidden" id="contact">
+    <div class="max-w-[1240px] mx-auto px-5 sm:px-6">
+      <div class="flex items-center gap-4">
+        <p class="uppercase tracking-[1.5px] text-md text-[#7A8C62]">
+          CONTACT US
+        </p>
+
+        <div class="w-24 h-[1px] bg-[#081501]"></div>
+      </div>
+      <br />
+
+      <h2 class="text-[#264415] text-3xl sm:text-5xl leading-[1.2] font-md max-w-[820px]">
+        Whether you have a question or want to book a session, we’re here to
+        help.
+      </h2>
+
+      <form class="mt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
+          <input type="text" placeholder="Name"
+            class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]" />
+
+          <input type="email" placeholder="Email Address"
+            class="h-[54px] sm:h-[56px] w-full bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl px-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]" />
+        </div>
+
+        <textarea placeholder="Write your query here"
+          class="mt-5 sm:mt-8 w-full lg:w-[430px] h-[130px] bg-[#e2e8da] text-gray-800 placeholder:text-gray-500 border border-white/50 backdrop-blur-[16px] shadow-[0_12px_30px_rgba(0,0,0,0.08)] rounded-xl p-5 outline-none transition-all duration-300 focus:border-[#6FB646] focus:shadow-[0_12px_35px_rgba(111,182,70,0.18)]"></textarea>
+
+        <div class="mt-8">
+          <button
+            class="bg-[#6FB646] hover:bg-[#5ea336] transition-all duration-300 hover:scale-105 text-white px-7 sm:px-9 py-3 rounded-full shadow-xl text-sm sm:text-base">
+            Send →
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER SECTION ===== -->
+
+  <footer class="relative">
+    <div class="absolute inset-0">
+      <img src="assets/Images/homePageImages/Hero.jpg" class="w-full h-full object-cover" />
+
+      <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+    </div>
+
+    <div class="relative max-w-[1540px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]">
       <div
-        class="relative max-w-[1540px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]"
-      >
-        <div
-          class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden"
-        >
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16"
-          >
-            <div>
-              <img
-                src="assets/Images/Logo.png"
-                class="w-[130px] sm:w-[159px]"
-              />
+        class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16">
+          <div>
+            <img src="assets/Images/Logo.png" class="w-[130px] sm:w-[159px]" />
 
-              <p
-                class="text-white/75 text-[13px] sm:text-[14px] leading-7 sm:leading-[1.9] mt-5 max-w-sm"
-              >
-                A space where you can feel truly seen and make sense of what
-                you're going through.
-              </p>
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Quick Links</span>
-              <a
-                href="pages/about-us.html"
-                class="hover:text-[#89D34A] transition"
-                >About Us</a
-              >
-              <a
-                href="pages/Services/services.html"
-                class="hover:text-[#89D34A] transition"
-                >Services</a
-              >
-              <a href="#faq" class="hover:text-[#89D34A] transition">FAQs</a>
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Important Links</span>
-              <a href="#" class="hover:text-[#89D34A] transition"
-                >Terms & Conditions</a
-              >
-              <a href="#" class="hover:text-[#89D34A] transition"
-                >Privacy Policy</a
-              >
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Help Center</span>
-              <a
-                href="pages/contact-us.html"
-                class="hover:text-[#89D34A] transition"
-                >Contact Us</a
-              >
-              <a
-                href="tel:+918552811537"
-                class="hover:text-[#89D34A] transition"
-                >📞855-281-1537</a
-              >
-              <a
-                href="mailto:info@z-edge.in"
-                class="hover:text-[#89D34A] transition"
-                >✉ info@z-edge.in</a
-              >
-            </div>
+            <p class="text-white/75 text-[13px] sm:text-[14px] leading-7 sm:leading-[1.9] mt-5 max-w-sm">
+              A space where you can feel truly seen and make sense of what
+              you're going through.
+            </p>
           </div>
 
-          <div
-            class="border-t border-white/10 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-white/60 text-[12px] sm:text-[13px]"
-          >
-            © 2026 All rights reserved.
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Quick Links</span>
+            <a href="pages/about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
+            <a href="pages/Services/services.html" class="hover:text-[#89D34A] transition">Services</a>
+            <a href="#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Important Links</span>
+            <a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Help Center</span>
+            <a href="pages/contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
+            <a href="tel:+918552811537" class="hover:text-[#89D34A] transition">📞855-281-1537</a>
+            <a href="mailto:info@z-edge.in" class="hover:text-[#89D34A] transition">✉ info@z-edge.in</a>
           </div>
         </div>
+
+        <div
+          class="border-t border-white/10 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-white/60 text-[12px] sm:text-[13px]">
+          © 2026 All rights reserved.
+        </div>
       </div>
+    </div>
 
-      <!-- FAQ JS -->
+    <!-- FAQ JS -->
 
-      <script>
-        const faqBtns = document.querySelectorAll(".faq-btn");
+    <script>
+      const faqBtns = document.querySelectorAll(".faq-btn");
 
-        faqBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const parent = btn.parentElement;
+      faqBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const parent = btn.parentElement;
 
-            const content = parent.querySelector(".faq-content");
+          const content = parent.querySelector(".faq-content");
 
-            const icon = parent.querySelector(".faq-icon");
+          const icon = parent.querySelector(".faq-icon");
 
-            const isOpen = !content.classList.contains("hidden");
+          const isOpen = !content.classList.contains("hidden");
 
-            document.querySelectorAll(".faq-content").forEach((el) => {
-              el.classList.add("hidden");
-            });
-
-            document.querySelectorAll(".faq-icon").forEach((el) => {
-              el.textContent = "+";
-            });
-
-            if (!isOpen) {
-              content.classList.remove("hidden");
-
-              icon.textContent = "−";
-            }
+          document.querySelectorAll(".faq-content").forEach((el) => {
+            el.classList.add("hidden");
           });
-        });
-      </script>
-      <script>
-        document.querySelectorAll(".faq-item").forEach((item, index) => {
-          const content = item.querySelector(".faq-content");
-          const icon = item.querySelector(".faq-icon");
-          const button = item.querySelector(".faq-btn");
-          const shouldOpen = index === 0;
 
-          if (content) content.classList.toggle("hidden", !shouldOpen);
-          if (icon) icon.textContent = shouldOpen ? "−" : "+";
-          if (button) {
-            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+          document.querySelectorAll(".faq-icon").forEach((el) => {
+            el.textContent = "+";
+          });
+
+          if (!isOpen) {
+            content.classList.remove("hidden");
+
+            icon.textContent = "−";
           }
         });
-      </script>
-    </footer>
-    <!-- ===== BOOKING MODAL ===== -->
-    <div class="modal-overlay" id="bookingModal">
-      <div
-        style="
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".faq-item").forEach((item, index) => {
+        const content = item.querySelector(".faq-content");
+        const icon = item.querySelector(".faq-icon");
+        const button = item.querySelector(".faq-btn");
+        const shouldOpen = index === 0;
+
+        if (content) content.classList.toggle("hidden", !shouldOpen);
+        if (icon) icon.textContent = shouldOpen ? "−" : "+";
+        if (button) {
+          button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+        }
+      });
+    </script>
+  </footer>
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div style="
           background: #fdf8ee;
           border-radius: 18px;
           max-width: 570px;
@@ -1503,11 +1211,8 @@
           position: relative;
           max-height: 92vh;
           overflow-y: auto;
-        "
-      >
-        <button
-          onclick="closeModal()"
-          style="
+        ">
+      <button onclick="closeModal()" style="
             position: absolute;
             top: 14px;
             right: 16px;
@@ -1517,92 +1222,60 @@
             color: #aaa;
             cursor: pointer;
             line-height: 1;
-          "
-        >
-          ✕
-        </button>
-        <h3
-          class="font-display"
-          style="
+          ">
+        ✕
+      </button>
+      <h3 class="font-display" style="
             font-size: 22px;
             font-weight: 700;
             color: #2d4a28;
             margin-bottom: 20px;
-          "
-        >
-          Book Your Appointment
-        </h3>
-        <div
-          style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px"
-          id="chipRow"
-        >
-          <button class="chip active" onclick="chipSel(this)">
-            Personal counselling
-          </button>
-          <button class="chip" onclick="chipSel(this)">
-            Career counselling
-          </button>
-          <button class="chip" onclick="chipSel(this)">
-            Relationship &amp; Marriage Counselling
-          </button>
-          <button class="chip" onclick="chipSel(this)">
-            Personality Assessment
-          </button>
-          <button class="chip" onclick="chipSel(this)">
-            Family &amp; Parental
-          </button>
-        </div>
-        <div
-          style="
+          ">
+        Book Your Appointment
+      </h3>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px" id="chipRow">
+        <button class="chip active" onclick="chipSel(this)">
+          Personal counselling
+        </button>
+        <button class="chip" onclick="chipSel(this)">
+          Career counselling
+        </button>
+        <button class="chip" onclick="chipSel(this)">
+          Relationship &amp; Marriage Counselling
+        </button>
+        <button class="chip" onclick="chipSel(this)">
+          Personality Assessment
+        </button>
+        <button class="chip" onclick="chipSel(this)">
+          Family &amp; Parental
+        </button>
+      </div>
+      <div style="
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-bottom: 10px;
-          "
-        >
-          <input class="input-field" type="text" placeholder="Name*" />
-          <input
-            class="input-field"
-            type="email"
-            placeholder="Email Address*"
-          />
-        </div>
-        <div style="margin-bottom: 10px">
-          <input
-            class="input-field"
-            style="max-width: calc(50% - 5px)"
-            type="tel"
-            placeholder="Phone Number*"
-          />
-        </div>
-        <textarea
-          class="input-field"
-          rows="4"
-          placeholder="Write your query"
-          style="margin-bottom: 8px"
-        ></textarea>
-        <p style="color: #aaa; font-size: 12px; margin-bottom: 20px">
-          We'll get in touch with you at earliest
-        </p>
-        <button class="book-btn">
-          Request Appointment
-          <svg
-            style="width: 16px; height: 16px"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </button>
+          ">
+        <input class="input-field" type="text" placeholder="Name*" />
+        <input class="input-field" type="email" placeholder="Email Address*" />
       </div>
+      <div style="margin-bottom: 10px">
+        <input class="input-field" style="max-width: calc(50% - 5px)" type="tel" placeholder="Phone Number*" />
+      </div>
+      <textarea class="input-field" rows="4" placeholder="Write your query" style="margin-bottom: 8px"></textarea>
+      <p style="color: #aaa; font-size: 12px; margin-bottom: 20px">
+        We'll get in touch with you at earliest
+      </p>
+      <button class="book-btn">
+        Request Appointment
+        <svg style="width: 16px; height: 16px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <script src="assets/js/main.js"></script>
-  </body>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
