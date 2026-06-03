@@ -41,10 +41,21 @@ function closeModal() {
 }
 
 function chipSelect(el) {
-  document.querySelectorAll(".chip").forEach(function (c) {
+  if (el.classList.contains("contact-chip")) {
+    el.classList.toggle("active");
+    return;
+  }
+
+  const chipGroup = el.parentElement || document;
+  const wasActive = el.classList.contains("active");
+
+  chipGroup.querySelectorAll(".chip").forEach(function (c) {
     c.classList.remove("active");
   });
-  el.classList.add("active");
+
+  if (!wasActive) {
+    el.classList.add("active");
+  }
 }
 
 function chipSel(el) {
