@@ -273,6 +273,13 @@ textarea.input-field {
   margin-top: 40px;
 }
 
+.blog-title h2{
+  color: #47752c;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
 @media (max-width: 640px) {
   .service-main {
     padding: 36px 18px 44px;

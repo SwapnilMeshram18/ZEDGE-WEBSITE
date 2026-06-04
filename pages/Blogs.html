@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Edge | Resources</title>
+    <link rel="icon" type="image/png" href="../assets/Images/Logo.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background: #f7f4ea;
+        }
+
+        .hero-bg {
+            background:
+                linear-gradient(rgba(18, 28, 14, 0.75), rgba(18, 28, 14, 0.65)),
+                url("../assets/Images/Resources-Imgs/heroBg.jpg") center/cover no-repeat;
+            min-height: 500px;
+        }
+
+        .resource-card {
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(74, 124, 64, 0.12);
+        }
+
+        .category-chip {
+            border: 1px solid #c8dbbf;
+            background: rgba(255, 255, 255, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .category-chip.active,
+        .category-chip:hover {
+            background: #4a7c40;
+            color: white;
+            border-color: #4a7c40;
+        }
+
+        .hide-scrollbar {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .shorts-card {
+            flex: 0 0 100%;
+        }
+
+        @media (min-width: 640px) {
+            .shorts-card {
+                flex-basis: calc((100% - 24px) / 2);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .shorts-card {
+                flex-basis: calc((100% - 48px) / 3);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .shorts-card {
+                flex-basis: calc((100% - 96px) / 5);
+            }
+        }
+
+        .youtube-card {
+            flex: 0 0 100%;
+        }
+
+        .videoPlayer:fullscreen,
+        .videoPlayer:-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        @media (min-width: 768px) {
+            .youtube-card {
+                flex-basis: calc((100% - 32px) / 2);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .youtube-card {
+                flex-basis: calc((100% - 64px) / 3);
+            }
+        }
+    </style>
+</head>
+
+<body class="scroll-smooth text-[#22301E]">
+    <!-- NAVBAR -->
+
+    <header class="fixed top-5 left-0 w-full z-50 px-5">
+        <nav class="max-w-[1410px] mx-auto relative">
+            <div class="rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4">
+                <!-- LOGO -->
+
+                <a href="../index.html" class="flex flex-col leading-none">
+                    <img src="../assets/Images/Logo.png" class="w-20 sm:w-[128px]" alt="Z EDGE Logo" />
+                </a>
+
+                <!-- CENTER NAV -->
+
+                <div
+                    class="hidden xl:flex items-center gap-2 rounded-full px-6 py-2.5 ml-60 xl:ml-40 2xl:ml-60 border border-[rgba(255,255,255,0.66)] bg-gradient-to-r from-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.30)] backdrop-blur-xl">
+                    <a href="../index.html"
+                        class="px-8 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
+                        Home
+                    </a>
+                    <div class="border-l border-white/70 h-6"></div>
+
+                    <!-- DROPDOWN -->
+
+                    <div class="relative" id="servicesParent">
+                        <button onclick="toggleDD()"
+                            class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
+                            Services
+
+                            <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- DROPDOWN MENU -->
+
+                        <div class="dropdown-menu" id="servicesDD">
+                            <a href="Services/services.html"
+                                class="dropdown-item font-semibold border-b border-[#e2eeda]">
+                                All Services
+                            </a>
+
+                            <a href="Services/personal-counselling.html" class="dropdown-item">
+                                Personal Counselling
+                            </a>
+
+                            <a href="Services/career-counselling.html" class="dropdown-item">
+                                Career Counselling
+                            </a>
+
+                            <a href="Services/relationship-counselling.html" class="dropdown-item">
+                                Relationship &amp; Marriage Counselling
+                            </a>
+
+                            <a href="Services/family-counselling.html" class="dropdown-item">
+                                Family &amp; Parental Counselling
+                            </a>
+
+                            <a href="Services/mbti-assessment.html" class="dropdown-item">
+                                Personality Assessment – MBTI
+                            </a>
+                        </div>
+                    </div>
+                    <div class="border-l border-white/70 h-6"></div>
+                    <a href="resources.html"
+                        class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+                        Resources
+                    </a>
+                    <div class="border-l border-white/70 h-6"></div>
+                    <a href="about-us.html"
+                        class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+                        About Us
+                    </a>
+                    <div class="border-l border-white/70 h-6"></div>
+                    <a href="our-team.html"
+                        class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+                        Our Team
+                    </a>
+                </div>
+
+                <!-- CONTACT BUTTON -->
+
+                <a href="contact-us.html"
+                    class="hidden xl:flex bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm">
+                    Contact Us
+                </a>
+
+                <!-- Hamburger Button (Mobile Only) -->
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+                    class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50">
+                    <span class="w-5 h-0.5 bg-white"></span>
+                    <span class="w-5 h-0.5 bg-white"></span>
+                    <span class="w-5 h-0.5 bg-white"></span>
+                </button>
+            </div>
+
+            <!-- MOBILE MENU DROPDOWN CARD -->
+            <div id="mobileMenu"
+                class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50">
+                <div class="flex flex-col gap-2">
+                    <a href="../index.html" onclick="toggleMobileMenu()"
+                        class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium">Home</a>
+
+                    <!-- Services Accordion -->
+                    <div class="flex flex-col">
+                        <button onclick="toggleMobileServices()"
+                            class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full">
+                            <span>Services</span>
+                            <svg id="mobileServicesArrow" class="w-4 h-4 transition-transform duration-200" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="mobileServicesLinks"
+                            class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4">
+                            <a href="Services/services.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">All
+                                Services</a>
+                            <a href="Services/personal-counselling.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personal
+                                Counselling</a>
+                            <a href="Services/career-counselling.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Career
+                                Counselling</a>
+                            <a href="Services/relationship-counselling.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Relationship
+                                &amp; Marriage Counselling</a>
+                            <a href="Services/family-counselling.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Family
+                                &amp; Parental Counselling</a>
+                            <a href="Services/mbti-assessment.html"
+                                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personality
+                                Assessment – MBTI</a>
+                        </div>
+                    </div>
+
+                    <a href="resources.html"
+                        class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Resources</a>
+                    <a href="about-us.html"
+                        class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">About
+                        Us</a>
+                    <a href="our-team.html"
+                        class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Our
+                        Team</a>
+                </div>
+                <hr class="border-white/10 my-1" />
+                <a href="contact-us.html"
+                    class="bg-[#6FB646] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#6FB646]/20">
+                    Contact Us
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-bg flex flex-col items-center justify-center text-center pt-40 pb-20 px-4">
+        <h1
+            class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-[6px] sm:tracking-widest mb-5">
+            RESOURCES &amp; INSIGHTS
+        </h1>
+        <p class="text-white/85 text-sm sm:text-base max-w-[95%] sm:max-w-2xl leading-5">
+            Every journey is different, and so are the challenges that come with it.
+            Our services are designed to support you through moments of uncertainty,
+            growth, and change, offering thoughtful guidance tailored to your unique
+            needs.
+        </p>
+    </section>
+
+    <!-- ===== RESOURCES GRID & CATEGORIES ===== -->
+    <section class="bg-[#FFFCF3]">
+        <div class=" py-16 lg:py-18 2xl:py-18 mx-4">
+            <div class="flex items-center justify-center ">
+            <a href="../index.html" class="service-back-link ">
+                <h2>Home</h2>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+
+            </a>
+            </div>
+
+            <div
+                class="blog-title bg-[#FFF5DF] max-w-[1296px] mx-auto px-8  py-12 rounded-[4px] text-[16px] sm:text-[16px] leading-[28px] sm:leading-">
+                <p>
+                    In a world that often celebrates achievement, success, and personal gain, acts of kindness can
+                    sometimes feel rare. We are constantly encouraged to focus on our goals, improve ourselves, and
+                    strive for more. While ambition is important, there is something equally powerful that often gets
+                    overlooked, the simple joy of giving.<br />
+                    Think back to a time when you helped someone without expecting anything in return. Maybe you
+                    listened to a friend who was struggling, supported a colleague during a difficult time, or offered
+                    help to a stranger. Chances are, that act of kindness left you feeling lighter, happier, and more
+                    connected. <br />
+                    Why does giving feel so good? Is it simply because we helped someone, or is there something deeper
+                    happening within us?
+                </p>
+                <h2>The Psychology Behind Giving</h2>
+                <p>
+                    Human beings are naturally wired for connection. We thrive in relationships, communities, and
+                    environments where we feel valued and supported. Acts of kindness strengthen these bonds and
+                    create a sense of belonging. <br />
+                    Research has shown that when we engage in generous behaviour, our brains release chemicals
+                    associated with happiness and wellbeing. This phenomenon is often referred to as the "helper's
+                    high." Giving activates reward centres in the brain, creating feelings of warmth, satisfaction,
+                    and joy. <br />
+                    Contrary to the belief that happiness comes only from receiving, studies consistently show that
+                    helping others can have an equally powerful—if not greater—impact on our emotional wellbeing.
+
+                </p>
+
+                <h2>Why Giving Improves Mental Health</h2>
+                <p>
+                    Acts of kindness do more than benefit the person receiving help. They can positively influence
+                    our own mental health in several ways:
+                </p>
+                <strong>Reduces Stress</strong>
+
+                <p>
+                    Helping others shifts our focus away from our worries and concerns. It creates a sense of
+                    perspective and reminds us that we are part of something larger than ourselves.
+                </p>
+                <strong>Boosts Self-Esteem</strong>
+                <p>
+                    Knowing that our actions made a positive difference can increase confidence and self-worth.
+                </p>
+                <strong>Strengthens Relationships</strong>
+                <p>
+                    Giving nurtures trust, empathy, and emotional connection, helping us build stronger personal and
+                    professional relationships.
+                </p>
+                <strong>Creates a Sense of Purpose</strong>
+                <p>
+                    Many people struggle with feelings of emptiness or lack of direction. Acts of service often
+                    provide meaning and remind us that our presence matters.
+                </p>
+
+                <h2>Small Ways to Practice Giving Every Day</h2>
+                Giving does not always involve money or grand gestures. In fact, the most meaningful acts are often
+                the simplest. <br />
+                You can: <br />
+                <ul class="list-disc list-inside">
+                    <li>Offer genuine appreciation to someone.</li>
+                    <li>Listen without interrupting.</li>
+                    <li>Help a neighbour or colleague.</li>
+                    <li>Volunteer your time.</li>
+                    <li>Share knowledge or skills.</li>
+                    <li>Check in on a friend.</li>
+                    <li>Donate books, clothes, or resources.</li>
+                    <li>Offer encouragement when someone needs it.</li>
+                </ul>
+                These small acts may seem insignificant, but their impact can be profound.
+
+                <h2>Giving Without Expectations</h2>
+                <p> One of the challenges of giving is learning to do it without expecting recognition, praise, or
+                    reciprocity.
+                    True generosity is not transactional. It comes from a place of empathy and compassion. When we
+                    give purely to help someone else, we often experience a deeper sense of fulfilment.
+                    This does not mean neglecting our own needs. Healthy giving involves maintaining boundaries
+                    while still extending kindness where possible.
+                </p>
+                <h2>Teaching the Next Generation</h2>
+                <p>
+                    Children learn by observing adults. When they witness kindness, compassion, and generosity, they
+                    are more likely to adopt those values themselves.
+                    Simple practices such as encouraging gratitude, volunteering as a family, or involving children
+                    in community service can help cultivate empathy and social responsibility from an early age.
+                </p>
+
+                <h2>The Ripple Effect of Kindness</h2>
+                <p>
+                    One act of kindness often inspires another. A supportive conversation, a thoughtful gesture, or
+                    a helping hand can create a ripple effect that extends far beyond what we can see.In a world
+                    that can sometimes feel disconnected, kindness has the power to bring people closer together.
+                </p>
+
+                <h2>Final Thoughts</h2>
+                <p>
+                    The joy of giving is not a long-lost feeling—it is something that remains available to all
+                    of us, every day. Whether through our time, attention, compassion, or resources, we each
+                    have the ability to make a positive difference. <br />
+                    The next time you have an opportunity to help someone, take it. You may discover that in
+                    giving to others, you receive something equally valuable in return: connection, purpose, and
+                    joy.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="relative">
+        <div class="absolute inset-0">
+            <img src="../assets/Images/homePageImages/Hero.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+        </div>
+
+        <div class="relative max-w-[1540px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]">
+            <div
+                class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16">
+                    <div>
+                        <img src="../assets/Images/Logo.png" class="w-[130px] sm:w-[159px]" />
+                        <p class="text-white/75 text-[13px] sm:text-[14px] leading-7 sm:leading-[1.9] mt-5 max-w-sm">
+                            A space where you can feel truly seen and make sense of what
+                            you're going through.
+                        </p>
+                    </div>
+
+                    <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+                        <span class="font-semibold text-white">Quick Links</span>
+                        <a href="about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
+                        <a href="Services/services.html" class="hover:text-[#89D34A] transition">Services</a>
+                        <a href="../index.html#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+                    </div>
+
+                    <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+                        <span class="font-semibold text-white">Important Links</span>
+                        <a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
+                        <a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
+                    </div>
+
+                    <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+                        <span class="font-semibold text-white">Help Center</span>
+                        <a href="contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
+                        <a href="tel:+918552811537" class="hover:text-[#89D34A] transition">📞855-281-1537</a>
+                        <a href="mailto:info@z-edge.in" class="hover:text-[#89D34A] transition">✉ info@z-edge.in</a>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-white/10 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-white/60 text-[12px] sm:text-[13px]">
+                    © 2026 All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOOKING MODAL ===== -->
+    <div class="modal-overlay" id="bookingModal">
+        <div style="
+          background: #fdf8ee;
+          border-radius: 18px;
+          max-width: 570px;
+          width: 100%;
+          padding: 36px 34px 30px;
+          position: relative;
+          max-height: 92vh;
+          overflow-y: auto;
+        ">
+            <button onclick="closeModal()" style="
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+          ">
+                ✕
+            </button>
+            <h3 class="font-display" style="
+            font-size: 22px;
+            font-weight: 700;
+            color: #2d4a28;
+            margin-bottom: 20px;
+          ">
+                Book Your Appointment
+            </h3>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px" id="chipRow">
+                <button class="chip active" onclick="chipSel(this)">
+                    Personal counselling
+                </button>
+                <button class="chip" onclick="chipSel(this)">
+                    Career counselling
+                </button>
+                <button class="chip" onclick="chipSel(this)">
+                    Relationship &amp; Marriage Counselling
+                </button>
+                <button class="chip" onclick="chipSel(this)">
+                    Personality Assessment
+                </button>
+                <button class="chip" onclick="chipSel(this)">
+                    Family &amp; Parental
+                </button>
+            </div>
+            <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+          ">
+                <input class="input-field" type="text" placeholder="Name*" />
+                <input class="input-field" type="email" placeholder="Email Address*" />
+            </div>
+            <div style="margin-bottom: 10px">
+                <input class="input-field" style="max-width: calc(50% - 5px)" type="tel" placeholder="Phone Number*" />
+            </div>
+            <textarea class="input-field" rows="4" placeholder="Write your query" style="margin-bottom: 8px"></textarea>
+            <p style="color: #aaa; font-size: 12px; margin-bottom: 20px">
+                We'll get in touch with you at earliest
+            </p>
+            <button class="book-btn">
+                Request Appointment
+                <svg style="width: 16px; height: 16px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
