@@ -1,1012 +1,792 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Z-Edge | Services</title>
-    <link rel="icon" type="image/png" href="../../assets/Images/Logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              green: {
-                brand: "#4a7c40",
-                light: "#6aaa50",
-                pale: "#eaf2e3",
-                dark: "#2d4a28",
-                muted: "#7a9e6e",
-              },
-            },
-            fontFamily: {
-              display: ["Lato", "sans-serif"],
-              body: ["Lato", "sans-serif"],
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Z-Edge | Services</title>
+  <meta name="keywords"
+    content="Services Page, Counselling Services in Nagpur, Personal Counselling, Career Counselling, Relationship Counselling, Family Counselling, MBTI Assessment, Corporate Training, Emotional Wellbeing" />
+  <link rel="icon" type="image/png" href="../../assets/Images/Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: {
+              brand: "#4a7c40",
+              light: "#6aaa50",
+              pale: "#eaf2e3",
+              dark: "#2d4a28",
+              muted: "#7a9e6e",
             },
           },
+          fontFamily: {
+            display: ["Lato", "sans-serif"],
+            body: ["Lato", "sans-serif"],
+          },
         },
-      };
-    </script>
-    <link rel="stylesheet" href="../../assets/css/styles.css" />
-    <style>
-      * {
-        font-family: "Lato", sans-serif;
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <style>
+    * {
+      font-family: "Lato", sans-serif;
+    }
+
+    .font-display {
+      font-family: "Lato", sans-serif;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(rgba(20, 30, 15, 0.7), rgba(20, 30, 15, 0.6)),
+        url("../../assets/Images/homePageImages/Hero.jpg") center/cover no-repeat;
+      min-height: 500px;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #eaf2e3;
+      border: 2px solid #6aaa50;
+      color: #4a7c40;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      width: 2px;
+      background: #d4e8c4;
+      flex: 1;
+      min-height: 40px;
+    }
+
+    .tag-label {
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      color: #4a7c40;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .tag-row::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 1px;
+      background: #8aba7a;
+      opacity: 0.6;
+    }
+
+    .step-border {
+      border-left: 2px solid #c8dbbf;
+      padding-left: 14px;
+    }
+
+    .reminder-box {
+      background: linear-gradient(135deg, #eaf2e3 50%, #d6eac4 100%);
+      border-radius: 14px;
+    }
+
+    .service-card {
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(74, 124, 64, 0.16);
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+      border: 1px solid #e8f0df;
+      min-width: 240px;
+      z-index: 200;
+      padding: 8px 0;
+    }
+
+    .dropdown-menu.open {
+      display: block;
+    }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 18px;
+      font-size: 13px;
+      color: #2d4a28;
+      transition: background 0.15s;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item.active-link {
+      background: #eaf2e3;
+      color: #4a7c40;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .chip {
+      border: 1.5px solid #c8dbbf;
+      border-radius: 999px;
+      padding: 6px 15px;
+      font-size: 12.5px;
+      cursor: pointer;
+      color: #2d4a28;
+      white-space: nowrap;
+      transition: all 0.18s;
+      background: #fff;
+    }
+
+    .chip:hover,
+    .chip.active {
+      background: #4a7c40;
+      color: #fff;
+      border-color: #4a7c40;
+    }
+
+    .mbti-table-head {
+      background: #4a7c40;
+    }
+
+    .mbti-table-head2 {
+      background: #6aaa50;
+    }
+
+    .mbti-table-head3 {
+      background: #2d4a28;
+    }
+
+    .input-field {
+      border: 1.5px solid #d4e8c4;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      background: #fff;
+      width: 100%;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: #4a7c40;
+    }
+
+    textarea.input-field {
+      resize: none;
+    }
+
+    .services-list .relative.grid {
+      isolation: isolate;
+    }
+
+    @media (max-width: 1023px) {
+      .services-list>section {
+        padding-top: 32px;
+        padding-bottom: 32px;
       }
 
-      .font-display {
-        font-family: "Lato", sans-serif;
+      .services-list>section:last-child {
+        padding-bottom: 72px;
       }
 
-      .hero-bg {
-        background:
-          linear-gradient(rgba(20, 30, 15, 0.7), rgba(20, 30, 15, 0.6)),
-          url("../../assets/Images/homePageImages/Hero.jpg") center/cover
-            no-repeat;
-        min-height: 500px;
-      }
-
-      .step-num {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: #eaf2e3;
-        border: 2px solid #6aaa50;
-        color: #4a7c40;
-        font-size: 13px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .step-line {
-        width: 2px;
-        background: #d4e8c4;
-        flex: 1;
-        min-height: 40px;
-      }
-
-      .tag-label {
-        font-size: 10.5px;
-        letter-spacing: 0.12em;
-        color: #4a7c40;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      .tag-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 6px;
-      }
-
-      .tag-row::after {
-        content: "";
-        display: block;
-        width: 55px;
-        height: 1px;
-        background: #8aba7a;
-        opacity: 0.6;
-      }
-
-      .step-border {
-        border-left: 2px solid #c8dbbf;
-        padding-left: 14px;
-      }
-
-      .reminder-box {
-        background: linear-gradient(135deg, #eaf2e3 50%, #d6eac4 100%);
-        border-radius: 14px;
-      }
-
-      .service-card {
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-      }
-
-      .service-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 22px rgba(74, 124, 64, 0.16);
-      }
-
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 50%;
-        transform: translateX(-50%);
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
-        border: 1px solid #e8f0df;
-        min-width: 240px;
-        z-index: 200;
-        padding: 8px 0;
-      }
-
-      .dropdown-menu.open {
-        display: block;
-      }
-
-      .dropdown-item {
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding: 10px 18px;
-        font-size: 13px;
-        color: #2d4a28;
-        transition: background 0.15s;
-      }
-
-      .dropdown-item:hover,
-      .dropdown-item.active-link {
-        background: #eaf2e3;
-        color: #4a7c40;
-      }
-
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(4px);
-        z-index: 500;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-      }
-
-      .modal-overlay.open {
-        display: flex;
-      }
-
-      .chip {
-        border: 1.5px solid #c8dbbf;
-        border-radius: 999px;
-        padding: 6px 15px;
-        font-size: 12.5px;
-        cursor: pointer;
-        color: #2d4a28;
-        white-space: nowrap;
-        transition: all 0.18s;
-        background: #fff;
-      }
-
-      .chip:hover,
-      .chip.active {
-        background: #4a7c40;
-        color: #fff;
-        border-color: #4a7c40;
-      }
-
-      .mbti-table-head {
-        background: #4a7c40;
-      }
-
-      .mbti-table-head2 {
-        background: #6aaa50;
-      }
-
-      .mbti-table-head3 {
-        background: #2d4a28;
-      }
-
-      .input-field {
-        border: 1.5px solid #d4e8c4;
-        border-radius: 10px;
-        padding: 10px 14px;
-        font-size: 13px;
-        background: #fff;
-        width: 100%;
-        outline: none;
-        transition: border 0.2s;
-      }
-
-      .input-field:focus {
-        border-color: #4a7c40;
-      }
-
-      textarea.input-field {
-        resize: none;
+      .services-list>section>div {
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .services-list .relative.grid {
-        isolation: isolate;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) !important;
+        overflow: hidden;
       }
 
-      @media (max-width: 1023px) {
-        .services-list > section {
-          padding-top: 32px;
-          padding-bottom: 32px;
-        }
-
-        .services-list > section:last-child {
-          padding-bottom: 72px;
-        }
-
-        .services-list > section > div {
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-
-        .services-list .relative.grid {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) !important;
-          overflow: hidden;
-        }
-
-        .services-list .relative.grid > div:first-child,
-        .services-list .relative.grid > div:nth-child(2) {
-          min-height: 220px;
-        }
-
-        .services-list .relative.grid > div[style] {
-          padding: 32px 24px !important;
-        }
-
-        .services-list
-          > section:nth-child(even)
-          .relative.grid
-          > div:first-child {
-          order: 2;
-        }
-
-        .services-list
-          > section:nth-child(even)
-          .relative.grid
-          > div:nth-child(2) {
-          order: 1;
-        }
-
-        .services-list .relative.grid > div.absolute {
-          top: 110px !important;
-          left: 50% !important;
-          right: auto !important;
-          transform: translate(-50%, -50%) !important;
-        }
-
-        .services-list .relative.grid > div.absolute img {
-          width: min(70vw, 260px);
-          max-height: 200px;
-        }
-
-        .services-list h2 {
-          font-size: clamp(25px, 7vw, 32px);
-          line-height: 1.18;
-        }
-
-        .services-list p {
-          font-size: 14px;
-          line-height: 1.8;
-        }
+      .services-list .relative.grid>div:first-child,
+      .services-list .relative.grid>div:nth-child(2) {
+        min-height: 220px;
       }
 
-      @media (max-width: 520px) {
-        .services-list > section {
-          padding-top: 24px;
-          padding-bottom: 24px;
-        }
-
-        .services-list .relative.grid > div:first-child,
-        .services-list .relative.grid > div:nth-child(2) {
-          min-height: 190px;
-        }
-
-        .services-list .relative.grid > div[style] {
-          padding: 28px 20px !important;
-        }
-
-        .services-list .relative.grid > div.absolute {
-          top: 95px !important;
-        }
-
-        .services-list .relative.grid > div.absolute img {
-          width: min(76vw, 220px);
-          max-height: 170px;
-        }
+      .services-list .relative.grid>div[style] {
+        padding: 32px 24px !important;
       }
-    </style>
-  </head>
 
-  <body class="bg-[#F7F4EA]">
-    <!-- NAVBAR -->
+      .services-list>section:nth-child(even) .relative.grid>div:first-child {
+        order: 2;
+      }
 
-    <header class="fixed top-5 left-0 w-full z-50 px-5">
-      <nav class="max-w-[1410px] mx-auto relative">
+      .services-list>section:nth-child(even) .relative.grid>div:nth-child(2) {
+        order: 1;
+      }
+
+      .services-list .relative.grid>div.absolute {
+        top: 110px !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) !important;
+      }
+
+      .services-list .relative.grid>div.absolute img {
+        width: min(70vw, 260px);
+        max-height: 200px;
+      }
+
+      .services-list h2 {
+        font-size: clamp(25px, 7vw, 32px);
+        line-height: 1.18;
+      }
+
+      .services-list p {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .services-list>section {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+
+      .services-list .relative.grid>div:first-child,
+      .services-list .relative.grid>div:nth-child(2) {
+        min-height: 190px;
+      }
+
+      .services-list .relative.grid>div[style] {
+        padding: 28px 20px !important;
+      }
+
+      .services-list .relative.grid>div.absolute {
+        top: 95px !important;
+      }
+
+      .services-list .relative.grid>div.absolute img {
+        width: min(76vw, 220px);
+        max-height: 170px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#F7F4EA]">
+  <!-- NAVBAR -->
+
+  <header class="fixed top-5 left-0 w-full z-50 px-5">
+    <nav class="max-w-[1410px] mx-auto relative">
+      <div class="rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4">
+        <!-- LOGO -->
+
+        <a href="../../index.html" class="flex flex-col leading-none">
+          <img src="../../assets/Images/Logo.png" class="w-20 sm:w-[128px]" alt="Z EDGE Logo" />
+        </a>
+
+        <!-- CENTER NAV -->
+
         <div
-          class="rounded-full flex items-center justify-between px-4 py-3 sm:px-7 sm:py-4"
-        >
-          <!-- LOGO -->
-
-          <a href="../../index.html" class="flex flex-col leading-none">
-            <img
-              src="../../assets/Images/Logo.png"
-              class="w-20 sm:w-[128px]"
-              alt="Z EDGE Logo"
-            />
+          class="hidden xl:flex items-center gap-2 rounded-full px-6 py-2.5 ml-60 xl:ml-40 2xl:ml-60 border border-[rgba(255,255,255,0.66)] bg-gradient-to-r from-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.30)] backdrop-blur-xl">
+          <a href="../../index.html" class="px-8 py-2 rounded-full text-white text-sm hover:bg-white/10 transition">
+            Home
           </a>
+          <div class="border-l border-white/70 h-6"></div>
 
-          <!-- CENTER NAV -->
+          <!-- DROPDOWN -->
 
-          <div
-            class="hidden xl:flex items-center gap-2 rounded-full px-6 py-2.5 ml-60 xl:ml-40 2xl:ml-60 border border-[rgba(255,255,255,0.66)] bg-gradient-to-r from-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.30)] backdrop-blur-xl"
-          >
-            <a
-              href="../../index.html"
-              class="px-8 py-2 rounded-full text-white text-sm hover:bg-white/10 transition"
-            >
-              Home
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
+          <div class="relative" id="servicesParent">
+            <button onclick="toggleDD()"
+              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1">
+              Services
 
-            <!-- DROPDOWN -->
+              <svg class="w-3.5 h-3.5 mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
 
-            <div class="relative" id="servicesParent">
-              <button
-                onclick="toggleDD()"
-                class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition flex items-center gap-1"
-              >
-                Services
+            <!-- DROPDOWN MENU -->
 
-                <svg
-                  class="w-3.5 h-3.5 mt-px"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              <!-- DROPDOWN MENU -->
-
-              <div class="dropdown-menu" id="servicesDD">
-                <a
-                  href="services.html"
-                  class="dropdown-item font-semibold border-b border-[#e2eeda]"
-                >
-                  All Services
-                </a>
-
-                <a href="personal-counselling.html" class="dropdown-item">
-                  Personal Counselling
-                </a>
-
-                <a href="career-counselling.html" class="dropdown-item">
-                  Career Counselling
-                </a>
-
-                <a href="relationship-counselling.html" class="dropdown-item">
-                  Relationship &amp; Marriage Counselling
-                </a>
-
-                <a href="family-counselling.html" class="dropdown-item">
-                  Family &amp; Parental Counselling
-                </a>
-
-                <a href="mbti-assessment.html" class="dropdown-item">
-                  Personality Assessment – MBTI
-                </a>
-              </div>
-            </div>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="../resources.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              Resources
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="../about-us.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              About Us
-            </a>
-            <div class="border-l border-white/70 h-6"></div>
-            <a
-              href="../our-team.html"
-              class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition"
-            >
-              Our Team
-            </a>
-          </div>
-
-          <!-- CONTACT BUTTON -->
-
-          <a
-            href="../contact-us.html"
-            class="hidden xl:flex bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm"
-          >
-            Contact Us
-          </a>
-
-          <!-- Hamburger Button (Mobile Only) -->
-          <button
-            id="mobileMenuBtn"
-            onclick="toggleMobileMenu()"
-            class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50"
-          >
-            <span class="w-5 h-0.5 bg-white"></span>
-            <span class="w-5 h-0.5 bg-white"></span>
-            <span class="w-5 h-0.5 bg-white"></span>
-          </button>
-        </div>
-
-        <!-- MOBILE MENU DROPDOWN CARD -->
-        <div
-          id="mobileMenu"
-          class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50"
-        >
-          <div class="flex flex-col gap-2">
-            <a
-              href="../../index.html"
-              onclick="toggleMobileMenu()"
-              class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium"
-              >Home</a
-            >
-
-            <!-- Services Accordion -->
-            <div class="flex flex-col">
-              <button
-                onclick="toggleMobileServices()"
-                class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full"
-              >
-                <span>Services</span>
-                <svg
-                  id="mobileServicesArrow"
-                  class="w-4 h-4 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="mobileServicesLinks"
-                class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4"
-              >
-                <a
-                  href="services.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >All Services</a
-                >
-                <a
-                  href="personal-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Personal Counselling</a
-                >
-                <a
-                  href="career-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Career Counselling</a
-                >
-                <a
-                  href="relationship-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Relationship &amp; Marriage Counselling</a
-                >
-                <a
-                  href="family-counselling.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Family &amp; Parental Counselling</a
-                >
-                <a
-                  href="mbti-assessment.html"
-                  class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm"
-                  >Personality Assessment – MBTI</a
-                >
-              </div>
-            </div>
-
-            <a
-              href="../resources.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >Resources</a
-            >
-            <a
-              href="../about-us.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >About Us</a
-            >
-            <a
-              href="../our-team.html"
-              class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium"
-              >Our Team</a
-            >
-          </div>
-          <hr class="border-white/10 my-1" />
-          <a
-            href="../contact-us.html"
-            class="bg-[#6FB646] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#6FB646]/20"
-          >
-            Contact Us
-          </a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- ===== HERO ===== -->
-    <div
-      class="hero-bg flex flex-col items-center justify-center text-center pt-32 pb-14 px-4"
-    >
-      <h1
-        class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-[6px] sm:tracking-widest mb-5"
-      >
-        SERVICES
-      </h1>
-      <p
-        class="text-white/75 text-sm sm:text-base max-w-[95%] sm:max-w-2xl leading-5"
-      >
-        Every journey is different, and so are the challenges that come with it.
-        Our services are designed to support you through moments of uncertainty,
-        growth, and change, offering thoughtful guidance tailored to your unique
-        needs
-      </p>
-    </div>
-
-    <!-- ===== MAIN CONTENT ===== -->
-
-    <section class="services-list">
-      <!-- ===== CARD 1 ===== -->
-      <section class="bg-[#FFF5D5] py-14">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div
-            class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden"
-          >
-            <!-- LEFT BG -->
-            <div class="bg-[#9DB885] min-h-[320px]"></div>
-
-            <!-- RIGHT CONTENT -->
-            <div
-              class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-left: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Career Counselling
-              </h2>
-
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                Find direction, clarity, and confidence in your career path.
-                Whether you’re feeling unsure about your next step, considering
-                a career change, or struggling to align your work with your
-                strengths, our career counselling sessions help you make
-                informed and meaningful decisions. We work with you to
-                understand your interests, strengths, and goals, so you can move
-                forward with clarity and confidence.
-              </p>
-
-              <a
-                href="career-counselling.html"
-                class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]"
-              >
-                Few steps that we follow
-                <span class="text-[18px]">›</span>
+            <div class="dropdown-menu" id="servicesDD">
+              <a href="services.html" class="dropdown-item font-semibold border-b border-[#e2eeda]">
+                All Services
               </a>
-            </div>
 
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/cc.png"
-                class="w-[320px] object-contain"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CARD 2 ===== -->
-      <section class="bg-[#FFF5D5] py-14">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
-            <!-- CONTENT SIDE -->
-            <div
-              class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-right: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              <a href="personal-counselling.html" class="dropdown-item">
                 Personal Counselling
-              </h2>
+              </a>
 
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                A safe space to understand yourself and your experiences. Life
-                can feel overwhelming at times. Whether you're dealing with
-                stress, anxiety, self-doubt, or simply feeling stuck, personal
-                counselling offers a space where you can talk openly and be
-                heard without judgment. Together, we explore your thoughts and
-                emotions, helping you gain clarity, build resilience, and move
-                forward with greater ease.
-              </p>
+              <a href="career-counselling.html" class="dropdown-item">
+                Career Counselling
+              </a>
 
-              <a
-                href="personal-counselling.html"
-                class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]"
-              >
-                Understand our approach
-                <span class="text-[18px]">›</span>
+              <a href="relationship-counselling.html" class="dropdown-item">
+                Relationship &amp; Marriage Counselling
+              </a>
+
+              <a href="family-counselling.html" class="dropdown-item">
+                Family &amp; Parental Counselling
+              </a>
+
+              <a href="mbti-assessment.html" class="dropdown-item">
+                Personality Assessment – MBTI
               </a>
             </div>
+          </div>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="../resources.html" class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Resources
+          </a>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="../about-us.html" class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            About Us
+          </a>
+          <div class="border-l border-white/70 h-6"></div>
+          <a href="../our-team.html" class="px-7 py-2 rounded-full text-white/85 text-sm hover:bg-white/10 transition">
+            Our Team
+          </a>
+        </div>
 
-            <!-- RIGHT BG -->
-            <div class="bg-[#8FA776] min-h-[320px]"></div>
+        <!-- CONTACT BUTTON -->
 
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/pc.png"
-                class="w-[290px] object-contain"
-                alt=""
-              />
+        <a href="../contact-us.html"
+          class="hidden xl:flex bg-[#6FB646] hover:bg-[#76B438] transition text-white px-7 py-3 rounded-full text-sm">
+          Contact Us
+        </a>
+
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+          class="xl:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none bg-white/10 hover:bg-white/20 transition rounded-full z-50">
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-5 h-0.5 bg-white"></span>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU DROPDOWN CARD -->
+      <div id="mobileMenu"
+        class="xl:hidden absolute top-[calc(100%+12px)] left-0 right-0 bg-[#1C2218]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 mt-3 shadow-2xl gap-4 z-50">
+        <div class="flex flex-col gap-2">
+          <a href="../../index.html" onclick="toggleMobileMenu()"
+            class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium">Home</a>
+
+          <!-- Services Accordion -->
+          <div class="flex flex-col">
+            <button onclick="toggleMobileServices()"
+              class="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition text-base font-medium flex items-center justify-between w-full">
+              <span>Services</span>
+              <svg id="mobileServicesArrow" class="w-4 h-4 transition-transform duration-200" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobileServicesLinks" class="hidden flex-col pl-6 gap-1.5 mt-1 border-l border-white/10 ml-4">
+              <a href="services.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">All
+                Services</a>
+              <a href="personal-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personal
+                Counselling</a>
+              <a href="career-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Career
+                Counselling</a>
+              <a href="relationship-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Relationship
+                &amp; Marriage Counselling</a>
+              <a href="family-counselling.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Family
+                &amp; Parental Counselling</a>
+              <a href="mbti-assessment.html"
+                class="px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition text-sm">Personality
+                Assessment – MBTI</a>
             </div>
           </div>
+
+          <a href="../resources.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Resources</a>
+          <a href="../about-us.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">About
+            Us</a>
+          <a href="../our-team.html"
+            class="px-4 py-3 rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition text-base font-medium">Our
+            Team</a>
         </div>
-      </section>
+        <hr class="border-white/10 my-1" />
+        <a href="../contact-us.html"
+          class="bg-[#6FB646] hover:bg-[#76B438] text-center text-white py-3 px-6 rounded-full text-base font-medium transition shadow-lg shadow-[#6FB646]/20">
+          Contact Us
+        </a>
+      </div>
+    </nav>
+  </header>
 
-      <!-- ===== CARD 3 ===== -->
-      <section class="bg-[#FFFCF3] py-14">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div
-            class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden"
-          >
-            <!-- LEFT BG -->
-            <div class="bg-[#9DB885] min-h-[320px]"></div>
+  <!-- ===== HERO ===== -->
+  <div class="hero-bg flex flex-col items-center justify-center text-center pt-32 pb-14 px-4">
+    <h1
+      class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-[6px] sm:tracking-widest mb-5">
+      SERVICES
+    </h1>
+    <p class="text-white/75 text-sm sm:text-base max-w-[95%] sm:max-w-2xl leading-5">
+      Every journey is different, and so are the challenges that come with it.
+      Our services are designed to support you through moments of uncertainty,
+      growth, and change, offering thoughtful guidance tailored to your unique
+      needs
+    </p>
+  </div>
 
-            <!-- RIGHT CONTENT -->
-            <div
-              class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-left: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Relationship & Marriage Counselling
-              </h2>
+  <!-- ===== MAIN CONTENT ===== -->
 
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                Strengthen connection, communication, and understanding.
-                Relationships can be deeply fulfilling, but also challenging.
-                Whether you're facing conflicts, communication gaps, or
-                emotional distance, we help you navigate these complexities with
-                care and understanding. Our sessions focus on improving
-                communication, rebuilding trust, and fostering healthier, more
-                meaningful connections.
-              </p>
+  <section class="services-list">
+    <!-- ===== CARD 1 ===== -->
+    <section class="bg-[#FFF5D5] py-14">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden">
+          <!-- LEFT BG -->
+          <div class="bg-[#9DB885] min-h-[320px]"></div>
 
-              <a
-                href="relationship-counselling.html"
-                class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]"
-              >
-                Understand our approach
-                <span class="text-[18px]">›</span>
-              </a>
-            </div>
+          <!-- RIGHT CONTENT -->
+          <div class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center" style="padding-left: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Career Counselling
+            </h2>
 
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/rmc.png"
-                class="w-[320px] object-contain"
-                alt=""
-              />
-            </div>
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              Find direction, clarity, and confidence in your career path.
+              Whether you’re feeling unsure about your next step, considering
+              a career change, or struggling to align your work with your
+              strengths, our career counselling sessions help you make
+              informed and meaningful decisions. We work with you to
+              understand your interests, strengths, and goals, so you can move
+              forward with clarity and confidence.
+            </p>
+
+            <a href="career-counselling.html"
+              class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]">
+              Few steps that we follow
+              <span class="text-[18px]">›</span>
+            </a>
+          </div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/cc.png" class="w-[320px] object-contain" alt="" />
           </div>
         </div>
-      </section>
-
-      <!-- ===== CARD 4 ===== -->
-      <section class="bg-[#FFFCF3] py-10">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
-            <!-- CONTENT SIDE -->
-            <div
-              class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-right: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Family & Parental Counselling
-              </h2>
-
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                Support for healthier family dynamics and stronger bonds.
-                Families go through phases of change, conflict, and growth.
-                Whether you're navigating parenting challenges, generational
-                differences, or family tensions, we provide guidance to help you
-                create a more balanced and supportive environment. Our approach
-                focuses on understanding perspectives, improving communication,
-                and building stronger relationships within the family.
-              </p>
-
-              <a
-                href="family-counselling.html"
-                class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]"
-              >
-                Understand our approach
-                <span class="text-[18px]">›</span>
-              </a>
-            </div>
-
-            <!-- RIGHT BG -->
-            <div class="bg-[#8FA776] min-h-[320px]"></div>
-
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/fpc.png"
-                class="w-[320px] object-contain"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CARD 5 ===== -->
-      <section class="bg-[#FFF5D5] py-14">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div
-            class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden"
-          >
-            <!-- LEFT BG -->
-            <div class="bg-[#9DB885] min-h-[320px]"></div>
-
-            <!-- RIGHT CONTENT -->
-            <div
-              class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-left: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Workshops & Corporate Training
-              </h2>
-
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                Empowering individuals and teams through awareness and growth.
-                We offer workshops and training programs designed to support
-                emotional well-being, communication, leadership, and personal
-                development within organisations. Through interactive sessions,
-                we help individuals and teams build self-awareness, improve
-                collaboration, and create healthier, more productive work
-                environments.
-              </p>
-            </div>
-
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/cc.png"
-                class="w-[300px] object-contain"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CARD 6 ===== -->
-      <section class="bg-[#FFF5D5] py-10">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
-            <!-- CONTENT SIDE -->
-            <div
-              class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-right: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Personality Assessment (MBTI)
-              </h2>
-
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                Understand yourself better through deeper self-awareness. The
-                MBTI (Myers-Briggs Type Indicator) assessment helps you gain
-                insight into your personality, preferences, and decision-making
-                style. By understanding how you think, communicate, and respond
-                to situations, you can make more aligned choices in your career,
-                relationships, and personal growth.
-              </p>
-
-              <a
-                href="mbti-assessment.html"
-                class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]"
-              >
-                Few steps that we follow
-                <span class="text-[18px]">›</span>
-              </a>
-            </div>
-
-            <!-- RIGHT BG -->
-            <div class="bg-[#8FA776] min-h-[320px]"></div>
-
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/pc.png"
-                class="w-[280px] object-contain"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===== CARD 7 ===== -->
-      <section class="bg-[#FFFCF3] py-16 pb-[120px]">
-        <div class="max-w-[1240px] mx-auto px-5">
-          <!-- WRAPPER -->
-          <div
-            class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden"
-          >
-            <!-- LEFT BG -->
-            <div class="bg-[#9DB885] min-h-[320px]"></div>
-
-            <!-- RIGHT CONTENT -->
-            <div
-              class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center"
-              style="padding-left: 204px"
-            >
-              <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
-                Heal Your Life Programs
-              </h2>
-
-              <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
-                A journey of self-discovery, healing, and transformation. Based
-                on powerful personal development principles, these programs are
-                designed to help you release limiting beliefs, build self-love,
-                and create positive change in your life. Through guided sessions
-                and exercises, you’ll develop a deeper connection with yourself
-                and move toward a more fulfilling and empowered life.
-              </p>
-            </div>
-
-            <!-- CENTER IMAGE -->
-            <div
-              class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-            >
-              <img
-                src="../../assets/Images/Services-Ings/excercise.png"
-                class="w-[320px] object-contain"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="relative">
-      <div class="absolute inset-0">
-        <img
-          src="../../assets/Images/homePageImages/Hero.jpg"
-          class="w-full h-full object-cover"
-        />
+    <!-- ===== CARD 2 ===== -->
+    <section class="bg-[#FFF5D5] py-14">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
+          <!-- CONTENT SIDE -->
+          <div class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center" style="padding-right: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Personal Counselling
+            </h2>
 
-        <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
-      </div>
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              A safe space to understand yourself and your experiences. Life
+              can feel overwhelming at times. Whether you're dealing with
+              stress, anxiety, self-doubt, or simply feeling stuck, personal
+              counselling offers a space where you can talk openly and be
+              heard without judgment. Together, we explore your thoughts and
+              emotions, helping you gain clarity, build resilience, and move
+              forward with greater ease.
+            </p>
 
-      <div
-        class="relative max-w-[1540px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]"
-      >
-        <div
-          class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden"
-        >
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16"
-          >
-            <div>
-              <img
-                src="../../assets/Images/Logo.png"
-                class="w-[130px] sm:w-[159px]"
-              />
-
-              <p
-                class="text-white/75 text-[13px] sm:text-[14px] leading-7 sm:leading-[1.9] mt-5 max-w-sm"
-              >
-                A space where you can feel truly seen and make sense of what
-                you're going through.
-              </p>
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Quick Links</span>
-              <a href="../about-us.html" class="hover:text-[#89D34A] transition"
-                >About Us</a
-              >
-              <a href="services.html" class="hover:text-[#89D34A] transition"
-                >Services</a
-              >
-              <a
-                href="../../index.html#faq"
-                class="hover:text-[#89D34A] transition"
-                >FAQs</a
-              >
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Important Links</span>
-              <a href="#" class="hover:text-[#89D34A] transition"
-                >Terms & Conditions</a
-              >
-              <a href="#" class="hover:text-[#89D34A] transition"
-                >Privacy Policy</a
-              >
-            </div>
-
-            <div
-              class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col"
-            >
-              <span class="font-semibold text-white">Help Center</span>
-              <a
-                href="../contact-us.html"
-                class="hover:text-[#89D34A] transition"
-                >Contact Us</a
-              >
-              <a
-                href="tel:+918552811537"
-                class="hover:text-[#89D34A] transition"
-                >📞855-281-1537</a
-              >
-              <a
-                href="mailto:info@z-edge.in"
-                class="hover:text-[#89D34A] transition"
-                >✉ info@z-edge.in</a
-              >
-            </div>
+            <a href="personal-counselling.html"
+              class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]">
+              Understand our approach
+              <span class="text-[18px]">›</span>
+            </a>
           </div>
 
-          <div
-            class="border-t border-white/10 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-white/60 text-[12px] sm:text-[13px]"
-          >
-            © 2026 All rights reserved.
+          <!-- RIGHT BG -->
+          <div class="bg-[#8FA776] min-h-[320px]"></div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/pc.png" class="w-[290px] object-contain" alt="" />
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- ===== BOOKING MODAL ===== -->
-    <div class="modal-overlay" id="bookingModal">
+    <!-- ===== CARD 3 ===== -->
+    <section class="bg-[#FFFCF3] py-14">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden">
+          <!-- LEFT BG -->
+          <div class="bg-[#9DB885] min-h-[320px]"></div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center" style="padding-left: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Relationship & Marriage Counselling
+            </h2>
+
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              Strengthen connection, communication, and understanding.
+              Relationships can be deeply fulfilling, but also challenging.
+              Whether you're facing conflicts, communication gaps, or
+              emotional distance, we help you navigate these complexities with
+              care and understanding. Our sessions focus on improving
+              communication, rebuilding trust, and fostering healthier, more
+              meaningful connections.
+            </p>
+
+            <a href="relationship-counselling.html"
+              class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]">
+              Understand our approach
+              <span class="text-[18px]">›</span>
+            </a>
+          </div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/rmc.png" class="w-[320px] object-contain" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARD 4 ===== -->
+    <section class="bg-[#FFFCF3] py-10">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
+          <!-- CONTENT SIDE -->
+          <div class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center" style="padding-right: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Family & Parental Counselling
+            </h2>
+
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              Support for healthier family dynamics and stronger bonds.
+              Families go through phases of change, conflict, and growth.
+              Whether you're navigating parenting challenges, generational
+              differences, or family tensions, we provide guidance to help you
+              create a more balanced and supportive environment. Our approach
+              focuses on understanding perspectives, improving communication,
+              and building stronger relationships within the family.
+            </p>
+
+            <a href="family-counselling.html"
+              class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]">
+              Understand our approach
+              <span class="text-[18px]">›</span>
+            </a>
+          </div>
+
+          <!-- RIGHT BG -->
+          <div class="bg-[#8FA776] min-h-[320px]"></div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/fpc.png" class="w-[320px] object-contain" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARD 5 ===== -->
+    <section class="bg-[#FFF5D5] py-14">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden">
+          <!-- LEFT BG -->
+          <div class="bg-[#9DB885] min-h-[320px]"></div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center" style="padding-left: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Workshops & Corporate Training
+            </h2>
+
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              Empowering individuals and teams through awareness and growth.
+              We offer workshops and training programs designed to support
+              emotional well-being, communication, leadership, and personal
+              development within organisations. Through interactive sessions,
+              we help individuals and teams build self-awareness, improve
+              collaboration, and create healthier, more productive work
+              environments.
+            </p>
+          </div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/cc.png" class="w-[300px] object-contain" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARD 6 ===== -->
+    <section class="bg-[#FFF5D5] py-10">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid lg:grid-cols-[80%_20%] overflow-hidden">
+          <!-- CONTENT SIDE -->
+          <div class="bg-[#E2F1CA] pr-10 md:px-16 py-14 flex flex-col justify-center" style="padding-right: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Personality Assessment (MBTI)
+            </h2>
+
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              Understand yourself better through deeper self-awareness. The
+              MBTI (Myers-Briggs Type Indicator) assessment helps you gain
+              insight into your personality, preferences, and decision-making
+              style. By understanding how you think, communicate, and respond
+              to situations, you can make more aligned choices in your career,
+              relationships, and personal growth.
+            </p>
+
+            <a href="mbti-assessment.html" class="inline-flex items-center gap-2 text-[#1D4008] text-[16px] font-[700]">
+              Few steps that we follow
+              <span class="text-[18px]">›</span>
+            </a>
+          </div>
+
+          <!-- RIGHT BG -->
+          <div class="bg-[#8FA776] min-h-[320px]"></div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute right-[20%] top-1/2 translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/pc.png" class="w-[280px] object-contain" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARD 7 ===== -->
+    <section class="bg-[#FFFCF3] py-16 pb-[120px]">
+      <div class="max-w-[1240px] mx-auto px-5">
+        <!-- WRAPPER -->
+        <div class="relative grid grid-cols-1 lg:grid-cols-[20%_80%] overflow-hidden">
+          <!-- LEFT BG -->
+          <div class="bg-[#9DB885] min-h-[320px]"></div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="bg-[#DDE6D0] pl-10 md:px-16 py-14 flex flex-col justify-center" style="padding-left: 204px">
+            <h2 class="text-[#5B7645] text-[34px] font-display mb-5">
+              Heal Your Life Programs
+            </h2>
+
+            <p class="text-[#495248] text-[16px] leading-[26px] mb-5">
+              A journey of self-discovery, healing, and transformation. Based
+              on powerful personal development principles, these programs are
+              designed to help you release limiting beliefs, build self-love,
+              and create positive change in your life. Through guided sessions
+              and exercises, you’ll develop a deeper connection with yourself
+              and move toward a more fulfilling and empowered life.
+            </p>
+          </div>
+
+          <!-- CENTER IMAGE -->
+          <div class="absolute left-[20%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <img src="../../assets/Images/Services-Ings/excercise.png" class="w-[320px] object-contain" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="relative">
+    <div class="absolute inset-0">
+      <img src="../../assets/Images/homePageImages/Hero.jpg" class="w-full h-full object-cover" />
+
+      <div class="absolute inset-0 bg-[#2A3528]/70 backdrop-blur-[8px]"></div>
+    </div>
+
+    <div class="relative max-w-[1540px] mx-auto px-5 sm:px-6 lg:px-8 py-14 sm:py-[70px]">
       <div
-        style="
+        class="border border-[rgba(255,255,255,0.18)] rounded-[10px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08),rgba(255,255,255,0.12))] backdrop-blur-xl p-6 sm:p-10 lg:p-12 overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16">
+          <div>
+            <img src="../../assets/Images/Logo.png" class="w-[130px] sm:w-[159px]" />
+
+            <p class="text-white/75 text-[13px] sm:text-[14px] leading-7 sm:leading-[1.9] mt-5 max-w-sm">
+              A space where you can feel truly seen and make sense of what
+              you're going through.
+            </p>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Quick Links</span>
+            <a href="../about-us.html" class="hover:text-[#89D34A] transition">About Us</a>
+            <a href="services.html" class="hover:text-[#89D34A] transition">Services</a>
+            <a href="../../index.html#faq" class="hover:text-[#89D34A] transition">FAQs</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Important Links</span>
+            <a href="#" class="hover:text-[#89D34A] transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-[#89D34A] transition">Privacy Policy</a>
+          </div>
+
+          <div class="text-white/75 text-[14px] space-y-3 sm:space-y-4 flex flex-col">
+            <span class="font-semibold text-white">Help Center</span>
+            <a href="../contact-us.html" class="hover:text-[#89D34A] transition">Contact Us</a>
+            <a href="tel:+918552811537" class="hover:text-[#89D34A] transition">📞855-281-1537</a>
+            <a href="mailto:info@z-edge.in" class="hover:text-[#89D34A] transition">✉ info@z-edge.in</a>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 mt-10 sm:mt-12 pt-6 sm:pt-8 text-center text-white/60 text-[12px] sm:text-[13px]">
+          © 2026 All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div style="
           background: #fdf8ee;
           border-radius: 18px;
           max-width: 560px;
@@ -1015,11 +795,8 @@
           position: relative;
           max-height: 92vh;
           overflow-y: auto;
-        "
-      >
-        <button
-          onclick="closeModal()"
-          style="
+        ">
+      <button onclick="closeModal()" style="
             position: absolute;
             top: 14px;
             right: 16px;
@@ -1029,74 +806,50 @@
             font-size: 20px;
             cursor: pointer;
             line-height: 1;
-          "
-        >
-          ✕
+          ">
+        ✕
+      </button>
+      <h3 class="font-display text-2xl font-bold text-green-dark mb-5">
+        Book Your Appointment
+      </h3>
+      <div class="flex gap-2 flex-wrap mb-6" id="chipRow">
+        <button class="chip active" onclick="chipSelect(this)">
+          Personal counselling
         </button>
-        <h3 class="font-display text-2xl font-bold text-green-dark mb-5">
-          Book Your Appointment
-        </h3>
-        <div class="flex gap-2 flex-wrap mb-6" id="chipRow">
-          <button class="chip active" onclick="chipSelect(this)">
-            Personal counselling
-          </button>
-          <button class="chip" onclick="chipSelect(this)">
-            Career counselling
-          </button>
-          <button class="chip" onclick="chipSelect(this)">
-            Relationship &amp; Marriage Counselling
-          </button>
-          <button class="chip" onclick="chipSelect(this)">
-            Personality Assessment
-          </button>
-          <button class="chip" onclick="chipSelect(this)">
-            Family &amp; Parental
-          </button>
-        </div>
-        <div class="grid grid-cols-2 gap-3 mb-3">
-          <input class="input-field" type="text" placeholder="Name*" />
-          <input
-            class="input-field"
-            type="email"
-            placeholder="Email Address*"
-          />
-        </div>
-        <div class="mb-3">
-          <input
-            class="input-field"
-            style="max-width: calc(50% - 6px)"
-            type="tel"
-            placeholder="Phone Number*"
-          />
-        </div>
-        <textarea
-          class="input-field mb-2"
-          rows="4"
-          placeholder="Write your query"
-        ></textarea>
-        <p class="text-gray-400 text-xs mb-5">
-          We'll get in touch with you at earliest
-        </p>
-        <button
-          class="bg-green-brand hover:bg-green-dark text-white text-sm font-medium px-7 py-3 rounded-full flex items-center gap-2 transition-colors"
-        >
-          Request Appointment
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
+        <button class="chip" onclick="chipSelect(this)">
+          Career counselling
+        </button>
+        <button class="chip" onclick="chipSelect(this)">
+          Relationship &amp; Marriage Counselling
+        </button>
+        <button class="chip" onclick="chipSelect(this)">
+          Personality Assessment
+        </button>
+        <button class="chip" onclick="chipSelect(this)">
+          Family &amp; Parental
         </button>
       </div>
+      <div class="grid grid-cols-2 gap-3 mb-3">
+        <input class="input-field" type="text" placeholder="Name*" />
+        <input class="input-field" type="email" placeholder="Email Address*" />
+      </div>
+      <div class="mb-3">
+        <input class="input-field" style="max-width: calc(50% - 6px)" type="tel" placeholder="Phone Number*" />
+      </div>
+      <textarea class="input-field mb-2" rows="4" placeholder="Write your query"></textarea>
+      <p class="text-gray-400 text-xs mb-5">
+        We'll get in touch with you at earliest
+      </p>
+      <button
+        class="bg-green-brand hover:bg-green-dark text-white text-sm font-medium px-7 py-3 rounded-full flex items-center gap-2 transition-colors">
+        Request Appointment
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
     </div>
-    <script src="../../assets/js/main.js"></script>
-  </body>
+  </div>
+  <script src="../../assets/js/main.js"></script>
+</body>
+
 </html>
