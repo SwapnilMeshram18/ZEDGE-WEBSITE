@@ -190,7 +190,7 @@ textarea.input-field {
 }
 
 .book-btn {
-  background: #4a7c40;
+  background: #6FB646;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -206,7 +206,8 @@ textarea.input-field {
 }
 
 .book-btn:hover {
-  background: #2d4a28;
+  /* background: #2d4a28; */
+  background: #76B438;
 }
 
 .service-main {
