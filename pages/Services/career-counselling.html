@@ -28,158 +28,11 @@
             no-repeat;
         min-height: 500px;
       }
-      .step-num {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: #eaf2e3;
-        border: 2px solid #6aaa50;
-        color: #4a7c40;
-        font-size: 13px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      .step-vline {
-        width: 2px;
-        background: #d4e8c4;
-        flex: 1;
-        min-height: 40px;
-        margin: 0 auto;
-      }
-      .tag-label {
-        font-size: 10.5px;
-        letter-spacing: 0.13em;
-        color: #4a7c40;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-      .tag-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 7px;
-      }
-      .tag-row::after {
-        content: "";
-        display: block;
-        width: 55px;
-        height: 1px;
-        background: #8aba7a;
-        opacity: 0.55;
-      }
-      .step-border {
-        border-left: 2px solid #c8dbbf;
-        padding-left: 16px;
-      }
-      .reminder-box {
-        background: linear-gradient(135deg, #eaf2e3 50%, #d6eac4 100%);
-        border-radius: 14px;
-        overflow: hidden;
-      }
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: calc(100% + 10px);
-        left: 50%;
-        transform: translateX(-50%);
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
-        border: 1px solid #e2eeda;
-        min-width: 248px;
-        z-index: 300;
-        padding: 8px 0;
-      }
-      .dropdown-menu.open {
-        display: block;
-      }
-      .dropdown-item {
-        display: block;
-        padding: 10px 18px;
-        font-size: 13px;
-        color: #2d4a28;
-        text-decoration: none;
-        transition: background 0.15s;
-      }
-      .dropdown-item:hover,
-      .dropdown-item.active-link {
-        background: #eaf2e3;
-        color: #4a7c40;
-        font-weight: 500;
-      }
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(4px);
-        z-index: 500;
-        align-items: center;
-        justify-content: center;
-        padding: 16px;
-      }
-      .modal-overlay.open {
-        display: flex;
-      }
-      .chip {
-        border: 1.5px solid #c8dbbf;
-        border-radius: 999px;
-        padding: 6px 15px;
-        font-size: 12.5px;
-        cursor: pointer;
-        color: #2d4a28;
-        white-space: nowrap;
-        transition: all 0.18s;
-        background: #fff;
-      }
-      .chip:hover,
-      .chip.active {
-        background: #4a7c40;
-        color: #fff;
-        border-color: #4a7c40;
-      }
-      .input-field {
-        border: 1.5px solid #d4e8c4;
-        border-radius: 10px;
-        padding: 10px 14px;
-        font-size: 13px;
-        background: #fff;
-        width: 100%;
-        outline: none;
-        transition: border 0.2s;
-      }
-      .input-field:focus {
-        border-color: #4a7c40;
-      }
-      textarea.input-field {
-        resize: none;
-      }
-      .book-btn {
-        background: #6FB646;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 500;
-        padding: 11px 26px;
-        border-radius: 999px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        border: none;
-        cursor: pointer;
-        transition: background 0.2s;
-        text-decoration: none;
-      }
-      .book-btn:hover {
-        background: #76B438;
-      }
       .career-main {
-        max-width: 1040px;
-        margin: 0 auto;
-        padding: 52px 28px 60px;
+        max-width:;
+        /* margin: 0 auto; */
+        padding: 52px 68px 60px;
+        background:#FFFCF3;
       }
       .career-back-link {
         display: inline-flex;
@@ -206,6 +59,7 @@
         flex-direction: column;
         align-items: center;
         min-width: 34px;
+        margin-top: 30px;
       }
       .career-step-content {
         padding-bottom: 40px;
@@ -215,15 +69,16 @@
         padding-bottom: 0;
       }
       .career-step-title {
-        font-size: 22px;
+        font-size: 24px;
         font-weight: 700;
         color: #1a2a18;
         margin-bottom: 12px;
         line-height: 1.25;
       }
       .career-step-copy {
-        color: #555;
-        font-size: 13.5px;
+        color: #000000;
+        font-size: 18px;
+        
         line-height: 1.75;
       }
       .career-book-actions {
@@ -550,7 +405,7 @@
       <div class="career-step">
         <div class="career-step-marker">
           <div class="step-num">1</div>
-          <div class="step-vline"></div>
+          <div class="step-vline " ></div>
         </div>
         <div class="career-step-content">
           <div class="tag-row">
@@ -559,14 +414,12 @@
           <h3 class="font-display career-step-title">
             We start with a real conversation
           </h3>
-          <div class="step-border">
-            <div class="career-step-copy">
+            <div class="career-step-copy lg:pr-[102px] xl:pr-[502px] 2xl:pr-[802px]">
               Before any assessment or advice, we listen. In your first session,
               we create a calm, unhurried space for you to share where you are
               right now — what's working, what isn't, and what's been weighing
               on you. There's no agenda to rush through. We want to understand
               you as a whole person, not just your CV.
-            </div>
           </div>
         </div>
       </div>
@@ -582,15 +435,13 @@
           <h3 class="font-display career-step-title">
             Mapping your strengths, values &amp; interests
           </h3>
-          <div class="step-border">
-            <div class="career-step-copy">
+            <div class="career-step-copy lg:pr-[102px] xl:pr-[502px] 2xl:pr-[802px]">
               Using structured reflection exercises and, where useful, validated
               assessment tools, we help you get a clearer picture of who you are
               professionally. We explore what genuinely energises you, what
               you're naturally good at, and what kind of work environment lets
               you thrive, not just survive. Many clients are surprised by what
               this reveals.
-            </div>
           </div>
         </div>
       </div>
@@ -604,8 +455,7 @@
           <h3 class="font-display career-step-title">
             Exploring what's actually possible for you
           </h3>
-          <div class="step-border">
-            <div class="career-step-copy">
+            <div class="career-step-copy lg:pr-[102px] xl:pr-[502px] 2xl:pr-[802px]">
               This is where we expand the horizon. Together, we look at career
               options, industries, and roles that align with your strengths and
               values — including paths you may not have considered yet. We help
@@ -613,7 +463,6 @@
               challenge assumptions that may be keeping you stuck. No option is
               too big or too unconventional to explore.
             </div>
-          </div>
         </div>
       </div>
       <div class="career-step">
@@ -628,8 +477,7 @@
           <h3 class="font-display career-step-title">
             Making sense of your options, without the overwhelm
           </h3>
-          <div class="step-border">
-            <div class="career-step-copy">
+            <div class="career-step-copy lg:pr-[102px] xl:pr-[502px] 2xl:pr-[802px]">
               Having options is only helpful if you can actually decide. We work
               through the practical and emotional sides of your choices —
               weighing trade-offs, addressing fears, and cutting through the
@@ -637,7 +485,6 @@
               your own clarity, so the decision you make is one you genuinely
               own and believe in.
             </div>
-          </div>
         </div>
       </div>
       <div class="career-step">
@@ -651,8 +498,7 @@
           <h3 class="font-display career-step-title">
             A clear, honest plan for what comes next
           </h3>
-          <div class="step-border">
-            <div class="career-step-copy">
+            <div class="career-step-copy lg:pr-[102px] xl:pr-[502px] 2xl:pr-[802px]">
               Clarity without action stays a feeling. We help you build a
               concrete, realistic plan — broken into steps that feel manageable,
               not overwhelming. Whether that's updating your skills, having a
@@ -660,10 +506,9 @@
               next three moves together. You leave with direction, not just
               insight.
             </div>
-          </div>
         </div>
       </div>
-      <div class="career-book-actions">
+      <div class="career-book-actions mb-28">
         <button onclick="openModal('career')" class="book-btn">
           Book a session
           <svg
@@ -685,7 +530,7 @@
 
     <!-- ===== FOOTER ===== -->
 
-    <footer class="relative mt-10">
+    <footer class="relative ">
       <div class="absolute inset-0">
         <img
           src="../../assets/Images/homePageImages/Hero.jpg"
