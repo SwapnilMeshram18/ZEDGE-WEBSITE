@@ -42,7 +42,11 @@ function closeModal() {
 
 function chipSelect(el) {
   if (el.classList.contains("contact-chip")) {
-    el.classList.toggle("active");
+    const chipGroup = el.parentElement || document;
+    chipGroup.querySelectorAll(".contact-chip").forEach(function (c) {
+      c.classList.remove("active");
+    });
+    el.classList.add("active");
     return;
   }
 
@@ -299,7 +303,6 @@ function playVideo(button) {
   video.play();
 }
 
-
 function setupHorizontalCarousel(sliderId, prevId, nextId, cardSelector) {
   const slider = document.getElementById(sliderId);
   const prev = document.getElementById(prevId);
@@ -345,6 +348,173 @@ setupHorizontalCarousel(
   ".youtube-card",
 );
 
+const INQUIRY_API_URL = "http://localhost:5000/send-inquiry";
+
+function getActiveChipText(container) {
+  const activeChip = container.querySelector(
+    ".chip.active, .contact-chip.active",
+  );
+  return activeChip ? activeChip.textContent.trim() : "";
+}
+
+function getFieldValue(container, selector) {
+  const field = container.querySelector(selector);
+  return field ? field.value.trim() : "";
+}
+
+function setButtonLoading(button, isLoading) {
+  if (!button) return;
+
+  if (isLoading) {
+    button.dataset.originalHtml = button.innerHTML;
+    button.disabled = true;
+    button.style.opacity = "0.75";
+    button.style.cursor = "not-allowed";
+    button.textContent = "Sending...";
+    return;
+  }
+
+  button.disabled = false;
+  button.style.opacity = "";
+  button.style.cursor = "";
+  if (button.dataset.originalHtml) {
+    button.innerHTML = button.dataset.originalHtml;
+  }
+}
+
+function isValidInquiry(data) {
+  if (!data.name || !data.email || !data.phone) {
+    alert("Please fill name, email, and phone number.");
+    return false;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    alert("Please enter a valid email address.");
+    return false;
+  }
+
+  return true;
+}
+
+async function sendInquiry(data, button, onSuccess) {
+  if (!isValidInquiry(data)) return;
+
+  setButtonLoading(button, true);
+
+  try {
+    const response = await fetch(INQUIRY_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Failed to send inquiry.");
+    }
+
+    alert("Inquiry sent successfully! We will contact you shortly.");
+    if (typeof onSuccess === "function") onSuccess();
+  } catch (err) {
+    console.error(err);
+    alert(
+      `Unable to send inquiry. ${
+        err.message || "Please make sure the backend server is running."
+      }`,
+    );
+  } finally {
+    setButtonLoading(button, false);
+  }
+}
+
+function setupInquiryForm() {
+  const form = document.getElementById("inquiryForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      source: "Contact page inquiry form",
+      service: getActiveChipText(form) || "General inquiry",
+      name: getFieldValue(form, "#name"),
+      email: getFieldValue(form, "#email"),
+      phone: getFieldValue(form, "#phone"),
+      message: getFieldValue(form, "#message"),
+    };
+
+    sendInquiry(data, form.querySelector("[type='submit']"), function () {
+      form.reset();
+      const firstChip = form.querySelector(".contact-chip");
+      if (firstChip) chipSelect(firstChip);
+    });
+  });
+}
+
+function setupHomepageContactForm() {
+  const form = document.querySelector("#contact form");
+  if (!form || form.id === "inquiryForm") return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      source: "Homepage contact form",
+      service: "General inquiry",
+      name: getFieldValue(form, "input[type='text']"),
+      email: getFieldValue(form, "input[type='email']"),
+      phone: getFieldValue(form, "input[type='tel']"),
+      message: getFieldValue(form, "textarea"),
+    };
+
+    sendInquiry(data, form.querySelector("button"), function () {
+      form.reset();
+    });
+  });
+}
+
+function setupBookingModalForm() {
+  const modal = document.getElementById("bookingModal");
+  if (!modal) return;
+
+  const submitButton =
+    modal.querySelector(".book-btn") ||
+    Array.from(modal.querySelectorAll("button")).find(function (button) {
+      return button.textContent
+        .trim()
+        .toLowerCase()
+        .includes("request appointment");
+    });
+
+  if (!submitButton) return;
+
+  submitButton.setAttribute("type", "button");
+  submitButton.addEventListener("click", function () {
+    const data = {
+      source: "Book appointment modal",
+      service: getActiveChipText(modal) || "General counselling",
+      name: getFieldValue(modal, "input[type='text']"),
+      email: getFieldValue(modal, "input[type='email']"),
+      phone: getFieldValue(modal, "input[type='tel']"),
+      message: getFieldValue(modal, "textarea"),
+    };
+
+    sendInquiry(data, submitButton, function () {
+      modal.querySelectorAll("input, textarea").forEach(function (field) {
+        field.value = "";
+      });
+      closeModal();
+    });
+  });
+}
+
+setupInquiryForm();
+setupHomepageContactForm();
+setupBookingModalForm();
+
 function setupServicesAccordion() {
   const accordion = document.getElementById("servicesAccordion");
   if (!accordion) return;
@@ -367,18 +537,22 @@ function setupServicesAccordion() {
           "bg-[#DDE5CF]",
           "text-[#5D7A4E]",
           "min-h-[140px]",
-          "sm:min-h-[220px]"
+          "sm:min-h-[220px]",
         );
         card.classList.add(
           "lg:flex-[1.1]",
           "bg-[#95AE7E]",
           "text-white",
-          "min-h-[420px]"
+          "min-h-[420px]",
         );
 
         // Header styling
         if (header) {
-          header.classList.remove("bg-[#C8D4B6]", "justify-center", "text-[#5D7A4E]");
+          header.classList.remove(
+            "bg-[#C8D4B6]",
+            "justify-center",
+            "text-[#5D7A4E]",
+          );
           header.classList.add("bg-[#A8BE95]", "px-10", "text-white");
         }
 
@@ -390,7 +564,11 @@ function setupServicesAccordion() {
 
         // Expanded content
         if (expanded) {
-          expanded.classList.remove("hidden", "opacity-0", "pointer-events-none");
+          expanded.classList.remove(
+            "hidden",
+            "opacity-0",
+            "pointer-events-none",
+          );
           expanded.classList.add("flex", "opacity-100");
         }
       } else {
@@ -401,25 +579,33 @@ function setupServicesAccordion() {
           "lg:flex-[1.1]",
           "bg-[#95AE7E]",
           "text-white",
-          "min-h-[420px]"
+          "min-h-[420px]",
         );
         card.classList.add(
           "lg:flex-[0.42]",
           "bg-[#DDE5CF]",
           "text-[#5D7A4E]",
           "min-h-[140px]",
-          "sm:min-h-[220px]"
+          "sm:min-h-[220px]",
         );
 
         // Header styling
         if (header) {
           header.classList.remove("bg-[#A8BE95]", "px-10", "text-white");
-          header.classList.add("bg-[#C8D4B6]", "justify-center", "text-[#5D7A4E]");
+          header.classList.add(
+            "bg-[#C8D4B6]",
+            "justify-center",
+            "text-[#5D7A4E]",
+          );
         }
 
         // Vertical text
         if (vertical) {
-          vertical.classList.remove("opacity-0", "pointer-events-none", "hidden");
+          vertical.classList.remove(
+            "opacity-0",
+            "pointer-events-none",
+            "hidden",
+          );
           vertical.classList.add("opacity-100");
         }
 
@@ -457,4 +643,3 @@ if (document.readyState === "loading") {
 } else {
   setupServicesAccordion();
 }
-

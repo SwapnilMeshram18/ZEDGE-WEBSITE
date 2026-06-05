@@ -164,9 +164,9 @@ footer .border-t {
 
 .chip:hover,
 .chip.active {
-  background: #4a7c40;
-  color: #fff;
-  border-color: #4a7c40;
+  background: #cae1bc;
+  color: #000000;
+  border-color: #4a7c00;
 }
 
 .input-field {
