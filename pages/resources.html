@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="Mental Health Resources, Counselling Resources, Self Help Articles, Mental Wellness Blogs, Relationship Advice, Career Guidance Articles, Personal Development Resources, Stress Management Tips">
+  <meta name="keywords"
+    content="Mental Health Resources, Counselling Resources, Self Help Articles, Mental Wellness Blogs, Relationship Advice, Career Guidance Articles, Personal Development Resources, Stress Management Tips">
   <title>Z-Edge | Resources</title>
   <link rel="icon" type="image/png" href="../assets/Images/Logo.png" />
 
@@ -77,6 +78,22 @@
     @media (min-width: 1024px) {
       .shorts-card {
         flex-basis: calc((100% - 96px) / 5);
+      }
+    }
+
+    .blog-card {
+      flex: 0 0 100%;
+    }
+
+    @media (min-width: 768px) {
+      .blog-card {
+        flex-basis: calc((100% - 32px) / 2);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .blog-card {
+        flex-basis: calc((100% - 64px) / 3);
       }
     }
 
@@ -717,35 +734,38 @@
           <h2 class="text-[28px] font-semibold text-[#1E2A1B]">Blogs</h2>
 
           <div class="flex items-center gap-3">
-            <button
+            <button id="blogsPrev" type="button" aria-label="Previous blogs"
               class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition">
               &#10094;
             </button>
 
-            <button
+            <button id="blogsNext" type="button" aria-label="Next blogs"
               class="w-10 h-10 rounded-full border border-[#B7C9A9] text-[#5E7655] hover:bg-[#6E8B63] hover:text-white transition">
               &#10095;
             </button>
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <!-- BLOG -->
-          <div class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
-            <img src="../assets/Images/Resources-Imgs/FeelLost.jpg" class="w-full h-[220px] object-cover" />
+        <div id="blogsSlider"
+          class="hide-scrollbar flex gap-8 w-full overflow-x-auto scroll-smooth snap-x snap-mandatory pb-3">
+          <!-- BLOG 1 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog1.png" class="w-full h-[240px] object-cover" />
+             <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
+
 
             <div class="p-6">
-              <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
-                How to Choose the Right Career Path When You Feel Lost
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                Stop yourself from stopping  yourself
               </h3>
 
-              <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
-                Feeling unsure about your career is more common than you
-                think. Whether you're a student, a recent graduate, or someone
-                considering a career change, the pressure......
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                Does life ever stop? It doesn't. How then can we stop ourselves? We must move on and live life to the
+                fullest. And to live life to the fullest we must ......
               </p>
-              <a href="Blogs.html">
-                <button class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all">
+              <a href="./Blogs/Blog1.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
                   Read more
                   <span>&#10095;</span>
                 </button>
@@ -753,22 +773,25 @@
             </div>
           </div>
 
-          <!-- BLOG -->
-          <div class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
-            <img src="../assets/Images/Resources-Imgs/counsellor.jpg" class="w-full h-[220px] object-cover" />
+          <!-- BLOG 2 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog2.png" class="w-full h-[240px] object-cover" />
+              <div class="h-1.5 w-full bg-[#708e5f]"></div>
+
 
             <div class="p-6">
-              <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
-                5 Signs You Might Benefit from Talking to a Counsellor
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                Change your thoughts to change your Life
               </h3>
 
-              <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
                 Many people wait until things feel unbearable before seeking
                 help. But counselling isn’t just for crisis—it’s for
                 understanding, clarity, and growth.
               </p>
-              <a href="Blogs.html">
-              <button class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all">
+              <a href="./Blogs/Blog2.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
                   Read more
                   <span>&#10095;</span>
                 </button>
@@ -776,28 +799,168 @@
             </div>
           </div>
 
-          <!-- BLOG -->
-          <div class="bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
-            <img src="../assets/Images/Resources-Imgs/Relationship.jpg" class="w-full h-[220px] object-cover" />
-
+          <!-- BLOG 3 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog3.png" class="w-full h-[240px] object-cover" />
+            <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
             <div class="p-6">
-              <h3 class="text-[22px] font-semibold text-[#1F2D1C] mb-4">
-                How to Improve Communication in Relationships
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                Happy You is Healthy You: 7 ways to surge your happy hormones
               </h3>
 
-              <p class="text-[#4E5E49] leading-7 text-[15px] mb-6">
-                Communication is at the heart of every relationship, but it’s
-                also where many challenges begin. Misunderstandings often come
-                from assumptions,....
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                When was it in recent times that you felt happy? How often has it been that you are in .....
               </p>
-              <a href="Blogs.html">
-                <button class="flex items-center gap-2 text-[#4B6B3F] font-semibold hover:gap-4 transition-all">
+              <a href="./Blogs/Blog3.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
                   Read more
                   <span>&#10095;</span>
                 </button>
               </a>
             </div>
           </div>
+
+          <!-- BLOG 4 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog4.png" class="w-full h-[240px] object-cover" />
+             <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
+
+
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                You cannot shake hands with a clenched fist
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                How often has it happened, that you have given yourself to something even when you did not believe in it wholesomely? How....
+              </p>
+              <a href="./Blogs/Blog4.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- BLOG 5 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog5.png" class="w-full h-[240px] object-cover" />
+              <div class="h-1.5 w-full bg-[#708e5f]"></div>
+
+
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                Change your thoughts to change your Life
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                Many books have been written on how to become a leader. Well, so many of them have become one even without reading those books. They...
+              </p>
+              <a href="./Blogs/Blog5.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- BLOG 6-->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog6.png" class="w-full h-[240px] object-cover" />
+            <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+               Happy You is Healthy You: 7 ways to surge your happy hormones
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                When was it in recent times that you felt happy? How often has it been that you are in .....
+              </p>
+              <a href="./Blogs/Blog6.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- BLOG 7 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog7.png" class="w-full h-[240px] object-cover" />
+             <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
+
+
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+               What is self-care and why is it important?
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                The word self-care has found a new meaning in today’s world. The internet is boasting about this as a concept. Some assume self-care is about......
+              </p>
+              <a href="./Blogs/Blog7.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- BLOG 8 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog8.png" class="w-full h-[240px] object-cover" />
+              <div class="h-1.5 w-full bg-[#708e5f]"></div>
+
+
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                The joy of giving- A long-lost feeling?
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+               A theory says that a selfless deed never exists. Strange, right? Well, that is said because even doing selfless deeds give you something—that is JOY.....
+              </p>
+              <a href="./Blogs/Blog8.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
+          <!-- BLOG 9 -->
+          <div
+            class="blog-card snap-start bg-[#DCE6C8] rounded-md overflow-hidden hover:-translate-y-1 transition duration-300 shadow-sm">
+            <img src="../assets/Images/Resources-Imgs/blogs-imgs/blog9.png" class="w-full h-[240px] object-cover" />
+            <div class="h-1.5 w-full bg-[#9cbb8a]"></div>
+            <div class="p-6">
+              <h3 class="text-[18px] font-bold text-[#47752c] mb-4">
+                Perfect Relationships
+              </h3>
+
+              <p class="text-[#4E5E49] leading-7 text-[16px] mb-6">
+                Do you ever think about the old version of yourself? Do you ever miss that version of yours? Of how it was back then for you to be YOU....
+              </p>
+              <a href="./Blogs/Blog9.html">
+                <button class="flex items-center gap-2 text-[#1d4008] text-[18px] font-bold hover:gap-4 transition-all">
+                  Read more
+                  <span>&#10095;</span>
+                </button>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

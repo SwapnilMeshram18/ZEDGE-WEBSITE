@@ -232,6 +232,7 @@ textarea.input-field {
   flex: 0 0 auto;
 }
 
+
 .service-step {
   display: flex;
   gap: 20px;
@@ -273,11 +274,34 @@ textarea.input-field {
   margin-top: 40px;
 }
 
-.blog-title h2{
+.blog-title h1{
   color: #47752c;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.blog-title h2{
   font-size: 17px;
   font-weight: 700;
   margin-top: 24px;
+}
+
+.blog-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 36px;
+}
+
+.blog-back-link svg {
+  width: 22px;
+  height: 18px;
+  color: #6bb646;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 640px) {
@@ -325,6 +349,20 @@ textarea.input-field {
   .service-step-copy {
     font-size: 13px;
     line-height: 1.65;
+  }
+
+
+  .blog-back-link {
+    align-items: flex-start;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+  .blog-back-link svg {
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
   }
 
   .step-border {

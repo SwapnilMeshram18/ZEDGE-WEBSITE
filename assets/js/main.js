@@ -347,6 +347,7 @@ setupHorizontalCarousel(
   "youtubeNext",
   ".youtube-card",
 );
+setupHorizontalCarousel("blogsSlider", "blogsPrev", "blogsNext", ".blog-card");
 
 const INQUIRY_API_URL = "http://localhost:5000/send-inquiry";
 
